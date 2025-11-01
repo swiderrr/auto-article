@@ -23,11 +23,11 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.150.0'
+          extended: true
 
       - name: Build site (kids/)
         working-directory: kids
         run: |
-          hugo version
           hugo mod get
           hugo mod tidy
           HUGO_ENVIRONMENT=production hugo --minify --destination ../kids_public
