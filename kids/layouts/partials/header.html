@@ -1,0 +1,10 @@
+<header class="site-header">
+  <nav class="navbar">
+    <a class="brand" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+    <ul class="nav">
+      {{ range .Site.Menus.main }}
+        <li class="nav-item"><a class="nav-link" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+</header>

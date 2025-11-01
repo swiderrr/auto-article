@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pl">
+	<head>
+		{{ partial "head/head.html" . }}
+	</head>
+	<body>
+				<main class="container">
+			<article class="page-content">
+				<header>
+					<h1>{{ .Title }}</h1>
+				</header>
+				<section>
+					{{ .Content }}
+				</section>
+			</article>
+		</main>
+
+				{{/* Footer omitted; theme may provide footers via partials in its layout. */}}
+	</body>
+</html>

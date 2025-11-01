@@ -1,0 +1,8 @@
+<!-- Minimal scripts partial: include common JS from static/js -->
+<script src="{{ "js/jquery.min.js" | relURL }}"></script>
+<script src="{{ "js/production.min.js" | relURL }}"></script>
+
+<!-- Optional vendor scripts if present -->
+{{ if (resources.Get "js/bootstrap.min.js") }}
+  <script src="{{ "js/bootstrap.min.js" | relURL }}"></script>
+{{ end }}

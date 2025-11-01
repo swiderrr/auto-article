@@ -1,0 +1,6 @@
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; {{ with .Site.Params.footer.since }}{{ . }}-{{ end }}{{ now.Format "2006" }} {{ .Site.Title }}</p>
+    {{ with .Site.Params.footer.customText }}<p>{{ . }}</p>{{ end }}
+  </div>
+</footer>
