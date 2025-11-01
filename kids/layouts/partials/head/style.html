@@ -1,5 +1,9 @@
-<!-- Minimal style partial: include main theme and custom CSS from static/css -->
-<link rel="stylesheet" href="{{ "css/hugo-theme-cleanwhite.min.css" | relURL }}">
+
+<!-- Use Hugo Pipes to compile SCSS to CSS (css.Sass replaces deprecated resources.ToCSS) -->
+{{ $style := resources.Get "scss/style.scss" | css.Sass | resources.Minify }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+<!-- Custom CSS (if needed, keep this line) -->
 <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
 
 <!-- Additional theme/vendor styles (fallbacks if present) -->

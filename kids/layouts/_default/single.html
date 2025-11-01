@@ -1,20 +1,11 @@
-<!doctype html>
-<html lang="pl">
-	<head>
-		{{ partial "head/head.html" . }}
-	</head>
-	<body>
-				<main class="container">
-			<article class="page-content">
-				<header>
-					<h1>{{ .Title }}</h1>
-				</header>
-				<section>
-					{{ .Content }}
-				</section>
-			</article>
-		</main>
-
-				{{/* Footer omitted; theme may provide footers via partials in its layout. */}}
-	</body>
-</html>
+{{/* Use the theme's base layout so pages get full site chrome (sidebars, header, footer) */}}
+{{ define "main" }}
+	<article class="page-content article-page">
+		<header class="article-header">
+			<h1>{{ .Title }}</h1>
+		</header>
+		<section class="article-content">
+			{{ .Content }}
+		</section>
+	</article>
+{{ end }}
