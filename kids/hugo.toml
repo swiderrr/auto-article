@@ -1,5 +1,6 @@
 baseURL = 'https://poradnik-rodzica.myops.pl/'
 languageCode = 'pl-pl'
+defaultContentLanguage = 'pl'
 title = 'Poradnik Rodzica'
 
 # Use module instead of theme
@@ -74,7 +75,7 @@ path = "github.com/CaiJimmy/hugo-theme-stack/v3"
     [[menu.main]]
         identifier = 'about'
         name = 'O nas'
-        url = '/about'
+        url = '/o-nas/'
         weight = -90
         params = { icon = 'user' }
         

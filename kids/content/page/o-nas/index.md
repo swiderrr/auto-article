@@ -4,6 +4,7 @@ date: 2025-11-01
 draft: false
 summary: "Poradnik Rodzica — praktyczne, sprawdzone porady dla rodziców i opiekunów."
 keywords: ["poradnik rodzica", "opiekun dziecka", "zdrowie dziecka", "wychowanie"]
+url: "/o-nas/"
 ---
 
 ## Kim jesteśmy?
