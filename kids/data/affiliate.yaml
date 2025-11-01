@@ -1,0 +1,12 @@
+# Affiliate items format
+# - id: unique-key
+#   name: "Product name"
+#   url: "https://example.com/?aff=ID"
+#   keywords: ["stroller", "wózek", "fotelik"]
+#   note: "Krótka rekomendacja"
+-
+  - id: "bezpieczny-wyposazenie-1"
+    name: "Bezpieczny fotelik 0+"
+    url: "https://example.com/product/fotelik?aff=YOUR_AFF_ID"
+    keywords: ["fotelik", "fotelik samochodowy", "safety seat"]
+    note: "Polecany fotelik z dobrymi opiniami i zabezpieczeniami."

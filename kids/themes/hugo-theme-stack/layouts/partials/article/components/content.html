@@ -1,0 +1,13 @@
+<section class="article-content">
+    <!-- Visible AI disclosure banner if article was AI generated -->
+    {{ if .Params.ai_generated }}
+    <div class="ai-disclosure" style="border-left:4px solid #f1c40f;padding:12px;margin-bottom:16px;background:#fff8e1;color:#333;">
+        <strong>Uwaga — treść wygenerowana automatycznie:</strong>
+        {{ with .Params.ai_disclaimer }} {{ . | safeHTML }} {{ else }} Ten artykuł został przygotowany przy użyciu narzędzi sztucznej inteligencji. Prosimy o weryfikację szczególnie porad medycznych i prawnych. {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- Refer to https://discourse.gohugo.io/t/responsive-tables-in-markdown/10639/5 -->
+    {{ $wrappedTable := printf "<div class=\"table-wrapper\">${1}</div>" }}
+    {{ .Content | replaceRE "(<table>(?:.|\n)+?</table>)" $wrappedTable | safeHTML }}
+</section>

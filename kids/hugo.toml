@@ -1,0 +1,107 @@
+baseURL = 'https://example.org/'
+languageCode = 'pl-pl'
+title = 'Poradnik Rodzica'
+theme = 'hugo-theme-stack'
+
+# Site parameters
+[params]
+    mainSections = ['posts']
+    featuredImageField = 'featured_image'
+    rssFullContent = true
+    favicon = '/favicon.png'
+
+    [params.footer]
+        since = 2025
+        customText = ''
+
+    [params.sidebar]
+        emoji = '👶'
+        subtitle = 'Praktyczne porady dla rodziców'
+        
+    [params.sidebar.avatar]
+        enabled = false
+        
+    [params.article]
+        math = false
+        toc = true
+        readingTime = true
+        [params.article.image]
+            enabled = true
+            width = "100%"
+            height = "auto"
+            style = "image-rendering: crisp-edges;"
+        
+    [params.comments]
+        enabled = true
+        provider = 'disqus'
+        
+        [params.comments.disqus]
+            shortname = 'your-disqus-shortname'
+
+    [params.widgets]
+        enabled = ['search', 'archives', 'tag-cloud']
+        
+        [params.widgets.archives]
+            limit = 5
+            
+        [params.widgets.tagCloud]
+            limit = 20
+
+    [params.opengraph]
+        [params.opengraph.twitter]
+            site = ""
+            card = "summary_large_image"
+            
+    [params.defaultImage]
+        [params.defaultImage.article]
+            enabled = true
+            local = true
+            src = "/img/default.jpg"
+        [params.defaultImage.opengraph]
+            enabled = true
+            local = true
+            src = "/img/default.jpg"
+            
+# Menu config
+[menu]
+    [[menu.main]]
+        identifier = 'home'
+        name = 'Start'
+        url = '/'
+        weight = -100
+        params = { icon = 'home' }
+        
+    [[menu.main]]
+        identifier = 'about'
+        name = 'O nas'
+        url = '/about'
+        weight = -90
+        params = { icon = 'user' }
+        
+    [[menu.main]]
+        identifier = 'categories'
+        name = 'Kategorie'
+        url = '/categories'
+        weight = -80
+        params = { icon = 'folder' }
+
+# Custom output formats
+[outputs]
+    home = ['HTML', 'RSS', 'JSON']
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true  # Allow HTML in markdown
+
+    [markup.highlight]
+        noClasses = false
+        
+    [markup.tableOfContents]
+        endLevel = 3
+        ordered = true
+        startLevel = 2
+
+# Add custom CSS
+[params.customCSS]
+    css = ['/css/custom.css']
