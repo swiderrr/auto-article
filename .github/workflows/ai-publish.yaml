@@ -35,7 +35,7 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python tools/generate_article.py "Temat przykładowy: Jak automatyzować deployment w 2025" 
+          python kids/tools/generate_article.py
 
       - name: Commit changes (if any)
         run: |
