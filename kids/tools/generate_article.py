@@ -6,10 +6,7 @@ import datetime
 import subprocess
 import re
 import json
-try:
-    from openai import OpenAI
-except Exception:
-    OpenAI = None
+from openai import OpenAI
 import requests
 import random
 import time
