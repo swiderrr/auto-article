@@ -69,16 +69,20 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.150.0'  # dostosuj do potrzeb
+          hugo-version: '0.150.0'
+          extended: true
 
-      - name: Build
-        run: hugo --minify
-        working-directory: ./kids
+      - name: Build site (kids/)
+        working-directory: kids
+        run: |
+          hugo mod get
+          hugo mod tidy
+          HUGO_ENVIRONMENT=production hugo --minify --destination ../kids_public
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages (gh-pages)
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: ./public
+          publish_dir: ./kids_public
           publish_branch: gh-pages
-          deploy_key: ${{ secrets.DEPLOY_KEY }}
+          keep_files: false
           github_token: ${{ secrets.GITHUB_TOKEN }}
