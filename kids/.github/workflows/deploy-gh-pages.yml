@@ -26,15 +26,18 @@ jobs:
 
       - name: Install Hugo CLI
         run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.150.0/hugo_extended_0.150.0_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+          wget -O ${{ runner.temp }}/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.119.0/hugo_extended_0.119.0_linux-amd64.tar.gz \
+          && tar -xvf ${{ runner.temp }}/hugo.tar.gz -C ${{ runner.temp }} \
+          && sudo mv ${{ runner.temp }}/hugo /usr/local/bin/hugo \
+          && hugo version
 
       - name: Build site (kids/)
         working-directory: kids
         run: |
+          hugo version
           hugo mod get
           hugo mod tidy
-          HUGO_ENVIRONMENT=production hugo --minify --destination ../kids_public
+          HUGO_ENVIRONMENT=production hugo --gc --minify --destination ../kids_public
 
       - name: Deploy to GitHub Pages (gh-pages)
         uses: peaceiris/actions-gh-pages@v3
