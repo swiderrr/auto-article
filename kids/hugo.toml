@@ -54,13 +54,9 @@ theme = 'hugo-theme-stack'
             
     [params.defaultImage]
         [params.defaultImage.article]
-            enabled = true
-            local = true
-            src = "/img/default.jpg"
+            enabled = false
         [params.defaultImage.opengraph]
-            enabled = true
-            local = true
-            src = "/img/default.jpg"
+            enabled = false
             
 # Menu config
 [menu]

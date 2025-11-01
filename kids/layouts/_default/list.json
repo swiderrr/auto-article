@@ -1,0 +1,1 @@
+{{ dict "posts" (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) | jsonify }}
