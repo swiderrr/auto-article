@@ -29,6 +29,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Print env vars
+        run: |
+          echo "OPENAI_API_KEY=$OPENAI_API_KEY"
+          echo "PEXELS_API_KEY=$PEXELS_API_KEY"
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+
       - name: Generate article with AI
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
