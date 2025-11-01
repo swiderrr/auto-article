@@ -1,0 +1,31 @@
+**/venv
+# ignore Python virtual env created at repo root
+.venv/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+eggs/
+*.egg-info/
+
+# Hugo generated output
+public/
+resources/_gen/
+static/
+
+# Editor/tmp
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules (if any)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db

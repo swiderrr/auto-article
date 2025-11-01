@@ -1,0 +1,26 @@
+# Hugo build outputs
+public/
+resources/_gen/
+
+# Static assets generated
+static/
+
+# Python virtual env
+.venv/
+venv/
+
+# Bytecode
+__pycache__/
+*.pyc
+
+# Editor
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+*.swo
+ 
+# Local env / lock
+.env
+.hugo_build.lock
