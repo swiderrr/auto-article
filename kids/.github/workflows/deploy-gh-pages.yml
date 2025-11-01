@@ -19,6 +19,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.21'
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -28,7 +33,8 @@ jobs:
       - name: Build site (kids/)
         working-directory: kids
         run: |
-          # Ensure public is generated into kids/public
+          hugo mod get
+          hugo mod tidy
           hugo --minify --destination ../kids_public
 
       - name: Deploy to GitHub Pages (gh-pages)

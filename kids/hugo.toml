@@ -1,7 +1,11 @@
 baseURL = 'https://example.org/'
 languageCode = 'pl-pl'
 title = 'Poradnik Rodzica'
-theme = 'hugo-theme-stack'
+
+# Use module instead of theme
+[module]
+[[module.imports]]
+path = "github.com/CaiJimmy/hugo-theme-stack/v3"
 
 # Site parameters
 [params]
