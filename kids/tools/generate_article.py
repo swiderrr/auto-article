@@ -684,9 +684,30 @@ if __name__ == "__main__":
             s3_client = None
             if s3_bucket:
                 try:
-                    s3_client = boto3.client('s3', region_name=os.getenv('AWS_REGION') or None)
+                    aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID')
+                    aws_secret_access_key = os.getenv('AWS_SECRET_ACCESS_KEY')
+                    aws_session_token = os.getenv('AWS_SESSION_TOKEN')
+                    region_name = os.getenv('AWS_REGION') or None
+                    # Pass credentials explicitly if present
+                    if aws_access_key_id and aws_secret_access_key:
+                        s3_client = boto3.client(
+                            's3',
+                            region_name=region_name,
+                            aws_access_key_id=aws_access_key_id,
+                            aws_secret_access_key=aws_secret_access_key,
+                            aws_session_token=aws_session_token
+                        )
+                        sts = boto3.client(
+                            'sts',
+                            region_name=region_name,
+                            aws_access_key_id=aws_access_key_id,
+                            aws_secret_access_key=aws_secret_access_key,
+                            aws_session_token=aws_session_token
+                        )
+                    else:
+                        s3_client = boto3.client('s3', region_name=region_name)
+                        sts = boto3.client('sts', region_name=region_name)
                     # Quick credentials check
-                    sts = boto3.client('sts')
                     sts.get_caller_identity()
                     do_upload = True
                 except NoCredentialsError:
