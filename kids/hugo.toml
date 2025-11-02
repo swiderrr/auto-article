@@ -2,6 +2,8 @@ baseURL = 'https://poradnik-rodzica.myops.pl/'
 languageCode = 'pl-pl'
 defaultContentLanguage = 'pl'
 title = 'Poradnik Rodzica'
+relativeURLs = true
+canonifyURLs = false
 
 # Use module instead of theme
 [module]

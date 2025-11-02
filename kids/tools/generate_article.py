@@ -592,8 +592,9 @@ if __name__ == "__main__":
             imgs = download_unsplash(topic, per_page=4)
 
         if imgs:
-            # Set featured image to first saved
-            data['featured_image'] = f"/img/generated/{slug}/{imgs[0]['filename']}"
+            # Set featured image to first saved (use relative path without leading slash so URLs
+            # are correct when the site is served from a subpath on GitHub Pages)
+            data['featured_image'] = f"img/generated/{slug}/{imgs[0]['filename']}"
             
             # Replace [IMAGE-n] placeholders with actual images or add them in logical places
             body = data.get('body', '')
@@ -618,7 +619,7 @@ if __name__ == "__main__":
                 caption_text = _sanitize_attr((img.get('description') or '') + (f" (Photo: {img.get('photographer')})" if img.get('photographer') else ''))
 
                 img_md = (
-                    "\n\n{{< figure src=\"/img/generated/" + slug + "/" + img['filename'] + "\" "
+                    "\n\n{{< figure src=\"img/generated/" + slug + "/" + img['filename'] + "\" "
                     "alt=\"" + alt_text + "\" "
                     "caption=\"" + caption_text + "\" "
                     "class=\"article-image\" >}}\n\n"
