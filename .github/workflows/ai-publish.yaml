@@ -95,6 +95,16 @@ jobs:
           hugo mod tidy
           HUGO_ENVIRONMENT=production hugo --minify --destination ../kids_public
 
+      - name: Ensure CNAME present in publish dir
+        run: |
+          # If repository has a CNAME file at the repo root, copy it into the generated publish directory
+          if [ -f CNAME ]; then
+            cp CNAME ./kids_public/CNAME
+            echo "Copied CNAME to kids_public/CNAME"
+          else
+            echo "No CNAME file in repo root; skipping copy"
+          fi
+
       - name: Deploy to GitHub Pages (gh-pages)
         uses: peaceiris/actions-gh-pages@v3
         with:
