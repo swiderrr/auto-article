@@ -15,7 +15,14 @@ eggs/
 # Hugo generated output
 public/
 resources/_gen/
+# By default ignore any `static/` directories (common for generated assets)
+# but allow the `kids/static/` folder so generated images can be committed.
+# This lets CI-generated images under `kids/static/img/...` be added to the repo
+# and later included in the Hugo output deployed to gh-pages.
 static/
+
+!/kids/static/
+!/kids/static/**
 
 # Editor/tmp
 .vscode/
