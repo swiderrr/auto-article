@@ -2,5 +2,6 @@
   <div class="container">
     <p>&copy; {{ with .Site.Params.footer.since }}{{ . }}-{{ end }}{{ now.Format "2006" }} {{ .Site.Title }}</p>
     {{ with .Site.Params.footer.customText }}<p>{{ . }}</p>{{ end }}
+    <p><a href="{{ "/page/polityka-prywatnosci/" | relURL }}">Polityka prywatności i RODO</a></p>
   </div>
 </footer>
