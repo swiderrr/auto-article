@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-02T14:00:37.075964+00:00",
+  "uploaded_at": "2025-11-02T15:13:11.669791+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -29,6 +29,10 @@
     "img/generated/2025-11-02-test-s3-upload-retry-2-jak-zwikszy-niezawodno-przesyania-plikw-do-amazon-s3/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-02-test-s3-upload-retry-2-jak-zwikszy-niezawodno-przesyania-plikw-do-amazon-s3/img_0.jpeg",
     "img/generated/2025-11-02-test-s3-upload-retry-2-jak-zwikszy-niezawodno-przesyania-plikw-do-amazon-s3/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-02-test-s3-upload-retry-2-jak-zwikszy-niezawodno-przesyania-plikw-do-amazon-s3/img_1.jpeg",
     "img/generated/2025-11-02-test-s3-upload-retry-2-jak-zwikszy-niezawodno-przesyania-plikw-do-amazon-s3/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-02-test-s3-upload-retry-2-jak-zwikszy-niezawodno-przesyania-plikw-do-amazon-s3/img_2.jpeg",
-    "img/generated/2025-11-02-test-s3-upload-retry-2-jak-zwikszy-niezawodno-przesyania-plikw-do-amazon-s3/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-02-test-s3-upload-retry-2-jak-zwikszy-niezawodno-przesyania-plikw-do-amazon-s3/img_3.jpeg"
+    "img/generated/2025-11-02-test-s3-upload-retry-2-jak-zwikszy-niezawodno-przesyania-plikw-do-amazon-s3/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-02-test-s3-upload-retry-2-jak-zwikszy-niezawodno-przesyania-plikw-do-amazon-s3/img_3.jpeg",
+    "img/generated/2025-11-02-metody-zasypiania-dla-niemowlt-skuteczne-techniki-na-spokojny-sen-dziecka/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-02-metody-zasypiania-dla-niemowlt-skuteczne-techniki-na-spokojny-sen-dziecka/img_0.jpeg",
+    "img/generated/2025-11-02-metody-zasypiania-dla-niemowlt-skuteczne-techniki-na-spokojny-sen-dziecka/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-02-metody-zasypiania-dla-niemowlt-skuteczne-techniki-na-spokojny-sen-dziecka/img_1.jpeg",
+    "img/generated/2025-11-02-metody-zasypiania-dla-niemowlt-skuteczne-techniki-na-spokojny-sen-dziecka/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-02-metody-zasypiania-dla-niemowlt-skuteczne-techniki-na-spokojny-sen-dziecka/img_2.jpeg",
+    "img/generated/2025-11-02-metody-zasypiania-dla-niemowlt-skuteczne-techniki-na-spokojny-sen-dziecka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-02-metody-zasypiania-dla-niemowlt-skuteczne-techniki-na-spokojny-sen-dziecka/img_3.jpeg"
   }
 }
