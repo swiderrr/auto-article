@@ -163,15 +163,45 @@ W każdej sekcji:
 
     # Parse JSON response
     try:
-        # Find first { and last } to extract JSON
-        json_start = text.find('{')
-        json_end = text.rfind('}') + 1
-        if json_start == -1 or json_end == 0:
+        # Robust JSON extraction: find the first JSON object by scanning braces while
+        # respecting quoted strings and escapes. This avoids grabbing trailing
+        # non-JSON text that sometimes appears after the object (like '---' or
+        # YAML frontmatter snippets) which breaks json.loads.
+        def _extract_json_block(s):
+            start = s.find('{')
+            if start == -1:
+                return None
+            in_str = False
+            esc = False
+            depth = 0
+            for i in range(start, len(s)):
+                ch = s[i]
+                if esc:
+                    esc = False
+                    continue
+                if ch == '\\':
+                    esc = True
+                    continue
+                if ch == '"':
+                    in_str = not in_str
+                    continue
+                if in_str:
+                    continue
+                if ch == '{':
+                    depth += 1
+                elif ch == '}':
+                    depth -= 1
+                    if depth == 0:
+                        return s[start:i+1]
+            return None
+
+        json_text = _extract_json_block(text)
+        if not json_text:
             raise ValueError("No valid JSON structure found in response")
-        json_text = text[json_start:json_end]
-        # Clean control characters and normalize whitespace
-        json_text = re.sub(r'[\x00-\x1F\x7F-\x9F]', ' ', json_text)
-        json_text = re.sub(r'\s+', ' ', json_text)
+        # Remove non-printable control characters that might break the JSON parser,
+        # but avoid collapsing all whitespace (preserve newlines inside strings if
+        # they are escaped). Keep the original spacing otherwise.
+        json_text = re.sub(r'[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x9F]', ' ', json_text)
 
         # Try to load JSON, and on failure provide helpful diagnostics and a small set of auto-fixes
         try:
