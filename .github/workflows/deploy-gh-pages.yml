@@ -34,4 +34,4 @@ jobs:
           publish_dir: ./kids_public
           publish_branch: gh-pages
           keep_files: false
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}
