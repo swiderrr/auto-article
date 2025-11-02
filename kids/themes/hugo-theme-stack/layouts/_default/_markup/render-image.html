@@ -1,5 +1,9 @@
 {{- $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) -}}
 {{- $Permalink := .Destination | relURL | safeURL -}}
+{{- $s3 := .Page.Site.Params.s3BaseURL -}}
+{{- if and $s3 (not (strings.HasPrefix $Permalink "http")) -}}
+	{{- $Permalink = printf "%s/%s" $s3 (strings.TrimPrefix $Permalink "/") | safeURL -}}
+{{- end -}}
 {{- $alt := .PlainText | safeHTML -}}
 {{- $Width := 0 -}}
 {{- $Height := 0 -}}

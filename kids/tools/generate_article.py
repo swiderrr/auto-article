@@ -7,11 +7,15 @@ import subprocess
 import re
 import json
 from openai import OpenAI
+import boto3
+from botocore.exceptions import NoCredentialsError, ClientError
+import mimetypes
 import requests
 import random
 import time
 from advanced_seo import AdvancedSEOHelper
 from PIL import Image
+import toml
 import yaml
 
 # Initialize Advanced SEO helper
@@ -280,6 +284,36 @@ def make_markdown_file(data):
     
     # base dir is two levels up from this script (kids/)
     base = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+    # Detect S3 base URL. Priority:
+    # 1. env var S3_BASE_URL
+    # 2. kids/.s3_migration_map.json mapping (use bucket + region or mapping values)
+    # 3. kids/hugo.toml params.s3BaseURL
+    s3_base = os.getenv('S3_BASE_URL')
+    s3_map = {}
+    try:
+        s3_map_path = os.path.join(base, '.s3_migration_map.json')
+        if os.path.exists(s3_map_path):
+            with open(s3_map_path, 'r', encoding='utf-8') as smf:
+                sm = json.load(smf)
+                # mapping under 'mapping'
+                if isinstance(sm, dict) and 'mapping' in sm:
+                    s3_map = sm.get('mapping', {}) or {}
+                # also allow bucket/region top-level to build base
+                if not s3_base and sm.get('bucket') and sm.get('region'):
+                    s3_base = f"https://{sm.get('bucket')}.s3.{sm.get('region')}.amazonaws.com"
+    except Exception:
+        s3_map = {}
+
+    # Fallback: try to parse kids/hugo.toml for params.s3BaseURL
+    if not s3_base:
+        try:
+            hugo_toml = os.path.join(base, 'hugo.toml')
+            if os.path.exists(hugo_toml):
+                parsed = toml.load(hugo_toml)
+                s3_base = parsed.get('params', {}).get('s3BaseURL')
+        except Exception:
+            pass
     # Use timezone-aware UTC datetimes
     date = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
     filename = os.path.join(base, "content", "posts", f"{slug}.md")
@@ -440,6 +474,30 @@ if __name__ == "__main__":
     date = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
     slug = f"{date}-{slug_full}"
     img_dir = os.path.join(base, "static", "img", "generated", slug)
+    # Detect S3 base and mapping for main runtime (same logic as in make_markdown_file)
+    s3_base = os.getenv('S3_BASE_URL')
+    s3_map = {}
+    try:
+        s3_map_path = os.path.join(base, '.s3_migration_map.json')
+        if os.path.exists(s3_map_path):
+            with open(s3_map_path, 'r', encoding='utf-8') as smf:
+                sm = json.load(smf)
+                if isinstance(sm, dict) and 'mapping' in sm:
+                    s3_map = sm.get('mapping', {}) or {}
+                if not s3_base and sm.get('bucket') and sm.get('region'):
+                    s3_base = f"https://{sm.get('bucket')}.s3.{sm.get('region')}.amazonaws.com"
+    except Exception:
+        s3_map = {}
+
+    # Fallback: try to parse kids/hugo.toml for params.s3BaseURL
+    if not s3_base:
+        try:
+            hugo_toml = os.path.join(base, 'hugo.toml')
+            if os.path.exists(hugo_toml):
+                parsed = toml.load(hugo_toml)
+                s3_base = parsed.get('params', {}).get('s3BaseURL')
+        except Exception:
+            pass
     if PEXELS_API_KEY:
         os.makedirs(img_dir, exist_ok=True)
         def _is_image_suitable(path, min_w=800, min_h=450, max_ratio=2.5):
@@ -607,9 +665,124 @@ if __name__ == "__main__":
             imgs = download_unsplash(topic, per_page=4)
 
         if imgs:
-            # Set featured image to first saved (use relative path without leading slash so URLs
-            # are correct when the site is served from a subpath on GitHub Pages)
-            data['featured_image'] = f"img/generated/{slug}/{imgs[0]['filename']}"
+            # Attempt to upload downloaded images to S3 if credentials and bucket are configured.
+            uploaded_map = {}
+            s3_bucket = os.getenv('S3_BUCKET') or None
+            # If .s3_migration_map.json provided bucket, use it
+            try:
+                if not s3_bucket:
+                    s3_bucket = None
+                    # Try to derive bucket from s3_base if it's a full URL like https://bucket.s3.region.amazonaws.com
+                    if s3_base and s3_base.startswith('https://'):
+                        # naive extraction
+                        host = s3_base.split('://', 1)[1]
+                        s3_bucket = host.split('.s3')[0]
+            except Exception:
+                s3_bucket = None
+
+            do_upload = False
+            s3_client = None
+            if s3_bucket:
+                try:
+                    s3_client = boto3.client('s3', region_name=os.getenv('AWS_REGION') or None)
+                    # Quick credentials check
+                    sts = boto3.client('sts')
+                    sts.get_caller_identity()
+                    do_upload = True
+                except NoCredentialsError:
+                    print('AWS credentials not found; skipping S3 upload.')
+                    do_upload = False
+                except Exception as e:
+                    # any other error, skip upload but continue
+                    print('S3 upload disabled (client error):', e)
+                    do_upload = False
+
+            for img in imgs:
+                rel_path = os.path.join('img', 'generated', slug, img['filename'])
+                local_file = os.path.join(img_dir, img['filename'])
+                if do_upload and s3_client and s3_bucket:
+                    key = rel_path.replace(os.path.sep, '/')
+                    try:
+                        content_type, _ = mimetypes.guess_type(local_file)
+                        extra = {}
+                        if content_type:
+                            extra['ContentType'] = content_type
+                        # default to public-read unless explicitly disabled
+                        add_acl = os.getenv('S3_PUBLIC', 'true').lower() in ('1', 'true', 'yes')
+                        if add_acl:
+                            extra['ACL'] = 'public-read'
+                        s3_client.upload_file(local_file, s3_bucket, key, ExtraArgs=extra)
+                        s3_url = f"https://{s3_bucket}.s3.{os.getenv('AWS_REGION') or 'eu-north-1'}.amazonaws.com/{key}"
+                        uploaded_map[rel_path] = s3_url
+                        print(f"Uploaded to S3: {s3_url}")
+                    except NoCredentialsError:
+                        print('AWS credentials disappeared; skipping remaining uploads.')
+                        do_upload = False
+                    except ClientError as ce:
+                        # Some buckets disallow ACLs; retry without ACL if that's the case
+                        try:
+                            err_code = ''
+                            if hasattr(ce, 'response') and isinstance(ce.response, dict):
+                                err_code = ce.response.get('Error', {}).get('Code', '')
+                            if err_code == 'AccessControlListNotSupported' and add_acl:
+                                # retry without ACL
+                                try:
+                                    extra.pop('ACL', None)
+                                    s3_client.upload_file(local_file, s3_bucket, key, ExtraArgs=extra)
+                                    s3_url = f"https://{s3_bucket}.s3.{os.getenv('AWS_REGION') or 'eu-north-1'}.amazonaws.com/{key}"
+                                    uploaded_map[rel_path] = s3_url
+                                    print(f"Uploaded to S3 (no ACL): {s3_url}")
+                                    continue
+                                except Exception:
+                                    pass
+                        except Exception:
+                            pass
+                        print('S3 upload failed for', local_file, ce)
+                    except Exception as e:
+                        # Some upload helpers raise a wrapped exception (e.g., S3UploadFailedError)
+                        # which may contain the underlying AccessControlListNotSupported message.
+                        try:
+                            msg = str(e)
+                        except Exception:
+                            msg = ''
+                        if 'AccessControlListNotSupported' in msg and add_acl:
+                            try:
+                                extra.pop('ACL', None)
+                                s3_client.upload_file(local_file, s3_bucket, key, ExtraArgs=extra)
+                                s3_url = f"https://{s3_bucket}.s3.{os.getenv('AWS_REGION') or 'eu-north-1'}.amazonaws.com/{key}"
+                                uploaded_map[rel_path] = s3_url
+                                print(f"Uploaded to S3 (no ACL): {s3_url}")
+                                continue
+                            except Exception as e2:
+                                print('Retry without ACL failed for', local_file, e2)
+                                continue
+                        print('Unexpected error uploading to S3 for', local_file, e)
+
+            # Merge uploaded_map into s3_map and persist to .s3_migration_map.json if any uploads succeeded
+            if uploaded_map:
+                try:
+                    s3_map.update(uploaded_map)
+                    map_path = os.path.join(base, '.s3_migration_map.json')
+                    out = {
+                        'bucket': os.getenv('S3_BUCKET') or (s3_bucket or ''),
+                        'region': os.getenv('AWS_REGION') or 'eu-north-1',
+                        'uploaded_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                        'mapping': s3_map
+                    }
+                    with open(map_path, 'w', encoding='utf-8') as mf:
+                        json.dump(out, mf, ensure_ascii=False, indent=2)
+                    print('Updated .s3_migration_map.json with uploads')
+                except Exception as e:
+                    print('Failed to update .s3_migration_map.json:', e)
+
+            # Set featured image to first uploaded URL if present, otherwise fall back to existing map or s3_base
+            local_path = f"img/generated/{slug}/{imgs[0]['filename']}"
+            featured_url = None
+            if local_path in s3_map:
+                featured_url = s3_map.get(local_path)
+            elif s3_base:
+                featured_url = s3_base.rstrip('/') + '/' + local_path.lstrip('/')
+            data['featured_image'] = featured_url or local_path
 
             # Replace [IMAGE-n] placeholders with actual images or add them in logical places
             body = data.get('body', '')
@@ -633,8 +806,18 @@ if __name__ == "__main__":
                 caption_text = _sanitize_attr((img.get('description') or '') + (f" (Photo: {img.get('photographer')})" if img.get('photographer') else ''))
 
                 # Only use /img/generated/<slug>/img_0.jpeg, never /posts/<slug>/img/generated/...
+                # Prefer S3-hosted image if mapping or s3_base is present
+                rel_img_path = f"img/generated/{slug}/{img['filename']}"
+                if rel_img_path in s3_map:
+                    img_src = s3_map.get(rel_img_path)
+                elif s3_base:
+                    img_src = s3_base.rstrip('/') + '/' + rel_img_path.lstrip('/')
+                else:
+                    # keep the leading slash for local assets
+                    img_src = "/" + rel_img_path
+
                 img_md = (
-                    "\n\n{{< figure src=\"/img/generated/" + slug + "/" + img['filename'] + "\" "
+                    "\n\n{{< figure src=\"" + img_src + "\" "
                     "alt=\"" + alt_text + "\" "
                     "caption=\"" + caption_text + "\" "
                     "class=\"article-image\" >}}\n\n"

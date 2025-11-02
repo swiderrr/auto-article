@@ -10,7 +10,13 @@
 
 <!-- Favicon -->
 {{ with .Site.Params.favicon }}
-<link rel="icon" href="{{ . }}">
+    {{ $favicon := . }}
+    {{ $s3 := $.Site.Params.s3BaseURL }}
+    {{ if and $s3 (not (strings.HasPrefix $favicon "http")) }}
+        <link rel="icon" href="{{ printf "%s/%s" $s3 (strings.TrimPrefix $favicon "/") }}">
+    {{ else }}
+        <link rel="icon" href="{{ $favicon }}">
+    {{ end }}
 {{ end }}
 
 <!-- RSS Feed -->

@@ -23,7 +23,12 @@
             {{ end }}
         {{ else }}
             <!-- Can not find the image under page bundle. Could be a relative linked image -->
-            {{ $result = merge $result (dict "permalink" (relURL $imageValue)) }}
+            {{ $s3 := .Context.Site.Params.s3BaseURL }}
+            {{ if and $s3 (not (strings.HasPrefix $imageValue "http")) }}
+                {{ $result = merge $result (dict "permalink" (printf "%s/%s" $s3 (strings.TrimPrefix $imageValue "/"))) }}
+            {{ else }}
+                {{ $result = merge $result (dict "permalink" (relURL $imageValue)) }}
+            {{ end }}
         {{ end }}
 
     {{ end }}
@@ -49,9 +54,14 @@
                 {{ $result = merge $result (dict "exists" false) }}
             {{ end }}
 
-        {{ else }}
-            <!-- External image -->
-            {{ $result = merge $result (dict "permalink" (relURL $defaultImageSetting.src)) }}
+            {{ else }}
+            <!-- External image or configured default image. Use S3 base when provided and src is relative -->
+            {{ $s3 := .Context.Site.Params.s3BaseURL }}
+            {{ if and $s3 (not (strings.HasPrefix $defaultImageSetting.src "http")) }}
+                {{ $result = merge $result (dict "permalink" (printf "%s/%s" $s3 (strings.TrimPrefix $defaultImageSetting.src "/"))) }}
+            {{ else }}
+                {{ $result = merge $result (dict "permalink" (relURL $defaultImageSetting.src)) }}
+            {{ end }}
         {{ end }}
         
     {{ end }}

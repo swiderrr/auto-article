@@ -12,6 +12,7 @@ path = "github.com/CaiJimmy/hugo-theme-stack/v3"
 
 # Site parameters
 [params]
+    s3BaseURL = "https://auto-article-kids.s3.eu-north-1.amazonaws.com"
     mainSections = ['posts']
     featuredImageField = 'featured_image'
     rssFullContent = true
