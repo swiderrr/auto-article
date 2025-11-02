@@ -5,7 +5,7 @@ This repository contains the Hugo site in the `kids/` subdirectory. The included
 What the workflow does
 - Runs on pushes to `main` and on manual dispatch.
 - Builds Hugo from the `kids/` folder and outputs to a temporary `kids_public` directory.
-- Pushes the contents of `kids_public` to the `gh-pages` branch using the `GITHUB_TOKEN`.
+- Pushes the contents of `kids_public` to the `gh-pages` branch using the `GH_TOKEN`.
 
 Required repository settings
 - In the repository Settings → Pages, set the source to the `gh-pages` branch and the root (/) folder.
