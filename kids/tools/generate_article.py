@@ -258,12 +258,18 @@ W każdej sekcji:
 
 def make_markdown_file(data):
     # Generate SEO metadata and suggestions
+    # Remove Hugo shortcodes (e.g. {{< figure ... >}}) from the body used for metadata
+    raw_body = data.get('body', '')
+    body_for_meta = re.sub(r'\{\{<[^>]*>\}\}', '', raw_body, flags=re.DOTALL)
     meta_tags = seo.generate_meta_tags(data.get('title', ''), data.get('summary', ''))
     structured_data = seo.generate_structured_data(data)
-    seo_analysis = seo.analyze_content(data.get('body', ''))
+    seo_analysis = seo.analyze_content(body_for_meta)
     
     # Get internal linking suggestions
-    slug = slugify(data.get('title', 'article'))
+    # Restore date prefix in slug
+    slug_full = slugify(data.get('title', 'article'))
+    date = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
+    slug = f"{date}-{slug_full}"
     internal_links = seo.get_internal_linking_suggestions(data.get('body', ''), slug)
     
     # Add internal links if found
@@ -276,8 +282,7 @@ def make_markdown_file(data):
     base = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     # Use timezone-aware UTC datetimes
     date = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
-    slug = slugify(data.get("title","article"))
-    filename = os.path.join(base, "content", "posts", f"{date}-{slug}.md")
+    filename = os.path.join(base, "content", "posts", f"{slug}.md")
     os.makedirs(os.path.dirname(filename), exist_ok=True)
 
     # przygotuj front-matter YAML
@@ -294,7 +299,8 @@ def make_markdown_file(data):
     # Generate optimized meta tags for SEO
     title = data.get('title', '')
     optimized_title = seo.optimize_title(title, data.get('tags', []))
-    meta_desc = seo.generate_meta_description(data.get('body', ''), data.get('tags', []))
+    # Use sanitized body (without shortcodes) for meta description to avoid template artifacts
+    meta_desc = seo.generate_meta_description(body_for_meta, data.get('tags', []))
     social_meta = seo.generate_social_meta(data)
     structured_data = seo.generate_structured_data(data)
     
@@ -430,7 +436,9 @@ if __name__ == "__main__":
         sys.exit(1)
 
     # Try to download images from Pexels if API key is available
-    slug = slugify(data.get('title', 'article'))
+    slug_full = slugify(data.get('title', 'article'))
+    date = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
+    slug = f"{date}-{slug_full}"
     img_dir = os.path.join(base, "static", "img", "generated", slug)
     if PEXELS_API_KEY:
         os.makedirs(img_dir, exist_ok=True)
@@ -526,6 +534,10 @@ if __name__ == "__main__":
                         with open(meta_path, 'w', encoding='utf-8') as f:
                             json.dump(meta, f, ensure_ascii=False, indent=2)
                             
+                        # Log downloaded image to console (relative path under site static/)
+                        rel_path = os.path.join('img', 'generated', slug, fn)
+                        print(f"Pobrano obraz: {rel_path}")
+
                         saved.append({
                             'filename': fn,
                             'description': p.get('alt') or p.get('description', ''),
@@ -580,6 +592,9 @@ if __name__ == "__main__":
                     with open(meta_path, 'w', encoding='utf-8') as f:
                         json.dump(meta, f, ensure_ascii=False, indent=2)
                     saved.append({'filename': fn, 'description': query, 'photographer': 'Unsplash'})
+                    # Log downloaded image to console (relative path under site static/)
+                    rel_path = os.path.join('img', 'generated', slug, fn)
+                    print(f"Pobrano obraz: {rel_path}")
                     time.sleep(0.2)
                 except Exception as e:
                     print("Unsplash fetch failed:", e)
@@ -595,22 +610,21 @@ if __name__ == "__main__":
             # Set featured image to first saved (use relative path without leading slash so URLs
             # are correct when the site is served from a subpath on GitHub Pages)
             data['featured_image'] = f"img/generated/{slug}/{imgs[0]['filename']}"
-            
+
             # Replace [IMAGE-n] placeholders with actual images or add them in logical places
             body = data.get('body', '')
             for i, img in enumerate(imgs):
                 placeholder = f"[IMAGE-{i+1}]"
-                # sanitize attribute values to avoid smart quotes and embedded newlines
+                # regex to match Markdown image links that use IMAGE-n as the URL: ![alt](IMAGE-n)
+                md_image_pattern = re.compile(r'!\[([^\]]*)\]\(IMAGE-' + str(i+1) + r'\)')
+
                 def _sanitize_attr(s):
                     if not s:
                         return ""
                     v = str(s)
-                    # normalize smart quotes to straight quotes
                     v = v.replace('\u201c', '"').replace('\u201d', '"').replace('\u2018', "'").replace('\u2019', "'")
                     v = v.replace('“', '"').replace('”', '"').replace('‘', "'").replace('’', "'")
-                    # collapse whitespace and remove newlines
                     v = ' '.join(v.split())
-                    # escape double quotes for shortcode attributes
                     v = v.replace('"', '\\"')
                     return v
 
@@ -618,24 +632,43 @@ if __name__ == "__main__":
                 photographer = _sanitize_attr(img.get('photographer') or '')
                 caption_text = _sanitize_attr((img.get('description') or '') + (f" (Photo: {img.get('photographer')})" if img.get('photographer') else ''))
 
+                # Only use /img/generated/<slug>/img_0.jpeg, never /posts/<slug>/img/generated/...
                 img_md = (
-                    "\n\n{{< figure src=\"img/generated/" + slug + "/" + img['filename'] + "\" "
+                    "\n\n{{< figure src=\"/img/generated/" + slug + "/" + img['filename'] + "\" "
                     "alt=\"" + alt_text + "\" "
                     "caption=\"" + caption_text + "\" "
                     "class=\"article-image\" >}}\n\n"
                 )
 
+                # Prefer explicit placeholder replacement [IMAGE-n]
                 if placeholder in body:
                     body = body.replace(placeholder, img_md)
+                # Also replace Markdown image links that were written as ![alt](IMAGE-n)
+                elif md_image_pattern.search(body):
+                    body = md_image_pattern.sub(img_md, body)
                 elif i == 0:
-                    # First image goes at the top if no placeholder
                     body = img_md + body
                 else:
-                    # Find a paragraph break to insert the image
                     parts = body.split("\n\n")
                     if len(parts) > i+1:
                         parts.insert(i+1, img_md)
                         body = "\n\n".join(parts)
+            # Deduplicate repeated figure shortcodes that reference the same image
+            # Sometimes the AI output already contains images and our insertion can create duplicates.
+            seen_srcs = set()
+            def _dedup_figure(m):
+                tag = m.group(0)
+                src_m = re.search(r'src=\"([^\"]+)\"', tag)
+                if not src_m:
+                    return tag
+                src = src_m.group(1)
+                if src in seen_srcs:
+                    # remove duplicate occurrence
+                    return ''
+                seen_srcs.add(src)
+                return tag
+
+            body = re.sub(r'\{\{<\s*figure\b[^>]*>\s*\}\}', _dedup_figure, body)
             data['body'] = body
     else:
         print("PEXELS_API_KEY not set; skipping image download. To enable image download set PEXELS_API_KEY env var.")

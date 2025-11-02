@@ -4,6 +4,16 @@
 		<header class="article-header">
 			<h1>{{ .Title }}</h1>
 		</header>
+		{{/* AI disclosure: show explicit notice when front-matter indicates AI generation */}}
+		{{ if or .Params.ai_generated .Params.ai_disclaimer }}
+			<div class="ai-disclaimer" style="border-left:4px solid #eee;padding:10px;margin:12px 0;background:#f9f9f9;color:#333;">
+				{{ with .Params.ai_disclaimer }}
+					{{ . | safeHTML }}
+				{{ else }}
+					<strong>Uwaga:</strong> Ten artykuł został wygenerowany przy użyciu narzędzi sztucznej inteligencji. Treść ma charakter informacyjny — prosimy o dodatkową weryfikację w przypadkach medycznych, prawnych i innych specjalistycznych porad.
+				{{ end }}
+			</div>
+		{{ end }}
 		<section class="article-content">
 			{{ .Content }}
 		</section>
