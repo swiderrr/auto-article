@@ -65,6 +65,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Ensure we fetch the full history and the latest branch tip from the remote
+          fetch-depth: 0
+          # Explicitly checkout the main branch so we pick up commits pushed by the `generate` job
+          ref: main
+          persist-credentials: true
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -75,6 +81,9 @@ jobs:
       - name: Build site (kids/)
         working-directory: kids
         run: |
+          # Ensure we are building from the latest main (in case generate pushed new commits)
+          git fetch origin main
+          git reset --hard origin/main
           hugo mod get
           hugo mod tidy
           HUGO_ENVIRONMENT=production hugo --minify --destination ../kids_public
