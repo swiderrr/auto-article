@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-03T22:12:37.212951+00:00",
+  "uploaded_at": "2025-11-03T22:17:11.342019+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -133,6 +133,10 @@
     "img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-poprawi-jako-snu-twojego-maluszka/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-poprawi-jako-snu-twojego-maluszka/img_0.jpeg",
     "img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-poprawi-jako-snu-twojego-maluszka/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-poprawi-jako-snu-twojego-maluszka/img_1.jpeg",
     "img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-poprawi-jako-snu-twojego-maluszka/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-poprawi-jako-snu-twojego-maluszka/img_2.jpeg",
-    "img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-poprawi-jako-snu-twojego-maluszka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-poprawi-jako-snu-twojego-maluszka/img_3.jpeg"
+    "img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-poprawi-jako-snu-twojego-maluszka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-poprawi-jako-snu-twojego-maluszka/img_3.jpeg",
+    "img/generated/2025-11-03-co-powinno-je-roczne-dziecko-praktyczny-przewodnik-dla-rodzicw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-co-powinno-je-roczne-dziecko-praktyczny-przewodnik-dla-rodzicw/img_0.jpeg",
+    "img/generated/2025-11-03-co-powinno-je-roczne-dziecko-praktyczny-przewodnik-dla-rodzicw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-co-powinno-je-roczne-dziecko-praktyczny-przewodnik-dla-rodzicw/img_1.jpeg",
+    "img/generated/2025-11-03-co-powinno-je-roczne-dziecko-praktyczny-przewodnik-dla-rodzicw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-co-powinno-je-roczne-dziecko-praktyczny-przewodnik-dla-rodzicw/img_2.jpeg",
+    "img/generated/2025-11-03-co-powinno-je-roczne-dziecko-praktyczny-przewodnik-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-co-powinno-je-roczne-dziecko-praktyczny-przewodnik-dla-rodzicw/img_3.jpeg"
   }
 }
