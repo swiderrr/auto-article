@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-03T19:20:10.838394+00:00",
+  "uploaded_at": "2025-11-03T19:41:53.818916+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -49,6 +49,10 @@
     "img/generated/2025-11-03-jak-nauczy-dziecko-spa-ca-noc-skuteczne-porady-dla-rodzicw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-jak-nauczy-dziecko-spa-ca-noc-skuteczne-porady-dla-rodzicw/img_0.jpeg",
     "img/generated/2025-11-03-jak-nauczy-dziecko-spa-ca-noc-skuteczne-porady-dla-rodzicw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-jak-nauczy-dziecko-spa-ca-noc-skuteczne-porady-dla-rodzicw/img_1.jpeg",
     "img/generated/2025-11-03-jak-nauczy-dziecko-spa-ca-noc-skuteczne-porady-dla-rodzicw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-jak-nauczy-dziecko-spa-ca-noc-skuteczne-porady-dla-rodzicw/img_2.jpeg",
-    "img/generated/2025-11-03-jak-nauczy-dziecko-spa-ca-noc-skuteczne-porady-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-jak-nauczy-dziecko-spa-ca-noc-skuteczne-porady-dla-rodzicw/img_3.jpeg"
+    "img/generated/2025-11-03-jak-nauczy-dziecko-spa-ca-noc-skuteczne-porady-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-jak-nauczy-dziecko-spa-ca-noc-skuteczne-porady-dla-rodzicw/img_3.jpeg",
+    "img/generated/2025-11-03-przepisy-na-zdrowe-posiki-dla-niemowlaka-jak-dba-o-rozwj-malucha-od-pierwszych-miesicy/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-przepisy-na-zdrowe-posiki-dla-niemowlaka-jak-dba-o-rozwj-malucha-od-pierwszych-miesicy/img_0.jpeg",
+    "img/generated/2025-11-03-przepisy-na-zdrowe-posiki-dla-niemowlaka-jak-dba-o-rozwj-malucha-od-pierwszych-miesicy/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-przepisy-na-zdrowe-posiki-dla-niemowlaka-jak-dba-o-rozwj-malucha-od-pierwszych-miesicy/img_1.jpeg",
+    "img/generated/2025-11-03-przepisy-na-zdrowe-posiki-dla-niemowlaka-jak-dba-o-rozwj-malucha-od-pierwszych-miesicy/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-przepisy-na-zdrowe-posiki-dla-niemowlaka-jak-dba-o-rozwj-malucha-od-pierwszych-miesicy/img_2.jpeg",
+    "img/generated/2025-11-03-przepisy-na-zdrowe-posiki-dla-niemowlaka-jak-dba-o-rozwj-malucha-od-pierwszych-miesicy/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-przepisy-na-zdrowe-posiki-dla-niemowlaka-jak-dba-o-rozwj-malucha-od-pierwszych-miesicy/img_3.jpeg"
   }
 }
