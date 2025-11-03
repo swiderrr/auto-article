@@ -29,6 +29,7 @@ jobs:
       - name: Run topic research
         run: |
           python tools/topic_research.py
+        working-directory: kids
 
       - name: Commit topics.txt
         run: |

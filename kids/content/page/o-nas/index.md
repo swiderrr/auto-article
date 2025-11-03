@@ -26,4 +26,4 @@ Część treści na stronie jest tworzona automatycznie przy użyciu narzędzi w
 
 ## Kontakt
 
-Masz pytanie lub sugestię? Napisz do nas: kontakt@poradnik-rodzica.myops.pl
+Masz pytanie lub sugestię? Napisz do nas: kontakt@poradnik-rodzica@com.pl
