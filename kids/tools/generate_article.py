@@ -719,7 +719,7 @@ if __name__ == "__main__":
                     aws_session_token = os.getenv('AWS_SESSION_TOKEN')
                     region_name = os.getenv('AWS_REGION') or None
                     # Pass credentials explicitly if present
-                    if aws_access_key_id and aws_secret_access_key:name: Check AWS/S3 env presence
+                    if aws_access_key_id and aws_secret_access_key:
                         s3_client = boto3.client(
                             's3',
                             region_name=region_name,
