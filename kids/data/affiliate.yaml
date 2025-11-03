@@ -1,12 +1,35 @@
-# Affiliate items format
-# - id: unique-key
-#   name: "Product name"
-#   url: "https://example.com/?aff=ID"
-#   keywords: ["stroller", "wózek", "fotelik"]
-#   note: "Krótka rekomendacja"
--
-  - id: "bezpieczny-wyposazenie-1"
-    name: "Bezpieczny fotelik 0+"
-    url: "https://example.com/product/fotelik?aff=YOUR_AFF_ID"
-    keywords: ["fotelik", "fotelik samochodowy", "safety seat"]
-    note: "Polecany fotelik z dobrymi opiniami i zabezpieczeniami."
+- id: "wep-link-1"
+  name: "Kinderkraft"
+  url: "https://webep1.com/go/4b76d90c16"
+  keywords: [
+    "zakup", "produkt", "polecam", "krzesełko", "oferta", "dziecięce", "meble", "akcesoria", "promocja", "sklep", "online", "rekomendacja", "nowość", "bezpieczeństwo", "komfort", "design", "funkcjonalność",
+    "dziecko", "rodzic", "zabawki", "pokój dziecięcy", "wygoda", "trwałość", "modne", "praktyczne", "prezent", "wybór", "jakość", "ranking", "opinie", "cena", "dostawa", "gwarancja"
+  ]
+  note: "Odkryj świat Kinderkraft – bezpieczne, stylowe i funkcjonalne produkty dla dzieci, które pokochają zarówno maluchy, jak i rodzice!"
+
+- id: "wep-link-2"
+  name: "Benni"
+  url: "https://webep1.com/go/e2cd1d9816"
+  keywords: [
+    "zakupy", "wyposażenie", "dom", "dziecko", "akcesoria", "promocja", "specjalna oferta", "sklep", "online", "nowość", "rekomendacja", "meble", "zabawki", "bezpieczeństwo", "komfort", "funkcjonalność",
+    "pokój dziecięcy", "dekoracje", "organizacja", "praktyczne", "trendy", "prezent", "wybór", "jakość", "ranking", "opinie", "cena", "dostawa", "gwarancja", "nowoczesne", "stylowe"
+  ]
+  note: "Zainspiruj się wyjątkową ofertą Benni – wszystko, czego potrzebujesz do wyposażenia dziecięcego pokoju i nie tylko!"
+
+- id: "wep-link-3"
+  name: "Pomaluj Świat Paluszkami"
+  url: "https://webep1.com/go/39e7ef5c16"
+  keywords: [
+    "dziecko", "rodzic", "polecane", "porady", "wychowanie", "akcesoria", "sklep", "online", "rekomendacja", "bezpieczeństwo", "zdrowie", "opieka", "wsparcie", "nowość", "promocja", "oferta",
+    "edukacja", "zabawki", "rozwój", "nauka", "praktyczne", "prezent", "wybór", "jakość", "ranking", "opinie", "cena", "dostawa", "gwarancja", "komfort", "trendy"
+  ]
+  note: "Rozwijaj kreatywność swojego dziecka z Pomaluj Świat Paluszkami – inspirujące produkty i porady dla rodziców!"
+
+- id: "wep-link-4"
+  name: "Podaruje"
+  url: "https://webep1.com/go/ed995d6416"
+  keywords: [
+    "niemowlę", "niemowlak", "sen", "akcesoria", "spanie", "komfort", "bezpieczeństwo", "dziecko", "rodzic", "sklep", "online", "promocja", "oferta", "nowość", "rekomendacja", "poduszka", "kołderka", "łóżeczko",
+    "wyprawka", "zdrowy sen", "przytulność", "materac", "pokój dziecięcy", "prezent", "wybór", "jakość", "ranking", "opinie", "cena", "dostawa", "gwarancja", "praktyczne"
+  ]
+  note: "Zadbaj o spokojny sen maluszka z Podaruje – wybierz najlepsze akcesoria do wyprawki i komfortowego snu!"

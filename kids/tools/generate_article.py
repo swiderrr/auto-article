@@ -396,43 +396,167 @@ def make_markdown_file(data):
         kws = item.get('keywords', []) or []
         for kw in kws:
             if kw.lower() in body_lower:
+                # store which keyword matched so we can replace it inline later
                 matched_affiliates.append({
                     'id': item.get('id'),
                     'name': item.get('name'),
                     'url': item.get('url'),
-                    'note': item.get('note','')
+                    'note': item.get('note',''),
+                    'matched_keyword': kw
                 })
                 break
 
-    # Insert affiliate block near 'Wskazówki' section if present; otherwise append to end
+    # Fallback: jeśli nie znaleziono dopasowań na podstawie słów kluczowych,
+    # wstaw losowo jeden link afiliacyjny (ułatwia testowanie i zapewnia, że
+    # linki afiliacyjne są dodawane do nowych postów, nawet gdy brak dopasowań).
+    if not matched_affiliates and affiliate_items:
+        try:
+            sample = random.choice(affiliate_items)
+            matched_affiliates.append({
+                'id': sample.get('id'),
+                'name': sample.get('name'),
+                'url': sample.get('url'),
+                'note': sample.get('note', '')
+            })
+            # oznaczamy, że użyto fallbacku (przydatne do debugowania)
+            data['affiliate_fallback_used'] = True
+        except Exception:
+            pass
+
+    # Instead of adding a separate affiliate block, embed affiliate links naturally
+    # inside the article text. We will allow multiple inserts per article to make
+    # links more visible. Limits are configurable via environment variables:
+    # AFFILIATE_MAX_INSERTS (default 4) - total anchors to insert in an article
+    # AFFILIATE_PER_ITEM_MAX (default 2) - max anchors per affiliate item
     if matched_affiliates:
-        aff_md_lines = ['\n## Rekomendacje produktów i afiliacje\n']
+        body = data.get('body', '')
+
+        # Configurable limits
+        try:
+            MAX_TOTAL_INSERTS = int(os.getenv('AFFILIATE_MAX_INSERTS', '4'))
+        except Exception:
+            MAX_TOTAL_INSERTS = 4
+        try:
+            PER_ITEM_MAX = int(os.getenv('AFFILIATE_PER_ITEM_MAX', '2'))
+        except Exception:
+            PER_ITEM_MAX = 2
+
+        # Render mode: 'inline' (replace keywords) or 'block' (separate CTA lines).
+        # Default to 'block' for greater visibility. Set AFFILIATE_RENDER_MODE=inline to keep inline behavior.
+        RENDER_MODE = os.getenv('AFFILIATE_RENDER_MODE', 'block').lower()
+
+        total_inserts = 0
+
+        # Build list of CTAs (HTML) first — we'll distribute them across the post
+        ctas_to_insert = []
         for m in matched_affiliates:
-            aff_md_lines.append(f"- **{m.get('name','Produkt')}** — {m.get('note','')} [Kup teraz]({m.get('url')})")
-        aff_md = '\n'.join(aff_md_lines) + '\n'
+            if len(ctas_to_insert) >= MAX_TOTAL_INSERTS:
+                break
 
-        body = data.get('body','')
-        # try to find 'Wskazówki i rekomendacje' or 'Wskazówki'
-        insert_at = None
-        lower = body.lower()
-        if '## wskazówki i rekomendacje' in lower:
-            insert_at = body.lower().index('## wskazówki i rekomendacje')
-        elif '## wskazówki' in lower:
-            insert_at = body.lower().index('## wskazówki')
+            url = m.get('url') or ''
+            name = m.get('name') or ''
+            mk = m.get('matched_keyword')
+            note = (m.get('note') or '').replace('"', '')
+            title_attr = f' title="{note}"' if note else ''
 
-        if insert_at is not None:
-            # insert after that heading block (find next double newline)
-            # find the heading in original case:
-            idx = insert_at
-            # find next occurrence of '\n\n' after heading
-            next_break = body.find('\n\n', idx)
-            if next_break != -1:
-                # insert after the first paragraph following heading
-                body = body[:next_break+2] + aff_md + body[next_break+2:]
+            # inline anchor factory (for potential inline replacements)
+            def make_anchor(text_label, affiliate_id=(m.get('id') or ''), affiliate_name=name, note=note):
+                safe_name = str(affiliate_id).replace('"', '')
+                title = f' title="{note}"' if note else ''
+                return f'<a href="{url}" class="affiliate-link" data-affiliate-id="{safe_name}" data-affiliate-name="{affiliate_name}"{title} target="_blank" rel="sponsored noopener noreferrer">{text_label}</a>'
+
+            # Create a prominent block CTA (button-like) with badge
+            # Rotate CTA copy to increase engagement — choose from persuasive variants
+            try:
+                cta_variants = [
+                    f"Zobacz ofertę: {name}",
+                    f"Promocja: {name} — sprawdź",
+                    f"Kup teraz: {name}",
+                    f"Oferta: {name} — ograniczona ilość",
+                    f"Sprawdź teraz: {name}",
+                    f"Zobacz opinię i ofertę: {name}",
+                ]
+                cta_label = random.choice(cta_variants)
+            except Exception:
+                cta_label = f"Zobacz ofertę: {name}"
+
+            cta_html = (
+                f'<p class="affiliate-cta affiliate-cta--prominent">'
+                f'<span class="affiliate-badge">Sponsorowane</span> '
+                f'<a href="{url}" class="affiliate-cta__link" data-affiliate-name="{name}"{title_attr} target="_blank" rel="sponsored noopener noreferrer">{note}</a>'
+                f'</p>'
+            )
+
+            ctas_to_insert.append({
+                'html': cta_html,
+                'mk': mk,
+                'name': name,
+                'url': url,
+                'note': note
+            })
+
+        # If render mode is inline, attempt keyword/name replacements first (still limited)
+        if RENDER_MODE == 'inline' and ctas_to_insert:
+            body_parts = body.split('\n\n')
+            for cta in list(ctas_to_insert):
+                if total_inserts >= MAX_TOTAL_INSERTS:
+                    break
+                replaced = False
+                if cta.get('mk'):
+                    try:
+                        pattern = re.compile(re.escape(cta['mk']), re.IGNORECASE)
+                        for i, part in enumerate(body_parts):
+                            if pattern.search(part):
+                                body_parts[i], count = pattern.subn(lambda m: make_anchor(m.group(0)), body_parts[i], count=1)
+                                if count:
+                                    total_inserts += 1
+                                    replaced = True
+                                    break
+                    except re.error:
+                        pass
+
+                if not replaced and cta.get('name'):
+                    try:
+                        pattern2 = re.compile(re.escape(cta['name']), re.IGNORECASE)
+                        for i, part in enumerate(body_parts):
+                            if pattern2.search(part):
+                                body_parts[i], count2 = pattern2.subn(lambda m: make_anchor(m.group(0)), body_parts[i], count=1)
+                                if count2:
+                                    total_inserts += 1
+                                    replaced = True
+                                    break
+                    except re.error:
+                        pass
+
+                if replaced:
+                    ctas_to_insert.remove(cta)
+
+            body = '\n\n'.join(body_parts)
+
+        # Distribute remaining CTAs as prominent block CTAs evenly across paragraphs
+        if ctas_to_insert:
+            parts = body.split('\n\n')
+            n = len(parts)
+            if n <= 1:
+                # just append all CTAs at start
+                for cta in ctas_to_insert[:MAX_TOTAL_INSERTS - total_inserts]:
+                    body = cta['html'] + '\n\n' + body
+                    total_inserts += 1
             else:
-                body = body + '\n' + aff_md
-        else:
-            body = body + '\n' + aff_md
+                # choose evenly spaced insertion points
+                slots = min(len(ctas_to_insert), MAX_TOTAL_INSERTS - total_inserts)
+                step = max(1, n // (slots + 1))
+                insert_positions = [step * i for i in range(1, slots + 1)]
+                # ensure unique and within bounds
+                insert_positions = [min(max(1, p), n) for p in insert_positions]
+                # insert from last to first to keep indices valid
+                for pos, cta in sorted(zip(insert_positions, ctas_to_insert[:slots]), reverse=True):
+                    # insert after paragraph at index pos-1
+                    idx = pos
+                    parts.insert(idx, cta['html'])
+                    total_inserts += 1
+
+                body = '\n\n'.join(parts)
 
         data['affiliate_links'] = matched_affiliates
         data['body'] = body
@@ -547,19 +671,80 @@ if __name__ == "__main__":
             """Download images from Pexels with content filtering and metadata capture."""
             headers = {"Authorization": PEXELS_API_KEY}
             # Enhance search query for better results
-            safe_terms = {
-                "diet": "healthy food baby",
-                "karmienie": "baby feeding",
-                "jedzenie": "baby food",
-                "posiłek": "baby meal",
-                "niemowlę": "happy baby",
-                "dziecko": "happy child",
-            }
-            safe_query = query
-            for k, v in safe_terms.items():
-                if k.lower() in query.lower():
-                    safe_query = v
-                    break
+            # Prefer using English keywords for image searches. Translate common
+            # Polish terms to English to improve Pexels/Unsplash results.
+            def _translate_to_english(q):
+                # Simple mapping for common words/phrases — extend as needed.
+                mapping = {
+                    # additional common phrases and longer phrases
+                    r"\bkarmienie piersia\b": "breastfeeding",
+                    r"\bkarmienie piersią\b": "breastfeeding",
+                    r"\bbutelka\b": "bottle",
+                    r"\brozszerzanie diety\b": "weaning",
+                    r"\brozszerzanie diety\b": "weaning",
+                    r"\bzasypianie\b": "falling asleep",
+                    r"\bmetody zasypiania\b": "sleeping methods",
+                    r"\bdrzemki\b": "naps",
+                    r"\bpiel(e|ę)gnacja\b": "care",
+                    r"\bpieluszki\b": "diapers",
+                    r"\bwyprawka\b": "baby layette",
+                    r"\bw\u00F3zek\b": "stroller",
+                    r"\bfotelik\b": "car seat",
+                    r"\bkrzese(ł|l)ko do karmienia\b": "high chair",
+                    r"\bnocnik\b": "potty",
+                    r"\bkarmienie mieszane\b": "mixed feeding",
+                    r"\b\u017Clobek\b": "nursery",
+                    r"\bprzedszkole\b": "kindergarten",
+                    r"\bszczepienia\b": "vaccinations",
+                    r"\bsuplementy\b": "supplements",
+                    r"\bwitamina d\b": "vitamin d",
+                    r"\bmleko modyfikowane\b": "formula milk",
+                    r"\bpierwsza pomoc\b": "first aid",
+                    r"\bproblemy ze snem\b": "sleep problems",
+                    r"\bproblemy z zasypianiem\b": "falling asleep problems",
+                    r"\bwychowanie\b": "parenting",
+                    r"\bniemowla\b": "baby",
+                    r"\bniemowlak\b": "baby",
+                    r"\bbezpieczenstwo\b": "safety",
+                    r"\bbezpiecze(ń|n)stwo\b": "safety",
+                    r"\bniemowl(e|ę|ak)\b": "baby",
+                    r"\bniemowlak\b": "baby",
+                    r"\bdziecko\b": "child",
+                    r"\bdzieci\b": "children",
+                    r"\bsen\b": "sleep",
+                    r"\busypianie\b": "sleeping",
+                    r"\bokres snu\b": "sleep",
+                    r"\bokres\b": "period",
+                    r"\bodporno(s|ś)ć\b": "immunity",
+                    r"\bodporno[sś]ci\b": "immunity",
+                    r"\bkarmienie\b": "feeding",
+                    r"\bjedzenie\b": "food",
+                    r"\bdieta\b": "diet",
+                    r"\bposi(\u0142|l)ek\b": "meal",
+                    r"\brodzic\b": "parent",
+                    r"\brodzice\b": "parents",
+                    r"\bopiek(a|ą)\b": "care",
+                    r"\brozwoj\b": "development",
+                    r"\brozwój\b": "development",
+                    r"\bzabawki\b": "toys",
+                    r"\bporady\b": "advice",
+                    r"\bwskaz(ów|ow)ki\b": "tips",
+                    r"\bwychowanie\b": "parenting",
+                    r"\bzdrowie\b": "health",
+                    r"\bprzytulno(s|ś)c\b": "cozy",
+                }
+                s = q.lower()
+                for pat, rep in mapping.items():
+                    try:
+                        s = re.sub(pat, rep, s, flags=re.IGNORECASE)
+                    except re.error:
+                        continue
+                # Remove punctuation and extra whitespace, then URL-encode when used
+                s = re.sub(r"[^\w\s-]", " ", s)
+                s = re.sub(r"\s+", " ", s).strip()
+                return s
+
+            safe_query = _translate_to_english(query)
             
             params = {
                 "query": safe_query,
@@ -644,48 +829,157 @@ if __name__ == "__main__":
             This uses the unsplash source endpoint to fetch random images for a query.
             """
             saved = []
-            for i in range(per_page):
+            # Common headers to reduce the chance of being blocked by simple bot filters
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0 Safari/537.36',
+                'Accept': 'image/avif,image/webp,image/apng,image/*,*/*;q=0.8'
+            }
+
+            def _try_fetch_image_from_url(src_url, filename):
+                path = os.path.join(img_dir, filename)
                 try:
-                    # Use source.unsplash.com to get a relevant image
-                    url = f"https://source.unsplash.com/1600x900/?{requests.utils.quote(query)}"
-                    rr = requests.get(url, timeout=30)
-                    rr.raise_for_status()
-                    # unsplash redirects to a final image URL
-                    final_url = rr.url
-                    ext = os.path.splitext(final_url.split('?')[0])[1] or '.jpg'
-                    fn = f"img_unsplash_{i}{ext}"
-                    path = os.path.join(img_dir, fn)
-                    rr2 = requests.get(final_url, timeout=30)
-                    rr2.raise_for_status()
+                    r = requests.get(src_url, timeout=30, headers=headers, allow_redirects=True)
+                    r.raise_for_status()
                     with open(path, 'wb') as f:
-                        f.write(rr2.content)
+                        f.write(r.content)
                     if not _is_image_suitable(path):
                         try:
                             os.remove(path)
                         except Exception:
                             pass
+                        return None
+                    return path
+                except Exception:
+                    try:
+                        if os.path.exists(path):
+                            os.remove(path)
+                    except Exception:
+                        pass
+                    return None
+
+            # 1) Try Unsplash source with retries/backoff
+            # Use English keywords for Unsplash too
+            def _translate_to_english_short(q):
+                # reuse the same translation helper logic above (best-effort)
+                try:
+                    return _translate_to_english(q)
+                except Exception:
+                    return q
+
+            eng_query = _translate_to_english_short(query)
+
+            for i in range(per_page):
+                got = False
+                url = f"https://source.unsplash.com/1600x900/?{requests.utils.quote(eng_query)}"
+                for attempt in range(3):
+                    try:
+                        rr = requests.get(url, timeout=30, headers=headers, allow_redirects=True)
+                        # If Unsplash returns a server error, retry with backoff
+                        if rr.status_code >= 500:
+                            time.sleep(1 + attempt * 2)
+                            continue
+                        rr.raise_for_status()
+                        # final redirected image URL
+                        final_url = rr.url
+                        ext = os.path.splitext(final_url.split('?')[0])[1] or '.jpg'
+                        fn = f"img_unsplash_{i}{ext}"
+                        fetched = _try_fetch_image_from_url(final_url, fn)
+                        if fetched:
+                            meta = {
+                                "provider": "Unsplash",
+                                "photographer": "Unsplash",
+                                "photographer_url": "https://unsplash.com",
+                                "source_url": final_url,
+                                "license": "Unsplash License",
+                                "license_url": "https://unsplash.com/license",
+                                "description": query,
+                                "downloaded_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
+                            }
+                            meta_path = os.path.splitext(fetched)[0] + '.json'
+                            try:
+                                with open(meta_path, 'w', encoding='utf-8') as f:
+                                    json.dump(meta, f, ensure_ascii=False, indent=2)
+                            except Exception:
+                                pass
+                            saved.append({'filename': fn, 'description': query, 'photographer': 'Unsplash'})
+                            rel_path = os.path.join('img', 'generated', slug, fn)
+                            print(f"Pobrano obraz: {rel_path}")
+                            got = True
+                            time.sleep(0.2)
+                            break
+                        else:
+                            # failed to download image body; retry
+                            time.sleep(1 + attempt * 2)
+                            continue
+                    except requests.exceptions.RequestException:
+                        time.sleep(1 + attempt * 2)
+                        continue
+                if not got:
+                    # try next provider for this slot (below)
+                    pass
+
+            # If Unsplash produced nothing, try loremflickr (tag-based) which often accepts queries
+            if not saved:
+                for i in range(per_page):
+                    try:
+                        lf_url = f"https://loremflickr.com/1600/900/{requests.utils.quote(query)}"
+                        ext = '.jpg'
+                        fn = f"img_loremflickr_{i}{ext}"
+                        fetched = _try_fetch_image_from_url(lf_url, fn)
+                        if fetched:
+                            meta = {
+                                "provider": "loremflickr",
+                                "photographer": "loremflickr",
+                                "photographer_url": "https://loremflickr.com",
+                                "source_url": lf_url,
+                                "license": "loremflickr",
+                                "license_url": "https://loremflickr.com",
+                                "description": query,
+                                "downloaded_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
+                            }
+                            try:
+                                with open(os.path.splitext(fetched)[0] + '.json', 'w', encoding='utf-8') as f:
+                                    json.dump(meta, f, ensure_ascii=False, indent=2)
+                            except Exception:
+                                pass
+                            saved.append({'filename': fn, 'description': query, 'photographer': 'loremflickr'})
+                            rel_path = os.path.join('img', 'generated', slug, fn)
+                            print(f"Pobrano obraz (loremflickr): {rel_path}")
+                            time.sleep(0.2)
+                    except Exception:
                         continue
 
-                    meta = {
-                        "provider": "Unsplash",
-                        "photographer": "Unsplash",
-                        "photographer_url": "https://unsplash.com",
-                        "source_url": final_url,
-                        "license": "Unsplash License",
-                        "license_url": "https://unsplash.com/license",
-                        "description": query,
-                        "downloaded_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
-                    }
-                    meta_path = os.path.splitext(path)[0] + '.json'
-                    with open(meta_path, 'w', encoding='utf-8') as f:
-                        json.dump(meta, f, ensure_ascii=False, indent=2)
-                    saved.append({'filename': fn, 'description': query, 'photographer': 'Unsplash'})
-                    # Log downloaded image to console (relative path under site static/)
-                    rel_path = os.path.join('img', 'generated', slug, fn)
-                    print(f"Pobrano obraz: {rel_path}")
-                    time.sleep(0.2)
-                except Exception as e:
-                    print("Unsplash fetch failed:", e)
+            # Final fallback: picsum.photos (random). No query support but at least supplies an image.
+            if not saved:
+                for i in range(per_page):
+                    try:
+                        p_url = "https://picsum.photos/1600/900"
+                        ext = '.jpg'
+                        fn = f"img_picsum_{i}{ext}"
+                        fetched = _try_fetch_image_from_url(p_url, fn)
+                        if fetched:
+                            meta = {
+                                "provider": "picsum",
+                                "photographer": "picsum",
+                                "photographer_url": "https://picsum.photos",
+                                "source_url": p_url,
+                                "license": "picsum",
+                                "license_url": "https://picsum.photos",
+                                "description": query,
+                                "downloaded_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
+                            }
+                            try:
+                                with open(os.path.splitext(fetched)[0] + '.json', 'w', encoding='utf-8') as f:
+                                    json.dump(meta, f, ensure_ascii=False, indent=2)
+                            except Exception:
+                                pass
+                            saved.append({'filename': fn, 'description': query, 'photographer': 'picsum'})
+                            rel_path = os.path.join('img', 'generated', slug, fn)
+                            print(f"Pobrano obraz (picsum): {rel_path}")
+                            time.sleep(0.2)
+                    except Exception:
+                        continue
+
             return saved
 
         imgs = download_pexels(topic, per_page=4)
