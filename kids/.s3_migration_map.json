@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-02T15:57:49.038165+00:00",
+  "uploaded_at": "2025-11-03T08:17:58.465534+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -41,6 +41,10 @@
     "img/generated/2025-11-02-co-powinno-je-roczne-dziecko-przewodnik-dla-rodzicw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-02-co-powinno-je-roczne-dziecko-przewodnik-dla-rodzicw/img_0.jpeg",
     "img/generated/2025-11-02-co-powinno-je-roczne-dziecko-przewodnik-dla-rodzicw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-02-co-powinno-je-roczne-dziecko-przewodnik-dla-rodzicw/img_1.jpeg",
     "img/generated/2025-11-02-co-powinno-je-roczne-dziecko-przewodnik-dla-rodzicw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-02-co-powinno-je-roczne-dziecko-przewodnik-dla-rodzicw/img_2.jpeg",
-    "img/generated/2025-11-02-co-powinno-je-roczne-dziecko-przewodnik-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-02-co-powinno-je-roczne-dziecko-przewodnik-dla-rodzicw/img_3.jpeg"
+    "img/generated/2025-11-02-co-powinno-je-roczne-dziecko-przewodnik-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-02-co-powinno-je-roczne-dziecko-przewodnik-dla-rodzicw/img_3.jpeg",
+    "img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-uatwi-spokojny-sen-dziecka/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-uatwi-spokojny-sen-dziecka/img_0.jpeg",
+    "img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-uatwi-spokojny-sen-dziecka/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-uatwi-spokojny-sen-dziecka/img_1.jpeg",
+    "img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-uatwi-spokojny-sen-dziecka/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-uatwi-spokojny-sen-dziecka/img_2.jpeg",
+    "img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-uatwi-spokojny-sen-dziecka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-03-rutyna-snu-dla-niemowlaka-przykadowy-plan-ktry-uatwi-spokojny-sen-dziecka/img_3.jpeg"
   }
 }
