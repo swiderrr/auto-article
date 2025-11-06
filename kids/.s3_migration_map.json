@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-05T08:17:17.622920+00:00",
+  "uploaded_at": "2025-11-06T08:16:53.885473+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -149,6 +149,10 @@
     "img/generated/2025-11-05-kiedy-dziecko-zaczyna-chodzi-od-pierwszych-krokw-do-samodzielnoci/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-05-kiedy-dziecko-zaczyna-chodzi-od-pierwszych-krokw-do-samodzielnoci/img_0.jpeg",
     "img/generated/2025-11-05-kiedy-dziecko-zaczyna-chodzi-od-pierwszych-krokw-do-samodzielnoci/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-05-kiedy-dziecko-zaczyna-chodzi-od-pierwszych-krokw-do-samodzielnoci/img_1.jpeg",
     "img/generated/2025-11-05-kiedy-dziecko-zaczyna-chodzi-od-pierwszych-krokw-do-samodzielnoci/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-05-kiedy-dziecko-zaczyna-chodzi-od-pierwszych-krokw-do-samodzielnoci/img_2.jpeg",
-    "img/generated/2025-11-05-kiedy-dziecko-zaczyna-chodzi-od-pierwszych-krokw-do-samodzielnoci/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-05-kiedy-dziecko-zaczyna-chodzi-od-pierwszych-krokw-do-samodzielnoci/img_3.jpeg"
+    "img/generated/2025-11-05-kiedy-dziecko-zaczyna-chodzi-od-pierwszych-krokw-do-samodzielnoci/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-05-kiedy-dziecko-zaczyna-chodzi-od-pierwszych-krokw-do-samodzielnoci/img_3.jpeg",
+    "img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_0.jpeg",
+    "img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_1.jpeg",
+    "img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_2.jpeg",
+    "img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_3.jpeg"
   }
 }
