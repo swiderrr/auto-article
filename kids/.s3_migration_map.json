@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-06T08:16:53.885473+00:00",
+  "uploaded_at": "2025-11-07T08:17:41.902255+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -153,6 +153,10 @@
     "img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_0.jpeg",
     "img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_1.jpeg",
     "img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_2.jpeg",
-    "img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_3.jpeg"
+    "img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-06-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_3.jpeg",
+    "img/generated/2025-11-07-najczstsze-choroby-wieku-dziecicego-objawy-i-jak-je-rozpoznawa/img_picsum_0.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-07-najczstsze-choroby-wieku-dziecicego-objawy-i-jak-je-rozpoznawa/img_picsum_0.jpg",
+    "img/generated/2025-11-07-najczstsze-choroby-wieku-dziecicego-objawy-i-jak-je-rozpoznawa/img_picsum_1.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-07-najczstsze-choroby-wieku-dziecicego-objawy-i-jak-je-rozpoznawa/img_picsum_1.jpg",
+    "img/generated/2025-11-07-najczstsze-choroby-wieku-dziecicego-objawy-i-jak-je-rozpoznawa/img_picsum_2.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-07-najczstsze-choroby-wieku-dziecicego-objawy-i-jak-je-rozpoznawa/img_picsum_2.jpg",
+    "img/generated/2025-11-07-najczstsze-choroby-wieku-dziecicego-objawy-i-jak-je-rozpoznawa/img_picsum_3.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-07-najczstsze-choroby-wieku-dziecicego-objawy-i-jak-je-rozpoznawa/img_picsum_3.jpg"
   }
 }
