@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-08T08:14:58.987378+00:00",
+  "uploaded_at": "2025-11-09T08:13:59.511403+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -161,6 +161,10 @@
     "img/generated/2025-11-08-jak-przygotowa-mieszkanie-dla-niemowlaka-kompleksowy-przewodnik/img_picsum_0.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-08-jak-przygotowa-mieszkanie-dla-niemowlaka-kompleksowy-przewodnik/img_picsum_0.jpg",
     "img/generated/2025-11-08-jak-przygotowa-mieszkanie-dla-niemowlaka-kompleksowy-przewodnik/img_picsum_1.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-08-jak-przygotowa-mieszkanie-dla-niemowlaka-kompleksowy-przewodnik/img_picsum_1.jpg",
     "img/generated/2025-11-08-jak-przygotowa-mieszkanie-dla-niemowlaka-kompleksowy-przewodnik/img_picsum_2.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-08-jak-przygotowa-mieszkanie-dla-niemowlaka-kompleksowy-przewodnik/img_picsum_2.jpg",
-    "img/generated/2025-11-08-jak-przygotowa-mieszkanie-dla-niemowlaka-kompleksowy-przewodnik/img_picsum_3.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-08-jak-przygotowa-mieszkanie-dla-niemowlaka-kompleksowy-przewodnik/img_picsum_3.jpg"
+    "img/generated/2025-11-08-jak-przygotowa-mieszkanie-dla-niemowlaka-kompleksowy-przewodnik/img_picsum_3.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-08-jak-przygotowa-mieszkanie-dla-niemowlaka-kompleksowy-przewodnik/img_picsum_3.jpg",
+    "img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_0.jpeg",
+    "img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_1.jpeg",
+    "img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_2.jpeg",
+    "img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_3.jpeg"
   }
 }
