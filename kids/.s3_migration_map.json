@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-09T08:13:59.511403+00:00",
+  "uploaded_at": "2025-11-10T08:18:27.825301+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -165,6 +165,10 @@
     "img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_0.jpeg",
     "img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_1.jpeg",
     "img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_2.jpeg",
-    "img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_3.jpeg"
+    "img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-09-lista-wyprawki-dla-noworodka-co-jest-niezbdne-aby-przygotowa-si-na-przyjcie-maluszka/img_3.jpeg",
+    "img/generated/2025-11-10-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-10-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_0.jpeg",
+    "img/generated/2025-11-10-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-10-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_1.jpeg",
+    "img/generated/2025-11-10-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-10-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_2.jpeg",
+    "img/generated/2025-11-10-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-10-jak-rozszerza-diet-niemowlaka-krok-po-kroku-poradnik-dla-rodzicw/img_3.jpeg"
   }
 }
