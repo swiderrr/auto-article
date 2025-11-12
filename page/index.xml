@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on Poradnik Rodzica</title><link>https://poradnik-rodzica.com.pl/page/</link><description>Recent content in Pages on Poradnik Rodzica</description><generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Sun, 02 Nov 2025 12:00:00 +0100</lastBuildDate><atom:link href="https://poradnik-rodzica.com.pl/page/index.xml" rel="self" type="application/rss+xml"/><item><title>Polityka prywatności i RODO</title><link>https://poradnik-rodzica.com.pl/page/polityka-prywatnosci/</link><pubDate>Sun, 02 Nov 2025 12:00:00 +0100</pubDate><guid>https://poradnik-rodzica.com.pl/page/polityka-prywatnosci/</guid><description>&lt;h2 id="polityka-prywatności"&gt;Polityka prywatności
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on Poradnik Rodzica</title><link>https://poradnik-rodzica.com.pl/page/</link><description>Recent content in Pages on Poradnik Rodzica</description><generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Sun, 02 Nov 2025 12:00:00 +0100</lastBuildDate><atom:link href="https://poradnik-rodzica.com.pl/page/index.xml" rel="self" type="application/rss+xml"/><item><title>Polityka prywatności i RODO</title><link>https://poradnik-rodzica.com.pl/page/polityka-prywatnosci/</link><pubDate>Sun, 02 Nov 2025 12:00:00 +0100</pubDate><guid>https://poradnik-rodzica.com.pl/page/polityka-prywatnosci/</guid><description>&lt;img src="https://poradnik-rodzica.com.pl/img/logo.png" alt="Featured image of post Polityka prywatności i RODO" /&gt;&lt;h2 id="polityka-prywatności"&gt;Polityka prywatności
 &lt;/h2&gt;&lt;p&gt;Niniejsza strona wyjaśnia, jakie dane zbieramy, w jaki sposób je wykorzystujemy oraz jakie masz prawa wynikające z RODO.&lt;/p&gt;
 &lt;h3 id="administrator-danych"&gt;Administrator danych
 &lt;/h3&gt;&lt;p&gt;Administratorem danych osobowych jest właściciel strony: {{ .Site.Title }}.&lt;/p&gt;
@@ -21,7 +21,35 @@
 &lt;h3 id="kontakt"&gt;Kontakt
 &lt;/h3&gt;&lt;p&gt;W sprawie prywatności prosimy o kontakt przez formularz kontaktowy dostępny na stronie lub pod adresem e-mail podanym w sekcji „O nas”.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;em&gt;Strona ta zawiera podstawowe informacje; w razie potrzeby dostosuj treść do specyfiki swojej działalności oraz skonsultuj się z prawnikiem.&lt;/em&gt;&lt;/p&gt;</description></item><item><title>O nas</title><link>https://poradnik-rodzica.com.pl/o-nas/</link><pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate><guid>https://poradnik-rodzica.com.pl/o-nas/</guid><description>&lt;h2 id="kim-jesteśmy"&gt;Kim jesteśmy?
+&lt;p&gt;&lt;em&gt;Strona ta zawiera podstawowe informacje; w razie potrzeby dostosuj treść do specyfiki swojej działalności oraz skonsultuj się z prawnikiem.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id="dane-dzieci"&gt;Dane dzieci
+&lt;/h2&gt;&lt;p&gt;Szczególną uwagę przykładamy do ochrony danych dzieci. Nie gromadzimy świadomie danych osobowych dzieci poniżej 13. roku życia bez zgody opiekuna prawnego. Jeśli zauważysz, że Twoje dziecko udostępniło dane osobowe bez zgody, skontaktuj się z nami — podejmiemy natychmiastowe kroki, aby usunąć takie informacje.&lt;/p&gt;
+&lt;h2 id="przenoszenie-danych-poza-ue"&gt;Przenoszenie danych poza UE
+&lt;/h2&gt;&lt;p&gt;W przypadku korzystania z usług zewnętrznych (np. dostawców chmury lub narzędzi analitycznych) możliwe jest przekazywanie danych poza Europejski Obszar Gospodarczy. W takich sytuacjach współpracujemy z usługodawcami, którzy zapewniają odpowiednie zabezpieczenia prawne (standardowe klauzule umowne lub decyzje właściwych organów) w celu ochrony danych osobowych.&lt;/p&gt;
+&lt;h2 id="skargi-i-prawa-do-wniesienia-skargi"&gt;Skargi i prawa do wniesienia skargi
+&lt;/h2&gt;&lt;p&gt;Jeśli uważasz, że Twoje prawa związane z danymi osobowymi zostały naruszone, masz prawo do wniesienia skargi do organu nadzorczego (w Polsce: Prezes Urzędu Ochrony Danych Osobowych). Zanim złożysz skargę, zachęcamy do kontaktu z nami — postaramy się pomóc rozwiązać problem bez konieczności eskalacji.&lt;/p&gt;
+&lt;h2 id="zmiany-w-polityce-prywatności"&gt;Zmiany w Polityce Prywatności
+&lt;/h2&gt;&lt;p&gt;Zastrzegamy sobie prawo do aktualizacji polityki prywatności. Wszelkie istotne zmiany będą publikowane na tej stronie z informacją o dacie aktualizacji. Zachęcamy do regularnego sprawdzania polityki.&lt;/p&gt;
+&lt;h2 id="dane-kontaktowe-inspektor-ochrony-danych--kontakt-z-administratorem"&gt;Dane kontaktowe (inspektor ochrony danych / kontakt z administratorem)
+&lt;/h2&gt;&lt;p&gt;W sprawach związanych z danymi osobowymi prosimy o kontakt na adres: &lt;a class="link" href="mailto:kontakt@poradnik-rodzica.com.pl" &gt;kontakt@poradnik-rodzica.com.pl&lt;/a&gt;. W przypadku dużych lub skomplikowanych żądań możliwe jest, że przekażemy zapytanie do wyznaczonego specjalisty lub inspektora ochrony danych współpracującego z administratorem.&lt;/p&gt;
+&lt;h2 id="szczegóły-przetwarzania-danych"&gt;Szczegóły przetwarzania danych
+&lt;/h2&gt;&lt;p&gt;W zależności od interakcji użytkownika zbieramy różne kategorie danych. Najczęściej są to dane techniczne (adres IP, typ przeglądarki, informacje o urządzeniu), dane analityczne (odwiedzone strony, czas sesji) oraz dane kontaktowe przesyłane przez formularze.&lt;/p&gt;
+&lt;h3 id="podstawy-prawne-przetwarzania"&gt;Podstawy prawne przetwarzania
+&lt;/h3&gt;&lt;p&gt;Przetwarzamy dane na podstawie kilku przesłanek prawnych: zgody użytkownika (np. w przypadku cookies wymagających zgody), realizacji umowy lub działań przed zawarciem umowy, a także na podstawie prawnie uzasadnionych interesów administratora (np. analityka i bezpieczeństwo).&lt;/p&gt;
+&lt;h3 id="okres-przechowywania-danych"&gt;Okres przechowywania danych
+&lt;/h3&gt;&lt;p&gt;Dane techniczne i analityczne przechowujemy przez okres niezbędny do realizacji celu (np. analiza statystyk przez 26 miesięcy), natomiast dane kontaktowe przetwarzamy tak długo, jak to konieczne do obsługi zgłoszeń lub zgodnie z obowiązującymi przepisami prawa.&lt;/p&gt;
+&lt;h3 id="usługi-zewnętrzne-i-przekazywanie-danych"&gt;Usługi zewnętrzne i przekazywanie danych
+&lt;/h3&gt;&lt;p&gt;Współpracujemy z usługodawcami takimi jak Google (Tag Manager, Analytics, AdSense) oraz dostawcami hostingu i CDN. Dane mogą być przekazywane do tych podmiotów zgodnie z ich politykami prywatności i umowami powierzenia przetwarzania.&lt;/p&gt;
+&lt;h3 id="cookies-i-narzędzia-śledzące"&gt;Cookies i narzędzia śledzące
+&lt;/h3&gt;&lt;p&gt;Stosujemy różne rodzaje cookies: niezbędne (techniczne), analityczne oraz marketingowe. Użytkownik może zarządzać zgodami w ustawieniach przeglądarki lub poprzez nasz mechanizm zgód (jeśli dostępny). Wyłączenie części cookies może ograniczyć funkcjonalność serwisu.&lt;/p&gt;
+&lt;h3 id="prawa-użytkownika"&gt;Prawa użytkownika
+&lt;/h3&gt;&lt;p&gt;Użytkownicy mają prawo do dostępu do swoich danych, ich poprawienia, usunięcia, ograniczenia przetwarzania oraz przenoszenia. W celu realizacji tych praw prosimy o kontakt z administratorem.&lt;/p&gt;
+&lt;h3 id="środki-bezpieczeństwa"&gt;Środki bezpieczeństwa
+&lt;/h3&gt;&lt;p&gt;Stosujemy środki techniczne i organizacyjne adekwatne do ryzyka związanego z przetwarzaniem, w tym szyfrowanie komunikacji (HTTPS), ograniczenia dostępu do danych i procedury kopii zapasowych.&lt;/p&gt;
+&lt;h3 id="zmiany-w-polityce-prywatności-1"&gt;Zmiany w polityce prywatności
+&lt;/h3&gt;&lt;p&gt;Polityka prywatności może być aktualizowana. O istotnych zmianach będziemy informować na stronie. Data ostatniej aktualizacji znajduje się na początku dokumentu.&lt;/p&gt;
+&lt;h2 id="kontakt-1"&gt;Kontakt
+&lt;/h2&gt;&lt;p&gt;W sprawach związanych z prywatnością oraz realizacją praw związanych z danymi osobowymi prosimy o kontakt na adres: &lt;a class="link" href="mailto:kontakt@poradnik-rodzica.com.pl" &gt;kontakt@poradnik-rodzica.com.pl&lt;/a&gt;&lt;/p&gt;</description></item><item><title>O nas</title><link>https://poradnik-rodzica.com.pl/o-nas/</link><pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate><guid>https://poradnik-rodzica.com.pl/o-nas/</guid><description>&lt;img src="https://poradnik-rodzica.com.pl/img/logo.png" alt="Featured image of post O nas" /&gt;&lt;h2 id="kim-jesteśmy"&gt;Kim jesteśmy?
 &lt;/h2&gt;&lt;p&gt;Poradnik Rodzica to zespół tworzony z myślą o rodzicach małych dzieci. Dostarczamy praktyczne materiały na temat zdrowia, rozwoju, snu i bezpieczeństwa niemowląt oraz starszych dzieci.&lt;/p&gt;
 &lt;p&gt;Naszym celem jest pomaganie rodzicom w codziennych wyzwaniach poprzez jasne, sprawdzone wskazówki oraz przyjazne przewodniki.&lt;/p&gt;
 &lt;h2 id="co-oferujemy"&gt;Co oferujemy?
@@ -34,4 +62,30 @@
 &lt;h2 id="transparentność-i-źródła"&gt;Transparentność i źródła
 &lt;/h2&gt;&lt;p&gt;Część treści na stronie jest tworzona automatycznie przy użyciu narzędzi wspomagających, w tym modeli językowych. Zawsze weryfikujemy wygenerowaną treść oraz zamieszczamy źródła i odnośniki do wiarygodnych materiałów. W szczególnych przypadkach, takich jak porady medyczne, zachęcamy do konsultacji ze specjalistą.&lt;/p&gt;
 &lt;h2 id="kontakt"&gt;Kontakt
-&lt;/h2&gt;&lt;p&gt;Masz pytanie lub sugestię? Napisz do nas: kontakt@poradnik-rodzica@com.pl&lt;/p&gt;</description></item></channel></rss>
+&lt;/h2&gt;&lt;p&gt;Masz pytanie lub sugestię? Napisz do nas: &lt;a class="link" href="mailto:kontakt@poradnik-rodzica.com.pl" &gt;kontakt@poradnik-rodzica.com.pl&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="nasza-misja"&gt;Nasza misja
+&lt;/h2&gt;&lt;p&gt;Poradnik Rodzica powstał, by dostarczać rodzicom praktycznych, rzetelnych i łatwo przyswajalnych informacji o opiece nad małymi dziećmi. Naszym celem jest wspieranie rodziców w podejmowaniu świadomych decyzji dotyczących zdrowia, rozwoju, snu i bezpieczeństwa ich dzieci.&lt;/p&gt;
+&lt;h2 id="jak-tworzymy-treści"&gt;Jak tworzymy treści
+&lt;/h2&gt;&lt;p&gt;Materiały publikowane na stronie powstają w oparciu o kombinację źródeł: wiedzy eksperckiej autorów, wiarygodnych publikacji medycznych i materiałów edukacyjnych oraz narzędzi wspomagających tworzenie treści. Część artykułów przygotowywana jest przy użyciu modeli językowych; zawsze poddajemy je weryfikacji redakcji i specjalistów przed publikacją.&lt;/p&gt;
+&lt;h2 id="zespół-i-standardy-redakcyjne"&gt;Zespół i standardy redakcyjne
+&lt;/h2&gt;&lt;p&gt;Naszymi autorami są redaktorzy i specjaliści z doświadczeniem w opiece nad dziećmi, edukacji i zdrowiu. Stosujemy wewnętrzne standardy: każde opracowanie musi zawierać rzetelne źródła, klarowną strukturę oraz praktyczne wskazówki. Treści medyczne i prawne oznaczamy odpowiednimi zastrzeżeniami i zachęcamy do konsultacji z lekarzem.&lt;/p&gt;
+&lt;h2 id="reklama-i-współpraca-komercyjna"&gt;Reklama i współpraca komercyjna
+&lt;/h2&gt;&lt;p&gt;Na stronie mogą pojawiać się treści sponsorowane i afiliacyjne. Zawsze oznaczamy takie materiały i stosujemy zasady transparentności, aby czytelnik mógł odróżnić treści redakcyjne od komercyjnych. Współpraca z partnerami odbywa się zgodnie z naszymi standardami jakości.&lt;/p&gt;
+&lt;h2 id="polityka-jakości-i-kontakt-dla-autorów"&gt;Polityka jakości i kontakt dla autorów
+&lt;/h2&gt;&lt;p&gt;Jeśli chcesz zaproponować artykuł lub współpracę ekspercką, napisz do nas na adres &lt;a class="link" href="mailto:redakcja@poradnik-rodzica.com.pl" &gt;redakcja@poradnik-rodzica.com.pl&lt;/a&gt;. Zgłoszenia będą rozpatrywane przez zespół redakcyjny i specjalistów merytorycznych.&lt;/p&gt;
+&lt;h2 id="źródła-i-transparentność"&gt;Źródła i transparentność
+&lt;/h2&gt;&lt;p&gt;W artykułach podajemy źródła, linki do badań i materiałów pomocniczych tam, gdzie to możliwe. W przypadku treści generowanych automatycznie, informujemy o tym czytelników i umieszczamy rekomendacje weryfikacyjne.&lt;/p&gt;
+&lt;h2 id="nasz-zespół"&gt;Nasz zespół
+&lt;/h2&gt;&lt;p&gt;Zespół Poradnika Rodzica składa się z redaktorów, specjalistów ds. treści oraz konsultantów medycznych i psychologicznych. Współpracujemy także z ekspertami zewnętrznymi — pediatrami, fizjoterapeutami i psychologami dziecięcymi — którzy konsultują materiały o charakterze medycznym i rozwojowym.&lt;/p&gt;
+&lt;h2 id="proces-redakcyjny-i-weryfikacja"&gt;Proces redakcyjny i weryfikacja
+&lt;/h2&gt;&lt;p&gt;Każdy artykuł przechodzi przez kilka etapów: planowanie tematu, przygotowanie treści, weryfikacja merytoryczna i korekta redakcyjna. W przypadku treści medycznych lub prawnych korzystamy ze źródeł naukowych i konsultujemy treść z odpowiednimi specjalistami. Staramy się także aktualizować materiały w miarę pojawiania się nowych wytycznych i badań.&lt;/p&gt;
+&lt;h2 id="współpraca-i-partnerstwa"&gt;Współpraca i partnerstwa
+&lt;/h2&gt;&lt;p&gt;Współpracujemy z partnerami komercyjnymi i organizacjami, które wspierają nas w tworzeniu wartościowych treści. Wszystkie formy współpracy są oznaczone w treści, aby zachować pełną przejrzystość wobec czytelników.&lt;/p&gt;
+&lt;h2 id="zaangażowanie-społeczności"&gt;Zaangażowanie społeczności
+&lt;/h2&gt;&lt;p&gt;Zachęcamy czytelników do dzielenia się doświadczeniami i pytaniami. Regularnie organizujemy ankiety i zbieramy opinie, które pomagają nam dopasować tematy do realnych potrzeb rodziców. W planach mamy sekcję z historiami rodziców oraz możliwość publikowania gościnnych tekstów po uprzedniej weryfikacji.&lt;/p&gt;
+&lt;h2 id="jak-możesz-nam-pomóc"&gt;Jak możesz nam pomóc
+&lt;/h2&gt;&lt;p&gt;Jeśli korzystasz z naszych materiałów i chcesz wesprzeć rozwój serwisu, możesz rozważyć subskrypcję newslettera, udostępnienia artykułów lub skontaktowanie się w sprawie współpracy. Drobne wsparcie pomaga nam utrzymać wysoki poziom treści i inwestować w dalszą weryfikację materiałów.&lt;/p&gt;
+&lt;h2 id="dostępność-i-inkluzywność"&gt;Dostępność i inkluzywność
+&lt;/h2&gt;&lt;p&gt;Dbamy o to, aby nasze treści były dostępne dla szerokiego grona czytelników. Stosujemy czytelną strukturę artykułów, kontrastowy design oraz staramy się dodawać opisy alternatywne do grafik. Chcemy, aby porady były przydatne wszystkim rodzicom, niezależnie od ich sytuacji czy potrzeb.&lt;/p&gt;
+&lt;h2 id="aktualizacje-i-harmonogram-publikacji"&gt;Aktualizacje i harmonogram publikacji
+&lt;/h2&gt;&lt;p&gt;Regularnie aktualizujemy istniejące artykuły i publikujemy nowe materiały kilka razy w tygodniu. Monitorujemy trendy i sygnały od czytelników, aby dopasować tematy oraz pogłębiać te, które zyskują największe zainteresowanie.&lt;/p&gt;</description></item></channel></rss>
