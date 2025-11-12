@@ -299,7 +299,7 @@ class Search {
                 </div>
                 {item.image &&
                     <div class="article-image">
-                        <img src={item.image} loading="lazy" />
+                        <img src={item.image} loading="lazy" alt={item.title} />
                     </div>
                 }
             </a>

@@ -29,6 +29,10 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="format-detection" content="telephone=no">
 
+<!-- Force light color scheme and provide theme color to improve mobile UI and SEO signals -->
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="{{ .Site.Params.themeColor | default "#ffffff" }}">
+
 <!-- Author -->
 {{ with .Site.Author.name }}
 <meta name="author" content="{{ . }}">

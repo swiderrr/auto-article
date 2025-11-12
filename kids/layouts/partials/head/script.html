@@ -1,18 +1,18 @@
 <!-- Minimal scripts partial: include common JS from static/js -->
 {{ $s3 := .Site.Params.s3BaseURL }}
 {{ if $s3 }}
-  <script src="{{ printf "%s/%s" $s3 "js/jquery.min.js" }}"></script>
-  <script src="{{ printf "%s/%s" $s3 "js/production.min.js" }}"></script>
+  <script src="{{ printf "%s/%s" $s3 "js/jquery.min.js" }}" defer></script>
+  <script src="{{ printf "%s/%s" $s3 "js/production.min.js" }}" defer></script>
 {{ else }}
-  <script src="{{ "js/jquery.min.js" | relURL }}"></script>
-  <script src="{{ "js/production.min.js" | relURL }}"></script>
+  <script src="{{ "js/jquery.min.js" | relURL }}" defer></script>
+  <script src="{{ "js/production.min.js" | relURL }}" defer></script>
 {{ end }}
 
 <!-- Optional vendor scripts if present -->
 {{ if (resources.Get "js/bootstrap.min.js") }}
   {{ if $s3 }}
-    <script src="{{ printf "%s/%s" $s3 "js/bootstrap.min.js" }}"></script>
+    <script src="{{ printf "%s/%s" $s3 "js/bootstrap.min.js" }}" defer></script>
   {{ else }}
-    <script src="{{ "js/bootstrap.min.js" | relURL }}"></script>
+    <script src="{{ "js/bootstrap.min.js" | relURL }}" defer></script>
   {{ end }}
 {{ end }}

@@ -34,9 +34,7 @@
 	{{ with $Height }}height="{{ . }}"{{ end }}
 	{{ with $Srcset }}srcset="{{ . }}"{{ end }}
 	loading="lazy"
-	{{ with $alt }}
-		alt="{{ . }}"
-	{{ end }}
+	alt="{{ $alt }}"
 	{{ if $galleryImage }}
 		class="gallery-image" 
 		data-flex-grow="{{ div (mul $image.Width 100) $image.Height }}"
