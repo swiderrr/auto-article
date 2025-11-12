@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-11T08:16:58.074803+00:00",
+  "uploaded_at": "2025-11-12T08:17:28.721478+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -173,6 +173,10 @@
     "img/generated/2025-11-11-pierwsza-pomoc-dla-dzieci-co-trzeba-wiedzie/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-11-pierwsza-pomoc-dla-dzieci-co-trzeba-wiedzie/img_0.jpeg",
     "img/generated/2025-11-11-pierwsza-pomoc-dla-dzieci-co-trzeba-wiedzie/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-11-pierwsza-pomoc-dla-dzieci-co-trzeba-wiedzie/img_1.jpeg",
     "img/generated/2025-11-11-pierwsza-pomoc-dla-dzieci-co-trzeba-wiedzie/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-11-pierwsza-pomoc-dla-dzieci-co-trzeba-wiedzie/img_2.jpeg",
-    "img/generated/2025-11-11-pierwsza-pomoc-dla-dzieci-co-trzeba-wiedzie/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-11-pierwsza-pomoc-dla-dzieci-co-trzeba-wiedzie/img_3.jpeg"
+    "img/generated/2025-11-11-pierwsza-pomoc-dla-dzieci-co-trzeba-wiedzie/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-11-pierwsza-pomoc-dla-dzieci-co-trzeba-wiedzie/img_3.jpeg",
+    "img/generated/2025-11-12-co-powinno-je-roczne-dziecko-praktyczny-przewodnik-dla-rodzicw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-12-co-powinno-je-roczne-dziecko-praktyczny-przewodnik-dla-rodzicw/img_0.jpeg",
+    "img/generated/2025-11-12-co-powinno-je-roczne-dziecko-praktyczny-przewodnik-dla-rodzicw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-12-co-powinno-je-roczne-dziecko-praktyczny-przewodnik-dla-rodzicw/img_1.jpeg",
+    "img/generated/2025-11-12-co-powinno-je-roczne-dziecko-praktyczny-przewodnik-dla-rodzicw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-12-co-powinno-je-roczne-dziecko-praktyczny-przewodnik-dla-rodzicw/img_2.jpeg",
+    "img/generated/2025-11-12-co-powinno-je-roczne-dziecko-praktyczny-przewodnik-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-12-co-powinno-je-roczne-dziecko-praktyczny-przewodnik-dla-rodzicw/img_3.jpeg"
   }
 }
