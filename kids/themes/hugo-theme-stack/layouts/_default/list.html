@@ -33,11 +33,12 @@
                         {{- end -}}
                         
                         <img src="{{ $Permalink }}" 
+                            alt="{{ .Title | default $.Site.Title }}"
                             width="{{ $Width }}"
                             height="{{ $Height }}" 
                             loading="lazy">
                     {{ else }}
-                        <img src="{{ $image.permalink }}" loading="lazy" />
+                        <img src="{{ $image.permalink }}" loading="lazy" alt="{{ .Title | default $.Site.Title }}" />
                     {{ end }}
                 </div>
             {{ end }}

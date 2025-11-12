@@ -2,6 +2,13 @@
 <!-- Use Hugo Pipes to compile SCSS to CSS (css.Sass replaces deprecated resources.ToCSS) -->
 {{ $style := resources.Get "scss/style.scss" | css.Sass | resources.Minify }}
 
+<!-- Inline minimal rules to ensure images are responsive on mobile and to prefer light scheme -->
+<style>
+  html { color-scheme: light !important; }
+  img, .article-content img, .article-image img { max-width:100%; height:auto; display:block; }
+  picture, figure { max-width:100%; }
+</style>
+
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
 <!-- Custom CSS (if needed, prefer S3-hosted static files when configured) -->

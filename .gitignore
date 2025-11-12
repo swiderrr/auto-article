@@ -14,6 +14,7 @@ eggs/
 
 # Hugo generated output
 public/
+public_test
 resources/_gen/
 # By default ignore any `static/` directories (common for generated assets)
 # but allow the `kids/static/` folder so generated images can be committed.
@@ -36,3 +37,6 @@ node_modules/
 # OS files
 .DS_Store
 Thumbs.db
+.lh_server_pid
+package-lock.json
+package.json

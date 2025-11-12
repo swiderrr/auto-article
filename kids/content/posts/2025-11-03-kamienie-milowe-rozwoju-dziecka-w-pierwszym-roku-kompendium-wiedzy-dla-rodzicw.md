@@ -136,3 +136,14 @@ Poniżej przedstawiamy praktyczne wskazówki, które pomogą wspierać i monitor
 
 ## Podsumowanie
 Rozwój dziecka w pierwszym roku życia to fascynujący i pełen wyzwań czas. Kamienie milowe, które niemowlę osiąga w tym okresie, są nie tylko kolejno pojawiającymi się umiejętnościami, ale także ważnym wskaźnikiem zdrowego rozwoju. Poznając te etapy i stosując praktyczne kroki wspierające, rodzice mogą aktywnie towarzyszyć swojemu maluszkowi na drodze do samodzielności, zapewniając mu bezpieczne i rozwijające środowisko. Pamiętajmy, że najważniejsze jest cieszenie się każdą chwilą i okazywanie dziecku miłości i wsparcia na każdym kroku.
+
+## FAQ — najczęściej zadawane pytania
+
+### Co jeśli dziecko nie osiąga niektórych kamieni milowych?
+Jeżeli masz obawy dotyczące rozwoju dziecka, zgłoś się do pediatry lub specjalisty wczesnego rozwoju. Wczesna diagnoza i terapia dają najlepsze efekty.
+
+### Jak wspierać opóźnione umiejętności?
+Stosuj proste, codzienne ćwiczenia, angażuj dziecko w zabawy stymulujące motorykę i mów dużo do maluszka. Konsultacja ze specjalistą dostarczy spersonalizowanych wskazówek.
+
+### Kiedy szukać pomocy specjalistycznej?
+Jeśli obserwujesz wyraźne opóźnienia (brak reakcji na dźwięki, brak kontaktu wzrokowego, brak prób siadania lub przemieszczania), skonsultuj się z pediatrą.

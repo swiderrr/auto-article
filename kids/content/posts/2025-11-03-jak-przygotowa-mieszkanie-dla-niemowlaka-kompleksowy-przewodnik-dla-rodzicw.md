@@ -150,3 +150,14 @@ Wygospodaruj miejsce na matę edukacyjną i zabawek stymulujących rozwój motor
 Przygotowanie mieszkania dla niemowlaka to proces, który wymaga zaangażowania i przemyślenia każdego detalu. Stawiając na bezpieczeństwo, wygodę i rozwój dziecka, tworzysz idealne warunki do jego dorastania i odkrywania świata. Pamiętaj, że choć dom pełen akcesoriów i mebli jest ważny, najistotniejszą rzeczą jest Twoja troska i miłość, które sprawią, że maluszek poczuje się bezpiecznie i komfortowo w nowym miejscu.
 
 Z odpowiednio przygotowanym mieszkaniem zyskujesz pewność, że Twój niemowlak ma wszystko, czego potrzebuje, by rozwijać się zdrowo i szczęśliwie. Powodzenia w tworzeniu idealnej przestrzeni dla Twojego malucha!
+
+## Dodatkowe wskazówki i FAQ
+
+### Co zrobić, gdy mieszkasz w małym mieszkaniu?
+Wykorzystaj składane meble i organizery, stwórz strefy funkcjonalne i wybierz wielofunkcyjne akcesoria, które oszczędzają miejsce.
+
+### Jak dbać o higienę przestrzeni zabaw?
+Regularnie odkurzaj i wietrz pomieszczenia, piorć tekstylia w wysokiej temperaturze oraz dezynfekuj powierzchnie zabawkowe zgodnie z zaleceniami producentów.
+
+### Jakie zabawki wybrać na początek?
+Postaw na zabawki stymulujące rozwój sensoryczny: miękkie klocki, grzechotki, książeczki kontrastowe i maty edukacyjne.

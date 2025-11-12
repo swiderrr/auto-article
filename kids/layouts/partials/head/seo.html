@@ -1,5 +1,6 @@
 {{- $title := .Params.seo.title | default .Title -}}
-{{- $description := .Params.seo.description | default .Params.summary | default .Site.Params.description -}}
+{{- /* Backwards compatible lookup: seo.description preferred, fall back to seo.meta_description then summary then site description */ -}}
+{{- $description := .Params.seo.description | default .Params.seo.meta_description | default .Params.summary | default .Site.Params.description -}}
 {{- /* Handle featured image: .Params.featured_image may be a string, but Site.Params.defaultImage
 			 in this project is a map (tables). Safely extract a string image path using kindIs and scratch. */ -}}
 {{- $imageRaw := .Params.featured_image | default .Site.Params.defaultImage -}}
@@ -48,6 +49,14 @@
 <meta name="twitter:description" content="{{ .Params.seo.twitter.description | default $description }}">
 <meta name="twitter:image" content="{{ $imageURL }}">
 
+<!-- Favicon and app icons -->
+<!-- Place your favicon pack files in /icons/ (see kids/static/icons/) -->
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="manifest" href="/icons/site.webmanifest">
+<meta name="theme-color" content="{{ .Site.Params.themeColor | default "#ff6a00" }}">
+
 <!-- Article specific -->
 {{ if not .IsHome }}
 <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
@@ -62,3 +71,33 @@
 {{ . | safeJS }}
 </script>
 {{ end }}
+
+<!-- Default site-level JSON-LD for Organization and WebSite (helps SEO crawlers detect schema.org) -->
+{{- /* build a safe logo URL */ -}}
+{{- $logoScratch := newScratch -}}
+{{- with .Site.Params.favicon -}}
+	{{- if strings.HasPrefix . "http" -}}
+		{{- $logoScratch.Set "logo" . -}}
+	{{- else -}}
+		{{- $logoScratch.Set "logo" (printf "%s%s" $.Site.BaseURL .) -}}
+	{{- end -}}
+{{- end -}}
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Organization",
+			"name": "{{ .Site.Title }}",
+			"url": "{{ .Site.BaseURL }}",
+			"logo": "{{ $logoScratch.Get "logo" }}"
+		},
+		{
+			"@type": "WebSite",
+			"url": "{{ .Site.BaseURL }}",
+			"name": "{{ .Site.Title }}",
+			"publisher": { "@type": "Organization", "name": "{{ .Site.Title }}" }
+		}
+	]
+}
+</script>
