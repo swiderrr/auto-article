@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-12T23:22:12.216947+00:00",
+  "uploaded_at": "2025-11-13T08:16:52.814009+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -237,6 +237,10 @@
     "img/generated/2025-11-12-kreatywne-sposoby-na-budowanie-odpornoci-spoecznej-u-maluchw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-12-kreatywne-sposoby-na-budowanie-odpornoci-spoecznej-u-maluchw/img_0.jpeg",
     "img/generated/2025-11-12-kreatywne-sposoby-na-budowanie-odpornoci-spoecznej-u-maluchw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-12-kreatywne-sposoby-na-budowanie-odpornoci-spoecznej-u-maluchw/img_1.jpeg",
     "img/generated/2025-11-12-kreatywne-sposoby-na-budowanie-odpornoci-spoecznej-u-maluchw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-12-kreatywne-sposoby-na-budowanie-odpornoci-spoecznej-u-maluchw/img_2.jpeg",
-    "img/generated/2025-11-12-kreatywne-sposoby-na-budowanie-odpornoci-spoecznej-u-maluchw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-12-kreatywne-sposoby-na-budowanie-odpornoci-spoecznej-u-maluchw/img_3.jpeg"
+    "img/generated/2025-11-12-kreatywne-sposoby-na-budowanie-odpornoci-spoecznej-u-maluchw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-12-kreatywne-sposoby-na-budowanie-odpornoci-spoecznej-u-maluchw/img_3.jpeg",
+    "img/generated/2025-11-13-jak-przygotowa-si-do-pierwszych-szczepie-dziecka-checklisty-i-wskazwki/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-13-jak-przygotowa-si-do-pierwszych-szczepie-dziecka-checklisty-i-wskazwki/img_0.jpeg",
+    "img/generated/2025-11-13-jak-przygotowa-si-do-pierwszych-szczepie-dziecka-checklisty-i-wskazwki/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-13-jak-przygotowa-si-do-pierwszych-szczepie-dziecka-checklisty-i-wskazwki/img_1.jpeg",
+    "img/generated/2025-11-13-jak-przygotowa-si-do-pierwszych-szczepie-dziecka-checklisty-i-wskazwki/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-13-jak-przygotowa-si-do-pierwszych-szczepie-dziecka-checklisty-i-wskazwki/img_2.jpeg",
+    "img/generated/2025-11-13-jak-przygotowa-si-do-pierwszych-szczepie-dziecka-checklisty-i-wskazwki/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-13-jak-przygotowa-si-do-pierwszych-szczepie-dziecka-checklisty-i-wskazwki/img_3.jpeg"
   }
 }
