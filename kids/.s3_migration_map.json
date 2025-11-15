@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-14T08:16:48.726318+00:00",
+  "uploaded_at": "2025-11-15T08:14:20.085881+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -245,6 +245,10 @@
     "img/generated/2025-11-14-sensory-play-jak-budowa-proste-domowe-zabawy-wspierajce-rozwj-dziecka/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-14-sensory-play-jak-budowa-proste-domowe-zabawy-wspierajce-rozwj-dziecka/img_0.jpeg",
     "img/generated/2025-11-14-sensory-play-jak-budowa-proste-domowe-zabawy-wspierajce-rozwj-dziecka/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-14-sensory-play-jak-budowa-proste-domowe-zabawy-wspierajce-rozwj-dziecka/img_1.jpeg",
     "img/generated/2025-11-14-sensory-play-jak-budowa-proste-domowe-zabawy-wspierajce-rozwj-dziecka/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-14-sensory-play-jak-budowa-proste-domowe-zabawy-wspierajce-rozwj-dziecka/img_2.jpeg",
-    "img/generated/2025-11-14-sensory-play-jak-budowa-proste-domowe-zabawy-wspierajce-rozwj-dziecka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-14-sensory-play-jak-budowa-proste-domowe-zabawy-wspierajce-rozwj-dziecka/img_3.jpeg"
+    "img/generated/2025-11-14-sensory-play-jak-budowa-proste-domowe-zabawy-wspierajce-rozwj-dziecka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-14-sensory-play-jak-budowa-proste-domowe-zabawy-wspierajce-rozwj-dziecka/img_3.jpeg",
+    "img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_0.jpeg",
+    "img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_1.jpeg",
+    "img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_2.jpeg",
+    "img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_3.jpeg"
   }
 }
