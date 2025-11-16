@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-15T08:14:20.085881+00:00",
+  "uploaded_at": "2025-11-16T08:14:46.558919+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -249,6 +249,10 @@
     "img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_0.jpeg",
     "img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_1.jpeg",
     "img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_2.jpeg",
-    "img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_3.jpeg"
+    "img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-15-zdrowie-psychiczne-rodzicw-jak-dba-o-siebie-przy-maym-dziecku/img_3.jpeg",
+    "img/generated/2025-11-16-jak-wprowadzi-rytuay-czytania-od-pierwszych-dni-poradnik-dla-rodzicw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-16-jak-wprowadzi-rytuay-czytania-od-pierwszych-dni-poradnik-dla-rodzicw/img_0.jpeg",
+    "img/generated/2025-11-16-jak-wprowadzi-rytuay-czytania-od-pierwszych-dni-poradnik-dla-rodzicw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-16-jak-wprowadzi-rytuay-czytania-od-pierwszych-dni-poradnik-dla-rodzicw/img_1.jpeg",
+    "img/generated/2025-11-16-jak-wprowadzi-rytuay-czytania-od-pierwszych-dni-poradnik-dla-rodzicw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-16-jak-wprowadzi-rytuay-czytania-od-pierwszych-dni-poradnik-dla-rodzicw/img_2.jpeg",
+    "img/generated/2025-11-16-jak-wprowadzi-rytuay-czytania-od-pierwszych-dni-poradnik-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-16-jak-wprowadzi-rytuay-czytania-od-pierwszych-dni-poradnik-dla-rodzicw/img_3.jpeg"
   }
 }
