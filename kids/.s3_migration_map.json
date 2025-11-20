@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-19T08:16:39.783203+00:00",
+  "uploaded_at": "2025-11-20T08:17:28.373391+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -257,6 +257,10 @@
     "img/generated/2025-11-19-jak-zrwnoway-prac-zdaln-i-opiek-nad-niemowlakiem-realne-strategie/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-19-jak-zrwnoway-prac-zdaln-i-opiek-nad-niemowlakiem-realne-strategie/img_0.jpeg",
     "img/generated/2025-11-19-jak-zrwnoway-prac-zdaln-i-opiek-nad-niemowlakiem-realne-strategie/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-19-jak-zrwnoway-prac-zdaln-i-opiek-nad-niemowlakiem-realne-strategie/img_1.jpeg",
     "img/generated/2025-11-19-jak-zrwnoway-prac-zdaln-i-opiek-nad-niemowlakiem-realne-strategie/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-19-jak-zrwnoway-prac-zdaln-i-opiek-nad-niemowlakiem-realne-strategie/img_2.jpeg",
-    "img/generated/2025-11-19-jak-zrwnoway-prac-zdaln-i-opiek-nad-niemowlakiem-realne-strategie/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-19-jak-zrwnoway-prac-zdaln-i-opiek-nad-niemowlakiem-realne-strategie/img_3.jpeg"
+    "img/generated/2025-11-19-jak-zrwnoway-prac-zdaln-i-opiek-nad-niemowlakiem-realne-strategie/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-19-jak-zrwnoway-prac-zdaln-i-opiek-nad-niemowlakiem-realne-strategie/img_3.jpeg",
+    "img/generated/2025-11-20-etyczne-i-bezpieczne-testowanie-produktw-dziecicych-przewodnik-dla-rodzicw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-20-etyczne-i-bezpieczne-testowanie-produktw-dziecicych-przewodnik-dla-rodzicw/img_0.jpeg",
+    "img/generated/2025-11-20-etyczne-i-bezpieczne-testowanie-produktw-dziecicych-przewodnik-dla-rodzicw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-20-etyczne-i-bezpieczne-testowanie-produktw-dziecicych-przewodnik-dla-rodzicw/img_1.jpeg",
+    "img/generated/2025-11-20-etyczne-i-bezpieczne-testowanie-produktw-dziecicych-przewodnik-dla-rodzicw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-20-etyczne-i-bezpieczne-testowanie-produktw-dziecicych-przewodnik-dla-rodzicw/img_2.jpeg",
+    "img/generated/2025-11-20-etyczne-i-bezpieczne-testowanie-produktw-dziecicych-przewodnik-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-20-etyczne-i-bezpieczne-testowanie-produktw-dziecicych-przewodnik-dla-rodzicw/img_3.jpeg"
   }
 }
