@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-21T08:18:07.643339+00:00",
+  "uploaded_at": "2025-11-23T08:14:47.667986+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -265,6 +265,10 @@
     "img/generated/2025-11-21-jak-bezpiecznie-wprowadza-trening-nocnika-u-dziecka-poradnik-dla-rodzicw/img_picsum_0.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-21-jak-bezpiecznie-wprowadza-trening-nocnika-u-dziecka-poradnik-dla-rodzicw/img_picsum_0.jpg",
     "img/generated/2025-11-21-jak-bezpiecznie-wprowadza-trening-nocnika-u-dziecka-poradnik-dla-rodzicw/img_picsum_1.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-21-jak-bezpiecznie-wprowadza-trening-nocnika-u-dziecka-poradnik-dla-rodzicw/img_picsum_1.jpg",
     "img/generated/2025-11-21-jak-bezpiecznie-wprowadza-trening-nocnika-u-dziecka-poradnik-dla-rodzicw/img_picsum_2.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-21-jak-bezpiecznie-wprowadza-trening-nocnika-u-dziecka-poradnik-dla-rodzicw/img_picsum_2.jpg",
-    "img/generated/2025-11-21-jak-bezpiecznie-wprowadza-trening-nocnika-u-dziecka-poradnik-dla-rodzicw/img_picsum_3.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-21-jak-bezpiecznie-wprowadza-trening-nocnika-u-dziecka-poradnik-dla-rodzicw/img_picsum_3.jpg"
+    "img/generated/2025-11-21-jak-bezpiecznie-wprowadza-trening-nocnika-u-dziecka-poradnik-dla-rodzicw/img_picsum_3.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-21-jak-bezpiecznie-wprowadza-trening-nocnika-u-dziecka-poradnik-dla-rodzicw/img_picsum_3.jpg",
+    "img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_0.jpeg",
+    "img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_1.jpeg",
+    "img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_2.jpeg",
+    "img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_3.jpeg"
   }
 }
