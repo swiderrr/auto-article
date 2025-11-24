@@ -1203,19 +1203,20 @@ if __name__ == "__main__":
                 except Exception as e:
                     print('Failed to update .s3_migration_map.json:', e)
 
-            # Set featured image to first uploaded URL if present, otherwise fall back to existing map or local path
+            # Set featured image - use S3 URL if s3_base configured, otherwise local path
             local_path = f"/img/generated/{slug}/{imgs[0]['filename']}"
-            featured_url = None
-            
-            # Only use S3 URLs if files were actually uploaded to S3
             s3_local_key = f"img/generated/{slug}/{imgs[0]['filename']}"
+            
+            # Check if already uploaded (in map)
             if s3_local_key in s3_map:
                 featured_url = s3_map.get(s3_local_key)
-            elif uploaded_map:  # Only use s3_base if we just uploaded files
-                if s3_base and s3_local_key in uploaded_map:
-                    featured_url = s3_base.rstrip('/') + '/' + s3_local_key.lstrip('/')
+            # Or use s3_base to construct URL (for manual S3 uploads or CI/CD)
+            elif s3_base:
+                featured_url = s3_base.rstrip('/') + '/' + s3_local_key.lstrip('/')
+            else:
+                featured_url = local_path
             
-            data['featured_image'] = featured_url or local_path
+            data['featured_image'] = featured_url
 
             # Replace [IMAGE-n] placeholders with actual images or add them in logical places
             body = data.get('body', '')
@@ -1238,18 +1239,17 @@ if __name__ == "__main__":
                 photographer = _sanitize_attr(img.get('photographer') or '')
                 caption_text = _sanitize_attr((img.get('description') or '') + (f" (Photo: {img.get('photographer')})" if img.get('photographer') else ''))
 
-                # Only use /img/generated/<slug>/img_0.jpeg, never /posts/<slug>/img/generated/...
-                # Prefer S3-hosted image if actually uploaded, otherwise use local path
+                # Use S3 URL if s3_base configured, otherwise local path
                 rel_img_path = f"img/generated/{slug}/{img['filename']}"
+                
+                # Check if already in S3 map
                 if rel_img_path in s3_map:
                     img_src = s3_map.get(rel_img_path)
-                elif uploaded_map and rel_img_path in uploaded_map:  # Only if we just uploaded
-                    if s3_base:
-                        img_src = s3_base.rstrip('/') + '/' + rel_img_path.lstrip('/')
-                    else:
-                        img_src = "/" + rel_img_path
+                # Or construct S3 URL if s3_base configured
+                elif s3_base:
+                    img_src = s3_base.rstrip('/') + '/' + rel_img_path.lstrip('/')
                 else:
-                    # Use local path with leading slash
+                    # Use local path with leading slash for development
                     img_src = "/" + rel_img_path
 
                 img_md = (
