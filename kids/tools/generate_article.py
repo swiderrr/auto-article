@@ -17,7 +17,6 @@ from advanced_seo import AdvancedSEOHelper
 from PIL import Image
 import toml
 import yaml
-from sora_image_manager import SoraImageManager
 from scientific_research import ScientificResearchManager
 
 # Initialize Advanced SEO helper
@@ -756,6 +755,7 @@ if __name__ == "__main__":
     def _translate_to_english(q):
         """Translate Polish terms to English for better image search results."""
         mapping = {
+            r"\bpierwsz(e|a|y|ego|ych)\b": "first",
             r"\bkarmienie piersia\b": "baby breastfeeding mother",
             r"\bkarmienie piersią\b": "baby breastfeeding mother",
             r"\bbutelka\b": "baby bottle feeding",
@@ -763,51 +763,51 @@ if __name__ == "__main__":
             r"\bzasypianie\b": "baby sleeping",
             r"\bmetody zasypiania\b": "baby sleep routine",
             r"\bdrzemki\b": "baby napping",
-            r"\bpiel(e|ę)gnacja\b": "baby care",
+            r"\bpiel(e|ę)gnacj(a|i|ą)\b": "baby care",
             r"\bpieluszki\b": "baby diaper changing",
             r"\bwyprawka\b": "baby nursery essentials",
-            r"\bw\u00F3zek\b": "baby stroller",
+            r"\bw[oó]zek\b": "baby stroller",
             r"\bfotelik\b": "baby car seat",
             r"\bkrzese(ł|l)ko do karmienia\b": "baby high chair",
             r"\bnocnik\b": "potty training toddler",
             r"\bkarmienie mieszane\b": "baby mixed feeding",
-            r"\b\u017Clobek\b": "daycare children",
+            r"\b[zż][łl]obek\b": "daycare children",
             r"\bprzedszkole\b": "preschool children",
-            r"\bszczepienia\b": "infant vaccination pediatrician",
+            r"\bszczepie[ńn](|a|ia|iach|iu)\b": "infant vaccination pediatrician",
             r"\bkalendarz szczepień\b": "baby vaccination doctor",
-            r"\bsuplementy\b": "baby vitamins supplements",
-            r"\bwitamina d\b": "baby vitamin d drops",
+            r"\bsuplement(y|ów|acja)\b": "baby vitamins supplements",
+            r"\bwitamin(a|y) d\b": "baby vitamin d drops",
             r"\bmleko modyfikowane\b": "baby formula milk",
             r"\bpierwsza pomoc\b": "baby first aid",
             r"\bproblemy ze snem\b": "baby sleep problems",
             r"\bproblemy z zasypianiem\b": "baby bedtime routine",
             r"\bwychowanie\b": "parenting baby toddler",
-            r"\bniemowla\b": "newborn baby",
-            r"\bniemowlak\b": "infant baby",
-            r"\bbezpieczenstwo\b": "baby safety home",
-            r"\bbezpiecze(ń|n)stwo\b": "baby safety",
-            r"\bniemowl(e|ę|ak)\b": "baby infant",
+            r"\bniemowl(a|ę|ęcia|ąt|ak|akiem)\b": "newborn baby infant",
+            r"\bnoworo(dek|dk|dka|dkiem)\b": "newborn baby",
+            r"\bbezpiecze[ńn](|stwo|stwa)\b": "baby safety home",
             r"\bdziecko\b": "child",
+            r"\bdzieck(a|o|i|iem)\b": "child",
             r"\bdzieci\b": "children",
+            r"\bmaluszu?k(a|i|iem)?\b": "baby",
             r"\bsen\b": "baby sleeping",
             r"\busypianie\b": "baby bedtime",
             r"\bokres snu\b": "baby sleep",
-            r"\bodporno(s|ś)ć\b": "baby immunity health",
-            r"\bodporno[sś]ci\b": "baby immune system",
+            r"\bodporno[sś](ć|ci)\b": "baby immunity health",
             r"\bkarmienie\b": "baby feeding",
             r"\bjedzenie\b": "baby food",
             r"\bdieta\b": "baby diet nutrition",
-            r"\bposi(\u0142|l)ek\b": "baby meal",
-            r"\brodzic\b": "parent baby",
-            r"\brodzice\b": "parents baby",
-            r"\bopiek(a|ą)\b": "baby care parent",
-            r"\brozwoj\b": "baby development",
-            r"\brozwój\b": "child development",
+            r"\bposi(ł|l)ek\b": "baby meal",
+            r"\brodzic(a|e|ów)?\b": "parent baby",
+            r"\bopiek(a|ą|i)\b": "baby care parent",
+            r"\brozw[oó]j(|u)\b": "child development",
             r"\bzabawki\b": "baby toys",
-            r"\bporady\b": "parenting advice",
-            r"\bwskaz(ów|ow)ki\b": "parenting tips",
-            r"\bzdrowie\b": "baby health pediatric",
-            r"\bprzytulno(s|ś)c\b": "baby comfort",
+            r"\bporad(y|a)\b": "parenting advice",
+            r"\bwskaz[oó]w?k(i|a)\b": "parenting tips",
+            r"\bzdrowi(e|a|u)\b": "baby health pediatric",
+            r"\bprzytulno[sś](ć|ci)\b": "baby comfort",
+            r"\bjak\b": "how",
+            r"\bco\b": "what",
+            r"\bdla\b": "for",
         }
         s = q.lower()
         for pat, rep in mapping.items():
@@ -815,6 +815,18 @@ if __name__ == "__main__":
                 s = re.sub(pat, rep, s, flags=re.IGNORECASE)
             except re.error:
                 continue
+        
+        # Remove all Polish special characters
+        polish_chars = {
+            'ą': 'a', 'ć': 'c', 'ę': 'e', 'ł': 'l', 'ń': 'n',
+            'ó': 'o', 'ś': 's', 'ź': 'z', 'ż': 'z',
+            'Ą': 'a', 'Ć': 'c', 'Ę': 'e', 'Ł': 'l', 'Ń': 'n',
+            'Ó': 'o', 'Ś': 's', 'Ź': 'z', 'Ż': 'z'
+        }
+        for pl, en in polish_chars.items():
+            s = s.replace(pl, en)
+        
+        # Clean up non-ASCII and extra spaces
         s = re.sub(r"[^\w\s-]", " ", s)
         s = re.sub(r"\s+", " ", s).strip()
         return s
