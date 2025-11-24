@@ -1,6 +1,10 @@
 {{- $title := .Params.seo.title | default .Title -}}
 {{- /* Backwards compatible lookup: seo.description preferred, fall back to seo.meta_description then summary then site description */ -}}
 {{- $description := .Params.seo.description | default .Params.seo.meta_description | default .Params.summary | default .Site.Params.description -}}
+{{- /* Append research databases info to description if article is AI-generated with research */ -}}
+{{- if and .Params.ai_generated .Params.research_databases -}}
+	{{- $description = printf "%s | Oparty na badaniach z baz: %s" $description (delimit .Params.research_databases ", ") -}}
+{{- end -}}
 {{- /* Handle featured image: .Params.featured_image may be a string, but Site.Params.defaultImage
 			 in this project is a map (tables). Safely extract a string image path using kindIs and scratch. */ -}}
 {{- $imageRaw := .Params.featured_image | default .Site.Params.defaultImage -}}
@@ -54,7 +58,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-<link rel="manifest" href="/icons/site.webmanifest">
+<link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="{{ .Site.Params.themeColor | default "#ff6a00" }}">
 
 <!-- Article specific -->

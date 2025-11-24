@@ -14,6 +14,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   gtag('config', 'G-3BFPVEC0N9');
 </script>
+
+{{ if not (eq (getenv "HUGO_ENV") "development") }}
+{{ if not hugo.IsServer }}
 <script type="text/javascript">
 var _iub = _iub || [];
 _iub.csConfiguration = {"siteId":4303299,"cookiePolicyId":98092392,"lang":"pl","storage":{"useSiteId":true}};
@@ -26,6 +29,8 @@ _iub.csConfiguration = {"siteId":4303299,"cookiePolicyId":98092392,"lang":"pl","
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1557774267812462" crossorigin="anonymous"></script>
 <!-- End Google AdSense -->
+{{ end }}
+{{ end }}
 
 {{ partial "head/meta.html" . }}
 {{ partial "head/seo.html" . }}

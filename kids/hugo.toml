@@ -2,7 +2,7 @@ baseURL = 'https://poradnik-rodzica.com.pl/'
 languageCode = 'pl-pl'
 defaultContentLanguage = 'pl'
 title = 'Poradnik Rodzica'
-relativeURLs = true
+relativeURLs = false
 canonifyURLs = false
 
 # Use module instead of theme

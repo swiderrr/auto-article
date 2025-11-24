@@ -1,6 +1,7 @@
 **/venv
 # ignore Python virtual env created at repo root
 .venv/
+.env
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

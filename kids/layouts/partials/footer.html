@@ -2,6 +2,14 @@
   <div class="container">
     <p>&copy; {{ with .Site.Params.footer.since }}{{ . }}-{{ end }}{{ now.Format "2006" }} {{ .Site.Title }}</p>
     {{ with .Site.Params.footer.customText }}<p>{{ . }}</p>{{ end }}
+    <p style="font-size:0.9em;opacity:0.8;margin:12px 0;">
+      <strong>🔬 Nauka na pierwszym miejscu</strong><br>
+      Nasze artykuły są generowane przez AI na podstawie badań naukowych z renomowanych baz medycznych:<br>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener" style="color:inherit;">PubMed</a> • 
+      <a href="https://europepmc.org/" target="_blank" rel="noopener" style="color:inherit;">Europe PMC</a> • 
+      <a href="https://www.crossref.org/" target="_blank" rel="noopener" style="color:inherit;">CrossRef</a> • 
+      <a href="https://www.semanticscholar.org/" target="_blank" rel="noopener" style="color:inherit;">Semantic Scholar</a>
+    </p>
     <p><a href="{{ "/page/polityka-prywatnosci/" | relURL }}">Polityka prywatności i RODO</a></p>
   </div>
 </footer>

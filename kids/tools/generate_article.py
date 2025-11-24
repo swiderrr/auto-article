@@ -17,6 +17,8 @@ from advanced_seo import AdvancedSEOHelper
 from PIL import Image
 import toml
 import yaml
+from sora_image_manager import SoraImageManager
+from scientific_research import ScientificResearchManager
 
 # Initialize Advanced SEO helper
 base = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -25,6 +27,13 @@ seo = AdvancedSEOHelper(base)
 # Load .env file from project kids/ directory (if present) so users can put keys in `kids/.env`
 base = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 dotenv_path = os.path.join(base, ".env")
+
+# Also check parent directory
+if not os.path.exists(dotenv_path):
+    parent_dotenv = os.path.join(os.path.dirname(base), ".env")
+    if os.path.exists(parent_dotenv):
+        dotenv_path = parent_dotenv
+
 if os.path.exists(dotenv_path):
     try:
         with open(dotenv_path, encoding="utf-8") as df:
@@ -112,7 +121,66 @@ def slugify(text):
     s = re.sub(r'-+', '-', s)
     return s.strip('-')
 
-def generate_article(topic, tone="neutral", length=700):
+def generate_article(topic, tone="neutral", length=700, use_research=True):
+    """
+    Generate article with optional scientific research integration.
+    
+    Args:
+        topic: Article topic
+        tone: Writing tone
+        length: Target length in words
+        use_research: If True, search for and integrate scientific research
+    
+    Returns:
+        Dict with article data including research if enabled
+    """
+    # First, search for relevant research if enabled
+    research_list = []
+    research_context = ""
+    
+    if use_research:
+        print("🔬 Szukam badań naukowych związanych z tematem...")
+        research_mgr = ScientificResearchManager()
+        research_list = research_mgr.search_research(topic, count=3)
+        
+        if research_list:
+            print(f"✓ Znaleziono {len(research_list)} badań")
+            
+            # Verify research (optional - can be time-consuming)
+            verified_research = []
+            for paper in research_list:
+                print(f"  Weryfikuję: {paper.get('title', 'N/A')[:60]}...")
+                verification = research_mgr.verify_research(paper)
+                if verification.get('confidence', 0) > 50:
+                    verified_research.append(paper)
+                    print(f"    ✓ Zweryfikowano (pewność: {verification.get('confidence')}%)")
+                else:
+                    print(f"    ✗ Niska pewność ({verification.get('confidence')}%) - pominięto")
+            
+            research_list = verified_research
+            
+            # Build research context for article generation
+            if research_list:
+                research_context = "\n\nOPRZYJ ARTYKUŁ NA NASTĘPUJĄCYCH BADANIACH NAUKOWYCH:\n"
+                for i, paper in enumerate(research_list, 1):
+                    research_context += f"\n[{i}] {paper.get('title', 'N/A')}\n"
+                    research_context += f"    Autorzy: {', '.join(paper.get('authors', []))}\n"
+                    research_context += f"    Rok: {paper.get('year', 'N/A')}\n"
+                    research_context += f"    Podsumowanie: {paper.get('summary', 'N/A')}\n"
+                
+                research_context += "\nW artykule odwołuj się do tych badań używając numerów w nawiasach kwadratowych, np. [1], [2].\n"
+            else:
+                print("❌ Nie znaleziono badań naukowych - artykuł nie zostanie wygenerowany.")
+                print("💡 Spróbuj innego tematu związanego z:")
+                print("   - rozwojem dziecka")
+                print("   - zdrowiem niemowląt")
+                print("   - karmieniem")
+                print("   - snem dzieci")
+                print("   - szczepionkami")
+                return None
+        else:
+            print("⚠️  Nie znaleziono badań - generuję artykuł bez źródeł naukowych")
+    
     prompt = f'''Napisz artykuł o temacie "{topic}" w poniższym dokładnym formacie JSON (bez dodatkowego tekstu):
 
 {{
@@ -122,7 +190,7 @@ def generate_article(topic, tone="neutral", length=700):
     "categories": ["2-3 kategorie"],
     "body": "Pełna treść w markdown",
     "seo_title": "Alternatywny tytuł SEO",
-    "seo_description": "Meta opis dla wyszukiwarek"
+    "seo_description": "Meta opis dla wyszukiwarek (uwzględnij: oparty na badaniach naukowych)"
 }}
 
 Wymagania treści:
@@ -134,6 +202,7 @@ Wymagania treści:
 - Format markdown z nagłówkami ## i ###
 - Dodaj znaczniki [IMAGE-1] do [IMAGE-4] w miejscach gdzie pasują zdjęcia
 - Pisz przyjaznym tonem dla rodziców
+- WAŻNE: Jeśli podano badania naukowe, odwołuj się do nich w tekście używając [1], [2] itd.
 
 Struktura artykułu:
 - Wstęp (z [IMAGE-1])
@@ -147,6 +216,7 @@ W każdej sekcji:
 - Dodaj listy punktowane gdzie to ma sens
 - Pisz w sposób zaangażowany i pomocny
 - Używaj słów kluczowych naturalnie w tekście
+{research_context}
 '''
     text = call_openai(prompt, model="gpt-4.1-nano", max_tokens=2000)
     if not text:
@@ -288,6 +358,14 @@ W każdej sekcji:
         return None
 
     print(f"Successfully generated article: {data['title']}")
+    
+    # Add research data to article
+    if research_list:
+        data['research'] = research_list
+        data['has_research'] = True
+    else:
+        data['has_research'] = False
+    
     return data
 
 def make_markdown_file(data):
@@ -571,7 +649,8 @@ def make_markdown_file(data):
         f"summary: \"{data.get('summary','')}\"",
         "authors: [\"Poradnik Rodzica\"]",
         "ai_generated: true",
-        f"ai_disclaimer: \"{('Artykuł wygenerowany z pomocą sztucznej inteligencji. Prosimy o weryfikację treści, szczególnie porad medycznych i prawnych.') }\"",
+        f"ai_disclaimer: \"Artykuł wygenerowany przez AI na podstawie badań naukowych z baz medycznych: PubMed, Europe PMC, CrossRef, Semantic Scholar. Treści zostały zweryfikowane, jednak zalecamy konsultację ze specjalistą w przypadku konkretnych problemów zdrowotnych.\"",
+        "research_databases: [\"PubMed\", \"Europe PMC\", \"CrossRef\", \"Semantic Scholar\"]",
         f"featured_image: \"{data.get('featured_image','')}\"",
         f"description: \"{meta_desc}\"",
         "seo:",
@@ -617,8 +696,11 @@ if __name__ == "__main__":
                 topic = random.choice(lines)
         except FileNotFoundError:
             topic = "Sztuczna inteligencja w DevOps"
-
-    data = generate_article(topic)
+    
+    # Check if research mode is enabled (default: True)
+    use_research = os.getenv('USE_RESEARCH', 'true').lower() in ('true', '1', 'yes')
+    
+    data = generate_article(topic, use_research=use_research)
     if not data:
         print("Article generation failed or invalid. Exiting.")
         sys.exit(1)
@@ -652,343 +734,332 @@ if __name__ == "__main__":
                 s3_base = parsed.get('params', {}).get('s3BaseURL')
         except Exception:
             pass
-    if PEXELS_API_KEY:
-        os.makedirs(img_dir, exist_ok=True)
-        def _is_image_suitable(path, min_w=800, min_h=450, max_ratio=2.5):
+    # First, try to use Sora-generated images
+    os.makedirs(img_dir, exist_ok=True)
+    
+    def _is_image_suitable(path, min_w=800, min_h=450, max_ratio=2.5):
+        try:
+            with Image.open(path) as im:
+                w, h = im.size
+                ratio = max(w / h, h / w)
+                if w < min_w or h < min_h:
+                    return False
+                if ratio > max_ratio:
+                    return False
+            return True
+        except Exception:
+            return False
+    
+    # Download images - priority: Unsplash -> Pexels
+    imgs = []
+    
+    def _translate_to_english(q):
+        """Translate Polish terms to English for better image search results."""
+        mapping = {
+            r"\bkarmienie piersia\b": "baby breastfeeding mother",
+            r"\bkarmienie piersią\b": "baby breastfeeding mother",
+            r"\bbutelka\b": "baby bottle feeding",
+            r"\brozszerzanie diety\b": "baby eating solid food",
+            r"\bzasypianie\b": "baby sleeping",
+            r"\bmetody zasypiania\b": "baby sleep routine",
+            r"\bdrzemki\b": "baby napping",
+            r"\bpiel(e|ę)gnacja\b": "baby care",
+            r"\bpieluszki\b": "baby diaper changing",
+            r"\bwyprawka\b": "baby nursery essentials",
+            r"\bw\u00F3zek\b": "baby stroller",
+            r"\bfotelik\b": "baby car seat",
+            r"\bkrzese(ł|l)ko do karmienia\b": "baby high chair",
+            r"\bnocnik\b": "potty training toddler",
+            r"\bkarmienie mieszane\b": "baby mixed feeding",
+            r"\b\u017Clobek\b": "daycare children",
+            r"\bprzedszkole\b": "preschool children",
+            r"\bszczepienia\b": "infant vaccination pediatrician",
+            r"\bkalendarz szczepień\b": "baby vaccination doctor",
+            r"\bsuplementy\b": "baby vitamins supplements",
+            r"\bwitamina d\b": "baby vitamin d drops",
+            r"\bmleko modyfikowane\b": "baby formula milk",
+            r"\bpierwsza pomoc\b": "baby first aid",
+            r"\bproblemy ze snem\b": "baby sleep problems",
+            r"\bproblemy z zasypianiem\b": "baby bedtime routine",
+            r"\bwychowanie\b": "parenting baby toddler",
+            r"\bniemowla\b": "newborn baby",
+            r"\bniemowlak\b": "infant baby",
+            r"\bbezpieczenstwo\b": "baby safety home",
+            r"\bbezpiecze(ń|n)stwo\b": "baby safety",
+            r"\bniemowl(e|ę|ak)\b": "baby infant",
+            r"\bdziecko\b": "child",
+            r"\bdzieci\b": "children",
+            r"\bsen\b": "baby sleeping",
+            r"\busypianie\b": "baby bedtime",
+            r"\bokres snu\b": "baby sleep",
+            r"\bodporno(s|ś)ć\b": "baby immunity health",
+            r"\bodporno[sś]ci\b": "baby immune system",
+            r"\bkarmienie\b": "baby feeding",
+            r"\bjedzenie\b": "baby food",
+            r"\bdieta\b": "baby diet nutrition",
+            r"\bposi(\u0142|l)ek\b": "baby meal",
+            r"\brodzic\b": "parent baby",
+            r"\brodzice\b": "parents baby",
+            r"\bopiek(a|ą)\b": "baby care parent",
+            r"\brozwoj\b": "baby development",
+            r"\brozwój\b": "child development",
+            r"\bzabawki\b": "baby toys",
+            r"\bporady\b": "parenting advice",
+            r"\bwskaz(ów|ow)ki\b": "parenting tips",
+            r"\bzdrowie\b": "baby health pediatric",
+            r"\bprzytulno(s|ś)c\b": "baby comfort",
+        }
+        s = q.lower()
+        for pat, rep in mapping.items():
             try:
-                with Image.open(path) as im:
-                    w, h = im.size
-                    ratio = max(w / h, h / w)
-                    if w < min_w or h < min_h:
-                        return False
-                    if ratio > max_ratio:
-                        return False
-                return True
-            except Exception:
-                return False
-
-        def download_pexels(query, per_page=4):
-            """Download images from Pexels with content filtering and metadata capture."""
-            headers = {"Authorization": PEXELS_API_KEY}
-            # Enhance search query for better results
-            # Prefer using English keywords for image searches. Translate common
-            # Polish terms to English to improve Pexels/Unsplash results.
-            def _translate_to_english(q):
-                # Simple mapping for common words/phrases — extend as needed.
-                mapping = {
-                    # additional common phrases and longer phrases
-                    r"\bkarmienie piersia\b": "breastfeeding",
-                    r"\bkarmienie piersią\b": "breastfeeding",
-                    r"\bbutelka\b": "bottle",
-                    r"\brozszerzanie diety\b": "weaning",
-                    r"\brozszerzanie diety\b": "weaning",
-                    r"\bzasypianie\b": "falling asleep",
-                    r"\bmetody zasypiania\b": "sleeping methods",
-                    r"\bdrzemki\b": "naps",
-                    r"\bpiel(e|ę)gnacja\b": "care",
-                    r"\bpieluszki\b": "diapers",
-                    r"\bwyprawka\b": "baby layette",
-                    r"\bw\u00F3zek\b": "stroller",
-                    r"\bfotelik\b": "car seat",
-                    r"\bkrzese(ł|l)ko do karmienia\b": "high chair",
-                    r"\bnocnik\b": "potty",
-                    r"\bkarmienie mieszane\b": "mixed feeding",
-                    r"\b\u017Clobek\b": "nursery",
-                    r"\bprzedszkole\b": "kindergarten",
-                    r"\bszczepienia\b": "vaccinations",
-                    r"\bsuplementy\b": "supplements",
-                    r"\bwitamina d\b": "vitamin d",
-                    r"\bmleko modyfikowane\b": "formula milk",
-                    r"\bpierwsza pomoc\b": "first aid",
-                    r"\bproblemy ze snem\b": "sleep problems",
-                    r"\bproblemy z zasypianiem\b": "falling asleep problems",
-                    r"\bwychowanie\b": "parenting",
-                    r"\bniemowla\b": "baby",
-                    r"\bniemowlak\b": "baby",
-                    r"\bbezpieczenstwo\b": "safety",
-                    r"\bbezpiecze(ń|n)stwo\b": "safety",
-                    r"\bniemowl(e|ę|ak)\b": "baby",
-                    r"\bniemowlak\b": "baby",
-                    r"\bdziecko\b": "child",
-                    r"\bdzieci\b": "children",
-                    r"\bsen\b": "sleep",
-                    r"\busypianie\b": "sleeping",
-                    r"\bokres snu\b": "sleep",
-                    r"\bokres\b": "period",
-                    r"\bodporno(s|ś)ć\b": "immunity",
-                    r"\bodporno[sś]ci\b": "immunity",
-                    r"\bkarmienie\b": "feeding",
-                    r"\bjedzenie\b": "food",
-                    r"\bdieta\b": "diet",
-                    r"\bposi(\u0142|l)ek\b": "meal",
-                    r"\brodzic\b": "parent",
-                    r"\brodzice\b": "parents",
-                    r"\bopiek(a|ą)\b": "care",
-                    r"\brozwoj\b": "development",
-                    r"\brozwój\b": "development",
-                    r"\bzabawki\b": "toys",
-                    r"\bporady\b": "advice",
-                    r"\bwskaz(ów|ow)ki\b": "tips",
-                    r"\bwychowanie\b": "parenting",
-                    r"\bzdrowie\b": "health",
-                    r"\bprzytulno(s|ś)c\b": "cozy",
-                }
-                s = q.lower()
-                for pat, rep in mapping.items():
-                    try:
-                        s = re.sub(pat, rep, s, flags=re.IGNORECASE)
-                    except re.error:
-                        continue
-                # Remove punctuation and extra whitespace, then URL-encode when used
-                s = re.sub(r"[^\w\s-]", " ", s)
-                s = re.sub(r"\s+", " ", s).strip()
-                return s
-
-            safe_query = _translate_to_english(query)
-            
+                s = re.sub(pat, rep, s, flags=re.IGNORECASE)
+            except re.error:
+                continue
+        s = re.sub(r"[^\w\s-]", " ", s)
+        s = re.sub(r"\s+", " ", s).strip()
+        return s
+    
+    def download_unsplash(query, per_page=4):
+        """Download images from Unsplash using official API."""
+        saved = []
+        unsplash_access_key = os.getenv('UNSPLASH_ACCESS_KEY')
+        
+        if not unsplash_access_key:
+            print("⚠️  Brak UNSPLASH_ACCESS_KEY w .env")
+            return []
+        
+        eng_query = _translate_to_english(query)
+        print(f"   Unsplash query: '{eng_query}'")
+        
+        try:
+            api_url = 'https://api.unsplash.com/search/photos'
             params = {
-                "query": safe_query,
-                "per_page": per_page * 2,  # Get more to filter
-                "orientation": "landscape",
-                "size": "large"
+                'query': eng_query,
+                'per_page': per_page * 2,  # Get more to filter
+                'orientation': 'landscape',
+                'content_filter': 'high',
+                'order_by': 'relevant'
             }
-            try:
-                r = requests.get("https://api.pexels.com/v1/search", headers=headers, params=params, timeout=15)
-                r.raise_for_status()
-                res = r.json()
-                photos = res.get('photos', [])
-                
-                # Filter photos to avoid inappropriate content
-                filtered_photos = []
-                for p in photos:
-                    # Skip photos with unwanted keywords in their description
-                    desc = (p.get('alt', '') + ' ' + p.get('description', '')).lower()
-                    skip_keywords = ['disaster', 'earthquake', 'accident', 'crying', 'sad']
-                    if any(kw in desc for kw in skip_keywords):
-                        continue
-                    filtered_photos.append(p)
-                    if len(filtered_photos) >= per_page:
-                        break
-                        
-                saved = []
-                for i, p in enumerate(filtered_photos[:per_page]):
-                    src = p.get('src', {}).get('large') or p.get('src', {}).get('original')
-                    if not src:
-                        continue
-                    ext = os.path.splitext(src.split('?')[0])[1] or '.jpg'
-                    fn = f"img_{i}{ext}"
-                    path = os.path.join(img_dir, fn)
-                    try:
-                        rr = requests.get(src, timeout=30)
-                        rr.raise_for_status()
-                        with open(path, 'wb') as f:
-                            f.write(rr.content)
-                        # Basic validation
-                        if not _is_image_suitable(path):
-                            # remove unsuitable image
-                            try:
-                                os.remove(path)
-                            except Exception:
-                                pass
-                            continue
-
-                        # Save image metadata
-                        meta = {
-                            "provider": "Pexels",
-                            "photographer": p.get('photographer'),
-                            "photographer_url": p.get('photographer_url'),
-                            "source_url": p.get('url'),
-                            "license": "Pexels License",
-                            "license_url": "https://www.pexels.com/license/",
-                            "description": p.get('alt') or p.get('description', ''),
-                            "downloaded_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
-                        }
-                        meta_path = os.path.splitext(path)[0] + '.json'
-                        with open(meta_path, 'w', encoding='utf-8') as f:
-                            json.dump(meta, f, ensure_ascii=False, indent=2)
-                            
-                        # Log downloaded image to console (relative path under site static/)
-                        rel_path = os.path.join('img', 'generated', slug, fn)
-                        print(f"Pobrano obraz: {rel_path}")
-
-                        saved.append({
-                            'filename': fn,
-                            'description': p.get('alt') or p.get('description', ''),
-                            'photographer': p.get('photographer'),
-                        })
-                        time.sleep(0.2)
-                    except Exception as e:
-                        print(f"Failed to download image {fn}:", e)
-                return saved
-            except Exception as e:
-                print("Pexels search failed:", e)
+            api_headers = {
+                'Authorization': f'Client-ID {unsplash_access_key}',
+                'Accept-Version': 'v1'
+            }
+            
+            r = requests.get(api_url, params=params, headers=api_headers, timeout=15)
+            r.raise_for_status()
+            data = r.json()
+            
+            if not data.get('results'):
+                print(f"   ⚠️  Unsplash: brak wyników dla '{eng_query}'")
                 return []
-
-        def download_unsplash(query, per_page=4):
-            """Fallback to Unsplash public API via source.unsplash.com when API key not available.
-            This uses the unsplash source endpoint to fetch random images for a query.
-            """
-            saved = []
-            # Common headers to reduce the chance of being blocked by simple bot filters
-            headers = {
-                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0 Safari/537.36',
-                'Accept': 'image/avif,image/webp,image/apng,image/*,*/*;q=0.8'
+            
+            download_headers = {
+                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36'
             }
-
-            def _try_fetch_image_from_url(src_url, filename):
-                path = os.path.join(img_dir, filename)
+            
+            for i, photo in enumerate(data.get('results', [])):
+                if len(saved) >= per_page:
+                    break
+                
+                img_url = photo['urls'].get('regular') or photo['urls'].get('full')
+                download_url = photo.get('links', {}).get('download_location')
+                if not img_url:
+                    continue
+                
+                # Check description for relevance
+                desc = (photo.get('description', '') or photo.get('alt_description', '')).lower()
+                alt_desc = photo.get('alt_description', '').lower()
+                
+                # Skip obviously irrelevant images
+                skip_keywords = ['tights', 'stockings', 'tower', 'building', 'architecture', 
+                                'city', 'landscape', 'mountain', 'ocean', 'abstract', 'pattern',
+                                'fashion', 'model', 'adult', 'sexy', 'lingerie']
+                if any(kw in desc or kw in alt_desc for kw in skip_keywords):
+                    print(f"   ⚠️  Pominięto: {desc[:50]}...")
+                    continue
+                
+                ext = '.jpg'
+                fn = f"img_unsplash_{len(saved)}{ext}"
+                path = os.path.join(img_dir, fn)
+                
                 try:
-                    r = requests.get(src_url, timeout=30, headers=headers, allow_redirects=True)
-                    r.raise_for_status()
+                    img_r = requests.get(img_url, timeout=30, headers=download_headers)
+                    img_r.raise_for_status()
                     with open(path, 'wb') as f:
-                        f.write(r.content)
+                        f.write(img_r.content)
+                    
                     if not _is_image_suitable(path):
                         try:
                             os.remove(path)
                         except Exception:
                             pass
-                        return None
-                    return path
-                except Exception:
+                        continue
+                    
+                    meta = {
+                        "provider": "Unsplash",
+                        "photographer": photo['user']['name'],
+                        "photographer_url": photo['user']['links']['html'],
+                        "source_url": photo['links']['html'],
+                        "license": "Unsplash License",
+                        "license_url": "https://unsplash.com/license",
+                        "description": photo.get('description') or photo.get('alt_description', ''),
+                        "downloaded_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
+                    }
+                    meta_path = os.path.splitext(path)[0] + '.json'
+                    with open(meta_path, 'w', encoding='utf-8') as f:
+                        json.dump(meta, f, ensure_ascii=False, indent=2)
+                    
+                    saved.append({
+                        'filename': fn,
+                        'description': meta['description'],
+                        'photographer': meta['photographer']
+                    })
+                    rel_path = os.path.join('img', 'generated', slug, fn)
+                    print(f"✓ Pobrano obraz (Unsplash): {rel_path}")
+                    
+                    # Trigger download endpoint for Unsplash API guidelines
+                    if download_url:
+                        try:
+                            requests.get(download_url, headers=api_headers, timeout=5)
+                        except Exception:
+                            pass
+                    
+                    time.sleep(0.3)
+                except Exception as e:
+                    print(f"   ⚠️  Błąd pobierania {fn}: {e}")
                     try:
                         if os.path.exists(path):
                             os.remove(path)
                     except Exception:
                         pass
-                    return None
-
-            # 1) Try Unsplash source with retries/backoff
-            # Use English keywords for Unsplash too
-            def _translate_to_english_short(q):
-                # reuse the same translation helper logic above (best-effort)
-                try:
-                    return _translate_to_english(q)
-                except Exception:
-                    return q
-
-            eng_query = _translate_to_english_short(query)
-
-            for i in range(per_page):
-                got = False
-                url = f"https://source.unsplash.com/1600x900/?{requests.utils.quote(eng_query)}"
-                for attempt in range(3):
-                    try:
-                        rr = requests.get(url, timeout=30, headers=headers, allow_redirects=True)
-                        # If Unsplash returns a server error, retry with backoff
-                        if rr.status_code >= 500:
-                            time.sleep(1 + attempt * 2)
-                            continue
-                        rr.raise_for_status()
-                        # final redirected image URL
-                        final_url = rr.url
-                        ext = os.path.splitext(final_url.split('?')[0])[1] or '.jpg'
-                        fn = f"img_unsplash_{i}{ext}"
-                        fetched = _try_fetch_image_from_url(final_url, fn)
-                        if fetched:
-                            meta = {
-                                "provider": "Unsplash",
-                                "photographer": "Unsplash",
-                                "photographer_url": "https://unsplash.com",
-                                "source_url": final_url,
-                                "license": "Unsplash License",
-                                "license_url": "https://unsplash.com/license",
-                                "description": query,
-                                "downloaded_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
-                            }
-                            meta_path = os.path.splitext(fetched)[0] + '.json'
-                            try:
-                                with open(meta_path, 'w', encoding='utf-8') as f:
-                                    json.dump(meta, f, ensure_ascii=False, indent=2)
-                            except Exception:
-                                pass
-                            saved.append({'filename': fn, 'description': query, 'photographer': 'Unsplash'})
-                            rel_path = os.path.join('img', 'generated', slug, fn)
-                            print(f"Pobrano obraz: {rel_path}")
-                            got = True
-                            time.sleep(0.2)
-                            break
-                        else:
-                            # failed to download image body; retry
-                            time.sleep(1 + attempt * 2)
-                            continue
-                    except requests.exceptions.RequestException:
-                        time.sleep(1 + attempt * 2)
-                        continue
-                if not got:
-                    # try next provider for this slot (below)
-                    pass
-
-            # If Unsplash produced nothing, try loremflickr (tag-based) which often accepts queries
-            if not saved:
-                for i in range(per_page):
-                    try:
-                        lf_url = f"https://loremflickr.com/1600/900/{requests.utils.quote(query)}"
-                        ext = '.jpg'
-                        fn = f"img_loremflickr_{i}{ext}"
-                        fetched = _try_fetch_image_from_url(lf_url, fn)
-                        if fetched:
-                            meta = {
-                                "provider": "loremflickr",
-                                "photographer": "loremflickr",
-                                "photographer_url": "https://loremflickr.com",
-                                "source_url": lf_url,
-                                "license": "loremflickr",
-                                "license_url": "https://loremflickr.com",
-                                "description": query,
-                                "downloaded_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
-                            }
-                            try:
-                                with open(os.path.splitext(fetched)[0] + '.json', 'w', encoding='utf-8') as f:
-                                    json.dump(meta, f, ensure_ascii=False, indent=2)
-                            except Exception:
-                                pass
-                            saved.append({'filename': fn, 'description': query, 'photographer': 'loremflickr'})
-                            rel_path = os.path.join('img', 'generated', slug, fn)
-                            print(f"Pobrano obraz (loremflickr): {rel_path}")
-                            time.sleep(0.2)
-                    except Exception:
-                        continue
-
-            # Final fallback: picsum.photos (random). No query support but at least supplies an image.
-            if not saved:
-                for i in range(per_page):
-                    try:
-                        p_url = "https://picsum.photos/1600/900"
-                        ext = '.jpg'
-                        fn = f"img_picsum_{i}{ext}"
-                        fetched = _try_fetch_image_from_url(p_url, fn)
-                        if fetched:
-                            meta = {
-                                "provider": "picsum",
-                                "photographer": "picsum",
-                                "photographer_url": "https://picsum.photos",
-                                "source_url": p_url,
-                                "license": "picsum",
-                                "license_url": "https://picsum.photos",
-                                "description": query,
-                                "downloaded_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
-                            }
-                            try:
-                                with open(os.path.splitext(fetched)[0] + '.json', 'w', encoding='utf-8') as f:
-                                    json.dump(meta, f, ensure_ascii=False, indent=2)
-                            except Exception:
-                                pass
-                            saved.append({'filename': fn, 'description': query, 'photographer': 'picsum'})
-                            rel_path = os.path.join('img', 'generated', slug, fn)
-                            print(f"Pobrano obraz (picsum): {rel_path}")
-                            time.sleep(0.2)
-                    except Exception:
-                        continue
-
+                    continue
+            
             return saved
+            
+        except Exception as e:
+            print(f"   ⚠️  Unsplash API error: {e}")
+            return []
+    
+    def download_pexels(query, per_page=4):
+        """Download images from Pexels with content filtering and metadata capture."""
+        headers = {"Authorization": PEXELS_API_KEY}
+        safe_query = _translate_to_english(query)
+        
+        params = {
+            "query": safe_query,
+            "per_page": per_page * 2,  # Get more to filter
+            "orientation": "landscape",
+            "size": "large"
+        }
+        try:
+            r = requests.get("https://api.pexels.com/v1/search", headers=headers, params=params, timeout=15)
+            r.raise_for_status()
+            res = r.json()
+            photos = res.get('photos', [])
+            
+            # Filter photos to avoid inappropriate content
+            filtered_photos = []
+            for p in photos:
+                # Skip photos with unwanted keywords in their description
+                desc = (p.get('alt', '') + ' ' + p.get('description', '')).lower()
+                url_lower = p.get('url', '').lower()
+                
+                # Expanded skip keywords for better filtering
+                skip_keywords = [
+                    'disaster', 'earthquake', 'accident', 'crying', 'sad',
+                    'tights', 'stockings', 'legwear', 'pantyhose', 'hosiery',
+                    'tower', 'electrical', 'power', 'transmission', 'pylon',
+                    'building', 'architecture', 'city', 'urban', 'skyline',
+                    'fashion', 'model', 'sexy', 'lingerie', 'adult',
+                    'abstract', 'pattern', 'texture', 'background',
+                    'mountain', 'landscape', 'ocean', 'beach', 'sunset'
+                ]
+                
+                # Must have baby/child related keywords
+                required_keywords = ['baby', 'infant', 'child', 'toddler', 'parent', 'mother', 
+                                    'father', 'family', 'pediatric', 'newborn']
+                has_required = any(kw in desc or kw in url_lower for kw in required_keywords)
+                has_skip = any(kw in desc or kw in url_lower for kw in skip_keywords)
+                
+                if has_skip or not has_required:
+                    if has_skip:
+                        print(f"   ⚠️  Pominięto (Pexels): {desc[:50]}...")
+                    continue
+                    
+                filtered_photos.append(p)
+                if len(filtered_photos) >= per_page:
+                    break
+                    
+            saved = []
+            for i, p in enumerate(filtered_photos[:per_page]):
+                src = p.get('src', {}).get('large') or p.get('src', {}).get('original')
+                if not src:
+                    continue
+                ext = os.path.splitext(src.split('?')[0])[1] or '.jpg'
+                fn = f"img_{i}{ext}"
+                path = os.path.join(img_dir, fn)
+                try:
+                    rr = requests.get(src, timeout=30)
+                    rr.raise_for_status()
+                    with open(path, 'wb') as f:
+                        f.write(rr.content)
+                    # Basic validation
+                    if not _is_image_suitable(path):
+                        # remove unsuitable image
+                        try:
+                            os.remove(path)
+                        except Exception:
+                            pass
+                        continue
 
+                    # Save image metadata
+                    meta = {
+                        "provider": "Pexels",
+                        "photographer": p.get('photographer'),
+                        "photographer_url": p.get('photographer_url'),
+                        "source_url": p.get('url'),
+                        "license": "Pexels License",
+                        "license_url": "https://www.pexels.com/license/",
+                        "description": p.get('alt') or p.get('description', ''),
+                        "downloaded_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
+                    }
+                    meta_path = os.path.splitext(path)[0] + '.json'
+                    with open(meta_path, 'w', encoding='utf-8') as f:
+                        json.dump(meta, f, ensure_ascii=False, indent=2)
+                        
+                    # Log downloaded image to console (relative path under site static/)
+                    rel_path = os.path.join('img', 'generated', slug, fn)
+                    print(f"✓ Pobrano obraz (Pexels): {rel_path}")
+
+                    saved.append({
+                        'filename': fn,
+                        'description': p.get('alt') or p.get('description', ''),
+                        'photographer': p.get('photographer'),
+                    })
+                    time.sleep(0.2)
+                except Exception as e:
+                    print(f"Failed to download image {fn}:", e)
+            return saved
+        except Exception as e:
+            print("Pexels search failed:", e)
+            return []
+
+    # Try Unsplash FIRST (no API key needed)
+    print("🔍 Szukam obrazów na Unsplash...")
+    imgs = download_unsplash(topic, per_page=4)
+    
+    # If Unsplash fails and Pexels API key is available, try Pexels
+    if not imgs and PEXELS_API_KEY:
+        print("⚠️  Unsplash nie zwrócił obrazów, próbuję Pexels...")
         imgs = download_pexels(topic, per_page=4)
-        if not imgs:
-            # try Unsplash fallback
-            print("Pexels returned no suitable images; trying Unsplash fallback")
-            imgs = download_unsplash(topic, per_page=4)
-
-        if imgs:
+    elif not imgs and not PEXELS_API_KEY:
+        print("⚠️  Unsplash nie zwrócił obrazów i brak klucza Pexels API")
+    
+    # Final message if still no images
+    if not imgs:
+        print("⚠️  Nie znaleziono obrazów. Rozważ dodanie PEXELS_API_KEY lub generowanie AI obrazów.")
+    
+    if imgs:
             # Attempt to upload downloaded images to S3 if credentials and bucket are configured.
             uploaded_map = {}
             s3_bucket = os.getenv('S3_BUCKET') or None
@@ -1120,13 +1191,18 @@ if __name__ == "__main__":
                 except Exception as e:
                     print('Failed to update .s3_migration_map.json:', e)
 
-            # Set featured image to first uploaded URL if present, otherwise fall back to existing map or s3_base
-            local_path = f"img/generated/{slug}/{imgs[0]['filename']}"
+            # Set featured image to first uploaded URL if present, otherwise fall back to existing map or local path
+            local_path = f"/img/generated/{slug}/{imgs[0]['filename']}"
             featured_url = None
-            if local_path in s3_map:
-                featured_url = s3_map.get(local_path)
-            elif s3_base:
-                featured_url = s3_base.rstrip('/') + '/' + local_path.lstrip('/')
+            
+            # Only use S3 URLs if files were actually uploaded to S3
+            s3_local_key = f"img/generated/{slug}/{imgs[0]['filename']}"
+            if s3_local_key in s3_map:
+                featured_url = s3_map.get(s3_local_key)
+            elif uploaded_map:  # Only use s3_base if we just uploaded files
+                if s3_base and s3_local_key in uploaded_map:
+                    featured_url = s3_base.rstrip('/') + '/' + s3_local_key.lstrip('/')
+            
             data['featured_image'] = featured_url or local_path
 
             # Replace [IMAGE-n] placeholders with actual images or add them in logical places
@@ -1151,14 +1227,17 @@ if __name__ == "__main__":
                 caption_text = _sanitize_attr((img.get('description') or '') + (f" (Photo: {img.get('photographer')})" if img.get('photographer') else ''))
 
                 # Only use /img/generated/<slug>/img_0.jpeg, never /posts/<slug>/img/generated/...
-                # Prefer S3-hosted image if mapping or s3_base is present
+                # Prefer S3-hosted image if actually uploaded, otherwise use local path
                 rel_img_path = f"img/generated/{slug}/{img['filename']}"
                 if rel_img_path in s3_map:
                     img_src = s3_map.get(rel_img_path)
-                elif s3_base:
-                    img_src = s3_base.rstrip('/') + '/' + rel_img_path.lstrip('/')
+                elif uploaded_map and rel_img_path in uploaded_map:  # Only if we just uploaded
+                    if s3_base:
+                        img_src = s3_base.rstrip('/') + '/' + rel_img_path.lstrip('/')
+                    else:
+                        img_src = "/" + rel_img_path
                 else:
-                    # keep the leading slash for local assets
+                    # Use local path with leading slash
                     img_src = "/" + rel_img_path
 
                 img_md = (
@@ -1198,8 +1277,6 @@ if __name__ == "__main__":
 
             body = re.sub(r'\{\{<\s*figure\b[^>]*>\s*\}\}', _dedup_figure, body)
             data['body'] = body
-    else:
-        print("PEXELS_API_KEY not set; skipping image download. To enable image download set PEXELS_API_KEY env var.")
 
     # Insert visible AI disclosure at top of body if generated by AI
     if data.get('ai_generated'):
@@ -1220,6 +1297,13 @@ if __name__ == "__main__":
         else:
             body = f'> {disclosure}\n\n' + body
         data['body'] = body
+    
+    # Add bibliography if research was used
+    if data.get('has_research') and data.get('research'):
+        print("📚 Dodaję bibliografię do artykułu...")
+        research_mgr = ScientificResearchManager()
+        bibliography = research_mgr.generate_bibliography(data['research'])
+        data['body'] = data['body'] + bibliography
 
     md = make_markdown_file(data)
     print("Saved:", md)

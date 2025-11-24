@@ -6,12 +6,25 @@
 		</header>
 		{{/* AI disclosure: show explicit notice when front-matter indicates AI generation */}}
 		{{ if or .Params.ai_generated .Params.ai_disclaimer }}
-			<div class="ai-disclaimer" style="border-left:4px solid #eee;padding:10px;margin:12px 0;background:#f9f9f9;color:#333;">
-				{{ with .Params.ai_disclaimer }}
-					{{ . | safeHTML }}
-				{{ else }}
-					<strong>Uwaga:</strong> Ten artykuł został wygenerowany przy użyciu narzędzi sztucznej inteligencji. Treść ma charakter informacyjny — prosimy o dodatkową weryfikację w przypadkach medycznych, prawnych i innych specjalistycznych porad.
-				{{ end }}
+			<div class="ai-disclaimer" style="border-left:4px solid #2563eb;padding:16px;margin:20px 0;background:#eff6ff;color:#1e40af;border-radius:4px;">
+				<div style="display:flex;align-items:start;gap:12px;">
+					<svg style="width:24px;height:24px;min-width:24px;margin-top:2px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+					</svg>
+					<div>
+						<strong style="display:block;margin-bottom:8px;">🔬 Artykuł oparty na badaniach naukowych</strong>
+						{{ with .Params.ai_disclaimer }}
+							<p style="margin:0;line-height:1.6;">{{ . | safeHTML }}</p>
+						{{ else }}
+							<p style="margin:0;line-height:1.6;"><strong>Uwaga:</strong> Ten artykuł został wygenerowany przy użyciu narzędzi sztucznej inteligencji. Treść ma charakter informacyjny — prosimy o dodatkową weryfikację w przypadkach medycznych, prawnych i innych specjalistycznych porad.</p>
+						{{ end }}
+						{{ if .Params.research_databases }}
+							<p style="margin:8px 0 0 0;font-size:0.9em;opacity:0.9;">
+								<strong>Źródła:</strong> {{ delimit .Params.research_databases ", " }}
+							</p>
+						{{ end }}
+					</div>
+				</div>
 			</div>
 		{{ end }}
 		<section class="article-content">
