@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-23T08:14:47.667986+00:00",
+  "uploaded_at": "2025-11-24T08:18:15.573386+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -269,6 +269,10 @@
     "img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_0.jpeg",
     "img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_1.jpeg",
     "img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_2.jpeg",
-    "img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_3.jpeg"
+    "img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-23-pierwsze-klocki-i-zabawy-sensoryczne-rozwj-przez-zabaw/img_3.jpeg",
+    "img/generated/2025-11-24-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-24-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_0.jpeg",
+    "img/generated/2025-11-24-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-24-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_1.jpeg",
+    "img/generated/2025-11-24-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-24-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_2.jpeg",
+    "img/generated/2025-11-24-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-24-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_3.jpeg"
   }
 }
