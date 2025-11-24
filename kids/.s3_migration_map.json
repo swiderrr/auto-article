@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-24T20:04:45.936110+00:00",
+  "uploaded_at": "2025-11-24T20:10:13.806646+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -292,6 +292,10 @@
     "img/generated/2025-11-24-zrwnowaone-wychowanie-zero-waste-w-pielgnacji-niemowlcia/img_unsplash_0.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-24-zrwnowaone-wychowanie-zero-waste-w-pielgnacji-niemowlcia/img_unsplash_0.jpg",
     "img/generated/2025-11-24-zrwnowaone-wychowanie-zero-waste-w-pielgnacji-niemowlcia/img_unsplash_1.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-24-zrwnowaone-wychowanie-zero-waste-w-pielgnacji-niemowlcia/img_unsplash_1.jpg",
     "img/generated/2025-11-24-zrwnowaone-wychowanie-zero-waste-w-pielgnacji-niemowlcia/img_unsplash_2.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-24-zrwnowaone-wychowanie-zero-waste-w-pielgnacji-niemowlcia/img_unsplash_2.jpg",
-    "img/generated/2025-11-24-zrwnowaone-wychowanie-zero-waste-w-pielgnacji-niemowlcia/img_unsplash_3.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-24-zrwnowaone-wychowanie-zero-waste-w-pielgnacji-niemowlcia/img_unsplash_3.jpg"
+    "img/generated/2025-11-24-zrwnowaone-wychowanie-zero-waste-w-pielgnacji-niemowlcia/img_unsplash_3.jpg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-24-zrwnowaone-wychowanie-zero-waste-w-pielgnacji-niemowlcia/img_unsplash_3.jpg",
+    "img/generated/2025-11-24-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-mam/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-24-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-mam/img_0.jpeg",
+    "img/generated/2025-11-24-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-mam/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-24-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-mam/img_1.jpeg",
+    "img/generated/2025-11-24-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-mam/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-24-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-mam/img_2.jpeg",
+    "img/generated/2025-11-24-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-mam/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-24-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-mam/img_3.jpeg"
   }
 }
