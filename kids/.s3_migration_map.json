@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-26T08:17:31.508219+00:00",
+  "uploaded_at": "2025-11-28T08:17:51.782546+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -308,6 +308,10 @@
     "img/generated/2025-11-26-wczesne-wskazwki-dotyczce-higieny-i-zapobiegania-alergiom-u-dzieci/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-26-wczesne-wskazwki-dotyczce-higieny-i-zapobiegania-alergiom-u-dzieci/img_0.jpeg",
     "img/generated/2025-11-26-wczesne-wskazwki-dotyczce-higieny-i-zapobiegania-alergiom-u-dzieci/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-26-wczesne-wskazwki-dotyczce-higieny-i-zapobiegania-alergiom-u-dzieci/img_1.jpeg",
     "img/generated/2025-11-26-wczesne-wskazwki-dotyczce-higieny-i-zapobiegania-alergiom-u-dzieci/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-26-wczesne-wskazwki-dotyczce-higieny-i-zapobiegania-alergiom-u-dzieci/img_2.jpeg",
-    "img/generated/2025-11-26-wczesne-wskazwki-dotyczce-higieny-i-zapobiegania-alergiom-u-dzieci/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-26-wczesne-wskazwki-dotyczce-higieny-i-zapobiegania-alergiom-u-dzieci/img_3.jpeg"
+    "img/generated/2025-11-26-wczesne-wskazwki-dotyczce-higieny-i-zapobiegania-alergiom-u-dzieci/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-26-wczesne-wskazwki-dotyczce-higieny-i-zapobiegania-alergiom-u-dzieci/img_3.jpeg",
+    "img/generated/2025-11-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_0.jpeg",
+    "img/generated/2025-11-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_1.jpeg",
+    "img/generated/2025-11-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_2.jpeg",
+    "img/generated/2025-11-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_3.jpeg"
   }
 }
