@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-11-30T08:15:02.336452+00:00",
+  "uploaded_at": "2025-12-02T08:18:57.294165+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -320,6 +320,10 @@
     "img/generated/2025-11-30-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-30-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka/img_0.jpeg",
     "img/generated/2025-11-30-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-30-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka/img_1.jpeg",
     "img/generated/2025-11-30-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-30-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka/img_2.jpeg",
-    "img/generated/2025-11-30-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-30-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka/img_3.jpeg"
+    "img/generated/2025-11-30-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-11-30-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka/img_3.jpeg",
+    "img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_0.jpeg",
+    "img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_1.jpeg",
+    "img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_2.jpeg",
+    "img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_3.jpeg"
   }
 }
