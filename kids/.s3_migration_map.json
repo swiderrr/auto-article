@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-12-02T08:18:57.294165+00:00",
+  "uploaded_at": "2025-12-06T08:15:37.735224+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -324,6 +324,10 @@
     "img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_0.jpeg",
     "img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_1.jpeg",
     "img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_2.jpeg",
-    "img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_3.jpeg"
+    "img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-02-rola-rutyny-w-rozwoju-poznawczym-niemowlt-jak-konsekwentne-nawyki-wspieraj-rozwj-dziecka/img_3.jpeg",
+    "img/generated/2025-12-06-jak-rozmawia-z-dziemi-o-emocjach-prosty-przewodnik-dla-rodzicw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-06-jak-rozmawia-z-dziemi-o-emocjach-prosty-przewodnik-dla-rodzicw/img_0.jpeg",
+    "img/generated/2025-12-06-jak-rozmawia-z-dziemi-o-emocjach-prosty-przewodnik-dla-rodzicw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-06-jak-rozmawia-z-dziemi-o-emocjach-prosty-przewodnik-dla-rodzicw/img_1.jpeg",
+    "img/generated/2025-12-06-jak-rozmawia-z-dziemi-o-emocjach-prosty-przewodnik-dla-rodzicw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-06-jak-rozmawia-z-dziemi-o-emocjach-prosty-przewodnik-dla-rodzicw/img_2.jpeg",
+    "img/generated/2025-12-06-jak-rozmawia-z-dziemi-o-emocjach-prosty-przewodnik-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-06-jak-rozmawia-z-dziemi-o-emocjach-prosty-przewodnik-dla-rodzicw/img_3.jpeg"
   }
 }
