@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-12-11T08:19:35.684656+00:00",
+  "uploaded_at": "2025-12-12T08:19:08.512503+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -341,6 +341,10 @@
     "img/generated/2025-12-11-technologie-dla-rodzicw-inteligentne-nianie-i-sensory-co-warto-mie-w-codziennej-opiece-nad-dzieckiem/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-11-technologie-dla-rodzicw-inteligentne-nianie-i-sensory-co-warto-mie-w-codziennej-opiece-nad-dzieckiem/img_0.jpeg",
     "img/generated/2025-12-11-technologie-dla-rodzicw-inteligentne-nianie-i-sensory-co-warto-mie-w-codziennej-opiece-nad-dzieckiem/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-11-technologie-dla-rodzicw-inteligentne-nianie-i-sensory-co-warto-mie-w-codziennej-opiece-nad-dzieckiem/img_1.jpeg",
     "img/generated/2025-12-11-technologie-dla-rodzicw-inteligentne-nianie-i-sensory-co-warto-mie-w-codziennej-opiece-nad-dzieckiem/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-11-technologie-dla-rodzicw-inteligentne-nianie-i-sensory-co-warto-mie-w-codziennej-opiece-nad-dzieckiem/img_2.jpeg",
-    "img/generated/2025-12-11-technologie-dla-rodzicw-inteligentne-nianie-i-sensory-co-warto-mie-w-codziennej-opiece-nad-dzieckiem/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-11-technologie-dla-rodzicw-inteligentne-nianie-i-sensory-co-warto-mie-w-codziennej-opiece-nad-dzieckiem/img_3.jpeg"
+    "img/generated/2025-12-11-technologie-dla-rodzicw-inteligentne-nianie-i-sensory-co-warto-mie-w-codziennej-opiece-nad-dzieckiem/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-11-technologie-dla-rodzicw-inteligentne-nianie-i-sensory-co-warto-mie-w-codziennej-opiece-nad-dzieckiem/img_3.jpeg",
+    "img/generated/2025-12-12-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka-poradnik-dla-rodzicw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-12-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka-poradnik-dla-rodzicw/img_0.jpeg",
+    "img/generated/2025-12-12-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka-poradnik-dla-rodzicw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-12-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka-poradnik-dla-rodzicw/img_1.jpeg",
+    "img/generated/2025-12-12-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka-poradnik-dla-rodzicw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-12-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka-poradnik-dla-rodzicw/img_2.jpeg",
+    "img/generated/2025-12-12-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka-poradnik-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-12-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka-poradnik-dla-rodzicw/img_3.jpeg"
   }
 }
