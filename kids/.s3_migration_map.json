@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-12-16T08:19:31.537042+00:00",
+  "uploaded_at": "2025-12-17T08:19:18.933115+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -358,6 +358,10 @@
     "img/generated/2025-12-15-odporno-a-dieta-produkty-ktre-warto-wprowadzi-i-unika/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-15-odporno-a-dieta-produkty-ktre-warto-wprowadzi-i-unika/img_1.jpeg",
     "img/generated/2025-12-15-odporno-a-dieta-produkty-ktre-warto-wprowadzi-i-unika/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-15-odporno-a-dieta-produkty-ktre-warto-wprowadzi-i-unika/img_2.jpeg",
     "img/generated/2025-12-15-odporno-a-dieta-produkty-ktre-warto-wprowadzi-i-unika/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-15-odporno-a-dieta-produkty-ktre-warto-wprowadzi-i-unika/img_3.jpeg",
-    "img/generated/2025-12-16-nauka-samodzielnego-jedzenia-od-puree-do-posikw-rodzinnych/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-16-nauka-samodzielnego-jedzenia-od-puree-do-posikw-rodzinnych/img_0.jpeg"
+    "img/generated/2025-12-16-nauka-samodzielnego-jedzenia-od-puree-do-posikw-rodzinnych/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-16-nauka-samodzielnego-jedzenia-od-puree-do-posikw-rodzinnych/img_0.jpeg",
+    "img/generated/2025-12-17-jak-uczy-dziecko-prostych-zasad-bezpieczestwa-w-ruchu-drogowym-i-kontakcie-z-obcymi/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-17-jak-uczy-dziecko-prostych-zasad-bezpieczestwa-w-ruchu-drogowym-i-kontakcie-z-obcymi/img_0.jpeg",
+    "img/generated/2025-12-17-jak-uczy-dziecko-prostych-zasad-bezpieczestwa-w-ruchu-drogowym-i-kontakcie-z-obcymi/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-17-jak-uczy-dziecko-prostych-zasad-bezpieczestwa-w-ruchu-drogowym-i-kontakcie-z-obcymi/img_1.jpeg",
+    "img/generated/2025-12-17-jak-uczy-dziecko-prostych-zasad-bezpieczestwa-w-ruchu-drogowym-i-kontakcie-z-obcymi/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-17-jak-uczy-dziecko-prostych-zasad-bezpieczestwa-w-ruchu-drogowym-i-kontakcie-z-obcymi/img_2.jpeg",
+    "img/generated/2025-12-17-jak-uczy-dziecko-prostych-zasad-bezpieczestwa-w-ruchu-drogowym-i-kontakcie-z-obcymi/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-17-jak-uczy-dziecko-prostych-zasad-bezpieczestwa-w-ruchu-drogowym-i-kontakcie-z-obcymi/img_3.jpeg"
   }
 }
