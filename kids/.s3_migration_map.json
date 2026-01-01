@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2025-12-29T08:20:04.058513+00:00",
+  "uploaded_at": "2026-01-01T08:18:21.803673+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -378,6 +378,10 @@
     "img/generated/2025-12-21-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-21-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka/img_1.jpeg",
     "img/generated/2025-12-21-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-21-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka/img_2.jpeg",
     "img/generated/2025-12-21-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-21-jak-przygotowa-starsze-rodzestwo-na-pojawienie-si-nowego-dziecka/img_3.jpeg",
-    "img/generated/2025-12-29-jak-radzi-sobie-z-lkiem-separacyjnym-u-maych-dzieci/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-29-jak-radzi-sobie-z-lkiem-separacyjnym-u-maych-dzieci/img_0.jpeg"
+    "img/generated/2025-12-29-jak-radzi-sobie-z-lkiem-separacyjnym-u-maych-dzieci/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2025-12-29-jak-radzi-sobie-z-lkiem-separacyjnym-u-maych-dzieci/img_0.jpeg",
+    "img/generated/2026-01-01-jak-uczy-dziecko-prostych-zasad-bezpieczestwa-w-ruchu-drogowym-i-kontakcie-z-obcymi/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-01-jak-uczy-dziecko-prostych-zasad-bezpieczestwa-w-ruchu-drogowym-i-kontakcie-z-obcymi/img_0.jpeg",
+    "img/generated/2026-01-01-jak-uczy-dziecko-prostych-zasad-bezpieczestwa-w-ruchu-drogowym-i-kontakcie-z-obcymi/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-01-jak-uczy-dziecko-prostych-zasad-bezpieczestwa-w-ruchu-drogowym-i-kontakcie-z-obcymi/img_1.jpeg",
+    "img/generated/2026-01-01-jak-uczy-dziecko-prostych-zasad-bezpieczestwa-w-ruchu-drogowym-i-kontakcie-z-obcymi/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-01-jak-uczy-dziecko-prostych-zasad-bezpieczestwa-w-ruchu-drogowym-i-kontakcie-z-obcymi/img_2.jpeg",
+    "img/generated/2026-01-01-jak-uczy-dziecko-prostych-zasad-bezpieczestwa-w-ruchu-drogowym-i-kontakcie-z-obcymi/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-01-jak-uczy-dziecko-prostych-zasad-bezpieczestwa-w-ruchu-drogowym-i-kontakcie-z-obcymi/img_3.jpeg"
   }
 }
