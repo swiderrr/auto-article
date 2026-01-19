@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2026-01-18T08:16:13.757789+00:00",
+  "uploaded_at": "2026-01-19T08:21:27.614272+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -406,6 +406,10 @@
     "img/generated/2026-01-18-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-by-dba-o-zdrowie-dziecka/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-18-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-by-dba-o-zdrowie-dziecka/img_0.jpeg",
     "img/generated/2026-01-18-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-by-dba-o-zdrowie-dziecka/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-18-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-by-dba-o-zdrowie-dziecka/img_1.jpeg",
     "img/generated/2026-01-18-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-by-dba-o-zdrowie-dziecka/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-18-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-by-dba-o-zdrowie-dziecka/img_2.jpeg",
-    "img/generated/2026-01-18-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-by-dba-o-zdrowie-dziecka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-18-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-by-dba-o-zdrowie-dziecka/img_3.jpeg"
+    "img/generated/2026-01-18-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-by-dba-o-zdrowie-dziecka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-18-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-by-dba-o-zdrowie-dziecka/img_3.jpeg",
+    "img/generated/2026-01-19-zrwnowaone-wychowanie-niemowlcia-zero-waste-w-pielgnacji-dziecka/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-19-zrwnowaone-wychowanie-niemowlcia-zero-waste-w-pielgnacji-dziecka/img_0.jpeg",
+    "img/generated/2026-01-19-zrwnowaone-wychowanie-niemowlcia-zero-waste-w-pielgnacji-dziecka/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-19-zrwnowaone-wychowanie-niemowlcia-zero-waste-w-pielgnacji-dziecka/img_1.jpeg",
+    "img/generated/2026-01-19-zrwnowaone-wychowanie-niemowlcia-zero-waste-w-pielgnacji-dziecka/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-19-zrwnowaone-wychowanie-niemowlcia-zero-waste-w-pielgnacji-dziecka/img_2.jpeg",
+    "img/generated/2026-01-19-zrwnowaone-wychowanie-niemowlcia-zero-waste-w-pielgnacji-dziecka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-19-zrwnowaone-wychowanie-niemowlcia-zero-waste-w-pielgnacji-dziecka/img_3.jpeg"
   }
 }
