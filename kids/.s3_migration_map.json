@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2026-01-25T08:16:59.467315+00:00",
+  "uploaded_at": "2026-01-30T08:27:31.600239+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -422,6 +422,10 @@
     "img/generated/2026-01-25-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-25-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_0.jpeg",
     "img/generated/2026-01-25-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-25-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_1.jpeg",
     "img/generated/2026-01-25-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-25-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_2.jpeg",
-    "img/generated/2026-01-25-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-25-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_3.jpeg"
+    "img/generated/2026-01-25-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-25-wychowanie-przez-zabaw-jak-zaplanowa-rozwj-motoryczny-na-3-miesice/img_3.jpeg",
+    "img/generated/2026-01-30-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-30-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_0.jpeg",
+    "img/generated/2026-01-30-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-30-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_1.jpeg",
+    "img/generated/2026-01-30-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-30-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_2.jpeg",
+    "img/generated/2026-01-30-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-01-30-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_3.jpeg"
   }
 }
