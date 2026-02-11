@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2026-02-02T08:32:13.442025+00:00",
+  "uploaded_at": "2026-02-11T08:37:34.539300+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -434,6 +434,10 @@
     "img/generated/2026-02-02-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-rodzicw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-02-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-rodzicw/img_0.jpeg",
     "img/generated/2026-02-02-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-rodzicw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-02-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-rodzicw/img_1.jpeg",
     "img/generated/2026-02-02-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-rodzicw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-02-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-rodzicw/img_2.jpeg",
-    "img/generated/2026-02-02-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-02-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-rodzicw/img_3.jpeg"
+    "img/generated/2026-02-02-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-02-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-rodzicw/img_3.jpeg",
+    "img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_0.jpeg",
+    "img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_1.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_1.png",
+    "img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_2.jpeg",
+    "img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_3.jpeg"
   }
 }
