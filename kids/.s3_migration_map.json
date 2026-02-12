@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2026-02-11T08:37:34.539300+00:00",
+  "uploaded_at": "2026-02-12T08:34:54.218504+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -438,6 +438,10 @@
     "img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_0.jpeg",
     "img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_1.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_1.png",
     "img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_2.jpeg",
-    "img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_3.jpeg"
+    "img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-11-szczepienia-sezonowe-vs-rutynowe-co-warto-wiedzie-na-temat-ochrony-dziecka/img_3.jpeg",
+    "img/generated/2026-02-12-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-12-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_0.jpeg",
+    "img/generated/2026-02-12-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-12-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_1.jpeg",
+    "img/generated/2026-02-12-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-12-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_2.jpeg",
+    "img/generated/2026-02-12-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-12-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_3.jpeg"
   }
 }
