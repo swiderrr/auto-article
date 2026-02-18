@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2026-02-16T08:36:05.374005+00:00",
+  "uploaded_at": "2026-02-18T08:34:39.008555+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -449,6 +449,7 @@
     "img/generated/2026-02-15-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-rodzicw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-15-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-rodzicw/img_2.jpeg",
     "img/generated/2026-02-15-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-15-karmienie-piersi-porady-pozycje-problemy-i-wsparcie-dla-rodzicw/img_3.jpeg",
     "img/generated/2026-02-16-zdrowe-przekski-do-zabrania-na-spacer-z-dzieckiem-co-wybra-by-zadba-o-zdrowie-malucha/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-16-zdrowe-przekski-do-zabrania-na-spacer-z-dzieckiem-co-wybra-by-zadba-o-zdrowie-malucha/img_0.jpeg",
-    "img/generated/2026-02-16-zdrowe-przekski-do-zabrania-na-spacer-z-dzieckiem-co-wybra-by-zadba-o-zdrowie-malucha/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-16-zdrowe-przekski-do-zabrania-na-spacer-z-dzieckiem-co-wybra-by-zadba-o-zdrowie-malucha/img_1.jpeg"
+    "img/generated/2026-02-16-zdrowe-przekski-do-zabrania-na-spacer-z-dzieckiem-co-wybra-by-zadba-o-zdrowie-malucha/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-16-zdrowe-przekski-do-zabrania-na-spacer-z-dzieckiem-co-wybra-by-zadba-o-zdrowie-malucha/img_1.jpeg",
+    "img/generated/2026-02-18-sensory-play-jak-budowa-proste-domowe-zabawy-wspierajce-rozwj-dziecka/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-02-18-sensory-play-jak-budowa-proste-domowe-zabawy-wspierajce-rozwj-dziecka/img_0.jpeg"
   }
 }
