@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2026-03-04T08:28:32.286325+00:00",
+  "uploaded_at": "2026-03-07T08:19:28.403859+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -464,6 +464,10 @@
     "img/generated/2026-03-04-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-praktyczny-przewodnik-dla-rodzicw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-04-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-praktyczny-przewodnik-dla-rodzicw/img_0.jpeg",
     "img/generated/2026-03-04-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-praktyczny-przewodnik-dla-rodzicw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-04-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-praktyczny-przewodnik-dla-rodzicw/img_1.jpeg",
     "img/generated/2026-03-04-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-praktyczny-przewodnik-dla-rodzicw/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-04-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-praktyczny-przewodnik-dla-rodzicw/img_2.jpeg",
-    "img/generated/2026-03-04-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-praktyczny-przewodnik-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-04-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-praktyczny-przewodnik-dla-rodzicw/img_3.jpeg"
+    "img/generated/2026-03-04-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-praktyczny-przewodnik-dla-rodzicw/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-04-eko-zabawki-co-wybra-jak-czyci-i-kiedy-wymienia-praktyczny-przewodnik-dla-rodzicw/img_3.jpeg",
+    "img/generated/2026-03-07-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-07-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_0.jpeg",
+    "img/generated/2026-03-07-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-07-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_1.jpeg",
+    "img/generated/2026-03-07-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-07-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_2.jpeg",
+    "img/generated/2026-03-07-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-07-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_3.jpeg"
   }
 }
