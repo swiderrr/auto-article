@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2026-03-10T08:31:15.267740+00:00",
+  "uploaded_at": "2026-03-12T08:32:01.013335+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -473,6 +473,10 @@
     "img/generated/2026-03-10-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-10-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_0.jpeg",
     "img/generated/2026-03-10-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-10-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_1.jpeg",
     "img/generated/2026-03-10-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-10-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_2.jpeg",
-    "img/generated/2026-03-10-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-10-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_3.jpeg"
+    "img/generated/2026-03-10-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-10-bezpieczne-podre-z-niemowlakiem-checklisty-i-triki/img_3.jpeg",
+    "img/generated/2026-03-12-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-12-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_0.jpeg",
+    "img/generated/2026-03-12-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-12-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_1.jpeg",
+    "img/generated/2026-03-12-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-12-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_2.jpeg",
+    "img/generated/2026-03-12-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-12-rozszerzanie-diety-wegetariaskiejwege-dla-niemowlt-co-trzeba-wiedzie/img_3.jpeg"
   }
 }
