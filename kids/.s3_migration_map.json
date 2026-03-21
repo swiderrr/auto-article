@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2026-03-20T08:30:48.626554+00:00",
+  "uploaded_at": "2026-03-21T08:21:15.192815+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -485,6 +485,10 @@
     "img/generated/2026-03-20-alternatywne-metody-rozwoju-terapia-zajciowa-i-logopedia-kiedy-warto/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-20-alternatywne-metody-rozwoju-terapia-zajciowa-i-logopedia-kiedy-warto/img_0.jpeg",
     "img/generated/2026-03-20-alternatywne-metody-rozwoju-terapia-zajciowa-i-logopedia-kiedy-warto/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-20-alternatywne-metody-rozwoju-terapia-zajciowa-i-logopedia-kiedy-warto/img_1.jpeg",
     "img/generated/2026-03-20-alternatywne-metody-rozwoju-terapia-zajciowa-i-logopedia-kiedy-warto/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-20-alternatywne-metody-rozwoju-terapia-zajciowa-i-logopedia-kiedy-warto/img_2.jpeg",
-    "img/generated/2026-03-20-alternatywne-metody-rozwoju-terapia-zajciowa-i-logopedia-kiedy-warto/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-20-alternatywne-metody-rozwoju-terapia-zajciowa-i-logopedia-kiedy-warto/img_3.jpeg"
+    "img/generated/2026-03-20-alternatywne-metody-rozwoju-terapia-zajciowa-i-logopedia-kiedy-warto/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-20-alternatywne-metody-rozwoju-terapia-zajciowa-i-logopedia-kiedy-warto/img_3.jpeg",
+    "img/generated/2026-03-21-jak-wspiera-dziecko-z-niszym-apetytem-skuteczne-strategie-i-przepisy/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-21-jak-wspiera-dziecko-z-niszym-apetytem-skuteczne-strategie-i-przepisy/img_0.jpeg",
+    "img/generated/2026-03-21-jak-wspiera-dziecko-z-niszym-apetytem-skuteczne-strategie-i-przepisy/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-21-jak-wspiera-dziecko-z-niszym-apetytem-skuteczne-strategie-i-przepisy/img_1.jpeg",
+    "img/generated/2026-03-21-jak-wspiera-dziecko-z-niszym-apetytem-skuteczne-strategie-i-przepisy/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-21-jak-wspiera-dziecko-z-niszym-apetytem-skuteczne-strategie-i-przepisy/img_2.jpeg",
+    "img/generated/2026-03-21-jak-wspiera-dziecko-z-niszym-apetytem-skuteczne-strategie-i-przepisy/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-03-21-jak-wspiera-dziecko-z-niszym-apetytem-skuteczne-strategie-i-przepisy/img_3.jpeg"
   }
 }
