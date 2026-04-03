@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2026-04-02T08:44:44.227535+00:00",
+  "uploaded_at": "2026-04-03T08:42:04.646930+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -509,6 +509,10 @@
     "img/generated/2026-04-02-rozszerzanie-diety-wegetariaskiej-dla-niemowlt-co-trzeba-wiedzie/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-02-rozszerzanie-diety-wegetariaskiej-dla-niemowlt-co-trzeba-wiedzie/img_0.jpeg",
     "img/generated/2026-04-02-rozszerzanie-diety-wegetariaskiej-dla-niemowlt-co-trzeba-wiedzie/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-02-rozszerzanie-diety-wegetariaskiej-dla-niemowlt-co-trzeba-wiedzie/img_1.jpeg",
     "img/generated/2026-04-02-rozszerzanie-diety-wegetariaskiej-dla-niemowlt-co-trzeba-wiedzie/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-02-rozszerzanie-diety-wegetariaskiej-dla-niemowlt-co-trzeba-wiedzie/img_2.jpeg",
-    "img/generated/2026-04-02-rozszerzanie-diety-wegetariaskiej-dla-niemowlt-co-trzeba-wiedzie/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-02-rozszerzanie-diety-wegetariaskiej-dla-niemowlt-co-trzeba-wiedzie/img_3.jpeg"
+    "img/generated/2026-04-02-rozszerzanie-diety-wegetariaskiej-dla-niemowlt-co-trzeba-wiedzie/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-02-rozszerzanie-diety-wegetariaskiej-dla-niemowlt-co-trzeba-wiedzie/img_3.jpeg",
+    "img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_0.jpeg",
+    "img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_1.jpeg",
+    "img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_2.jpeg",
+    "img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_3.jpeg"
   }
 }
