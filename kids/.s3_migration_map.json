@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2026-04-03T08:42:04.646930+00:00",
+  "uploaded_at": "2026-04-04T08:30:49.671790+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -513,6 +513,10 @@
     "img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_0.jpeg",
     "img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_1.jpeg",
     "img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_2.jpeg",
-    "img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_3.jpeg"
+    "img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-03-jak-przygotowa-dom-na-okres-choroby-dziecka-izolacja-higiena-i-plan-opieki/img_3.jpeg",
+    "img/generated/2026-04-04-mity-dotyczce-snu-niemowlt-co-naprawd-dziaa/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-04-mity-dotyczce-snu-niemowlt-co-naprawd-dziaa/img_0.jpeg",
+    "img/generated/2026-04-04-mity-dotyczce-snu-niemowlt-co-naprawd-dziaa/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-04-mity-dotyczce-snu-niemowlt-co-naprawd-dziaa/img_1.jpeg",
+    "img/generated/2026-04-04-mity-dotyczce-snu-niemowlt-co-naprawd-dziaa/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-04-mity-dotyczce-snu-niemowlt-co-naprawd-dziaa/img_2.jpeg",
+    "img/generated/2026-04-04-mity-dotyczce-snu-niemowlt-co-naprawd-dziaa/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-04-mity-dotyczce-snu-niemowlt-co-naprawd-dziaa/img_3.jpeg"
   }
 }
