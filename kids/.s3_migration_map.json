@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2026-04-16T09:09:28.593753+00:00",
+  "uploaded_at": "2026-04-22T09:12:02.112220+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -532,6 +532,9 @@
     "img/generated/2026-04-15-jak-przygotowa-si-do-pierwszych-szczepie-dziecka-checklisty-i-praktyczne-wskazwki/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-15-jak-przygotowa-si-do-pierwszych-szczepie-dziecka-checklisty-i-praktyczne-wskazwki/img_3.jpeg",
     "img/generated/2026-04-16-etyczne-i-bezpieczne-testowanie-produktw-dziecicych-przewodnik/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-16-etyczne-i-bezpieczne-testowanie-produktw-dziecicych-przewodnik/img_0.jpeg",
     "img/generated/2026-04-16-etyczne-i-bezpieczne-testowanie-produktw-dziecicych-przewodnik/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-16-etyczne-i-bezpieczne-testowanie-produktw-dziecicych-przewodnik/img_1.jpeg",
-    "img/generated/2026-04-16-etyczne-i-bezpieczne-testowanie-produktw-dziecicych-przewodnik/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-16-etyczne-i-bezpieczne-testowanie-produktw-dziecicych-przewodnik/img_2.jpeg"
+    "img/generated/2026-04-16-etyczne-i-bezpieczne-testowanie-produktw-dziecicych-przewodnik/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-16-etyczne-i-bezpieczne-testowanie-produktw-dziecicych-przewodnik/img_2.jpeg",
+    "img/generated/2026-04-22-nauka-samodzielnego-jedzenia-od-puree-do-posikw-rodzinnych/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-22-nauka-samodzielnego-jedzenia-od-puree-do-posikw-rodzinnych/img_0.jpeg",
+    "img/generated/2026-04-22-nauka-samodzielnego-jedzenia-od-puree-do-posikw-rodzinnych/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-22-nauka-samodzielnego-jedzenia-od-puree-do-posikw-rodzinnych/img_1.jpeg",
+    "img/generated/2026-04-22-nauka-samodzielnego-jedzenia-od-puree-do-posikw-rodzinnych/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-22-nauka-samodzielnego-jedzenia-od-puree-do-posikw-rodzinnych/img_2.jpeg"
   }
 }
