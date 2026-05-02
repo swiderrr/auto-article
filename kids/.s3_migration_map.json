@@ -1,7 +1,7 @@
 {
   "bucket": "auto-article-kids",
   "region": "eu-north-1",
-  "uploaded_at": "2026-04-28T10:06:05.983662+00:00",
+  "uploaded_at": "2026-05-02T08:57:19.188478+00:00",
   "mapping": {
     "favicon.png": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/favicon.png",
     "icons/folder.svg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/icons/folder.svg",
@@ -543,6 +543,8 @@
     "img/generated/2026-04-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_0.jpeg",
     "img/generated/2026-04-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_1.jpeg",
     "img/generated/2026-04-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_2.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_2.jpeg",
-    "img/generated/2026-04-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_3.jpeg"
+    "img/generated/2026-04-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_3.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-04-28-ekonomia-domowa-z-niemowlakiem-prosty-budet-na-pierwsze-12-miesicy/img_3.jpeg",
+    "img/generated/2026-05-02-jak-radzi-sobie-z-lkiem-separacyjnym-u-maych-dzieci-praktyczny-przewodnik-dla-rodzicw/img_0.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-05-02-jak-radzi-sobie-z-lkiem-separacyjnym-u-maych-dzieci-praktyczny-przewodnik-dla-rodzicw/img_0.jpeg",
+    "img/generated/2026-05-02-jak-radzi-sobie-z-lkiem-separacyjnym-u-maych-dzieci-praktyczny-przewodnik-dla-rodzicw/img_1.jpeg": "https://auto-article-kids.s3.eu-north-1.amazonaws.com/img/generated/2026-05-02-jak-radzi-sobie-z-lkiem-separacyjnym-u-maych-dzieci-praktyczny-przewodnik-dla-rodzicw/img_1.jpeg"
   }
 }
